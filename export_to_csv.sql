@@ -1,0 +1,1 @@
+COPY (select * from full_stats) TO '/Users/charlesarthur/Documents/Data Projects/Golf_Stats/full_stats.csv' DELIMITER ',' CSV HEADER;

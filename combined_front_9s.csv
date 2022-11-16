@@ -1,0 +1,82 @@
+round_date,golfer,course_name,round_number,game,hole,yards,stroke_index,par,score,vs_par
+2022-09-12,1,Godstone,1,Singles,5,388,1,4,5,1
+2022-09-12,1,Godstone,1,Singles,7,517,3,5,8,3
+2022-09-12,1,Godstone,1,Singles,1,303,13,4,5,1
+2022-09-12,1,Godstone,1,Singles,8,141,15,3,5,2
+2022-09-12,1,Godstone,1,Singles,4,152,17,3,7,4
+2022-09-12,1,Godstone,1,Singles,9,385,9,4,6,2
+2022-09-12,1,Godstone,1,Singles,6,340,11,4,4,0
+2022-09-12,1,Godstone,1,Singles,2,323,7,4,9,5
+2022-09-12,1,Godstone,1,Singles,3,490,5,5,8,3
+2022-09-25,1,The Oaks,3,Scramble,1,157,16,3,3,0
+2022-09-25,1,The Oaks,3,Scramble,2,358,1,4,5,1
+2022-09-25,1,The Oaks,3,Scramble,3,185,12,3,5,2
+2022-09-25,1,The Oaks,3,Scramble,4,401,3,4,5,1
+2022-09-25,1,The Oaks,3,Scramble,5,357,4,4,7,3
+2022-09-25,1,The Oaks,3,Scramble,6,307,18,4,5,1
+2022-09-25,1,The Oaks,3,Scramble,7,496,7,5,7,2
+2022-09-25,1,The Oaks,3,Scramble,8,375,2,4,5,1
+2022-09-25,1,The Oaks,3,Scramble,9,135,15,3,5,2
+2022-10-08,1,Southmapton Municipal,2,Singles,5,173,8,3,5,2
+2022-10-08,1,Southmapton Municipal,2,Singles,1,154,14,3,5,2
+2022-10-08,1,Southmapton Municipal,2,Singles,2,455,4,5,9,4
+2022-10-08,1,Southmapton Municipal,2,Singles,2,455,4,5,8,3
+2022-10-08,1,Southmapton Municipal,2,Singles,3,295,16,4,7,3
+2022-10-08,1,Southmapton Municipal,2,Singles,4,328,12,4,6,2
+2022-10-08,1,Southmapton Municipal,2,Singles,3,295,16,4,5,1
+2022-10-08,1,Southmapton Municipal,2,Singles,5,173,8,3,5,2
+2022-10-08,1,Southmapton Municipal,2,Singles,6,336,10,4,6,2
+2022-10-08,1,Southmapton Municipal,2,Singles,4,328,12,4,6,2
+2022-10-08,1,Southmapton Municipal,2,Singles,7,441,2,4,7,3
+2022-10-08,1,Southmapton Municipal,2,Singles,8,379,6,4,8,4
+2022-10-08,1,Southmapton Municipal,2,Singles,9,319,18,4,6,2
+2022-10-08,1,Southmapton Municipal,2,Singles,1,154,14,3,5,2
+2022-10-08,1,Southmapton Municipal,2,Singles,6,336,10,4,9,5
+2022-10-08,1,Southmapton Municipal,2,Singles,7,441,2,4,8,4
+2022-10-08,1,Southmapton Municipal,2,Singles,8,379,6,4,5,1
+2022-10-08,1,Southmapton Municipal,2,Singles,9,319,18,4,9,5
+2022-10-14,1,Southmapton Municipal,5,Singles,8,379,6,4,8,4
+2022-10-14,1,Southmapton Municipal,5,Singles,1,154,14,3,5,2
+2022-10-14,1,Southmapton Municipal,5,Singles,2,455,4,5,8,3
+2022-10-14,1,Southmapton Municipal,5,Singles,3,295,16,4,5,1
+2022-10-14,1,Southmapton Municipal,5,Singles,4,328,12,4,6,2
+2022-10-14,1,Southmapton Municipal,5,Singles,5,173,8,3,5,2
+2022-10-14,1,Southmapton Municipal,5,Singles,6,336,10,4,9,5
+2022-10-14,1,Southmapton Municipal,5,Singles,7,441,2,4,8,4
+2022-10-14,1,Southmapton Municipal,5,Singles,8,379,6,4,5,1
+2022-10-14,1,Southmapton Municipal,5,Singles,9,319,18,4,9,5
+2022-10-14,1,Southmapton Municipal,5,Singles,1,154,14,3,5,2
+2022-10-14,1,Southmapton Municipal,5,Singles,2,455,4,5,9,4
+2022-10-14,1,Southmapton Municipal,5,Singles,3,295,16,4,7,3
+2022-10-14,1,Southmapton Municipal,5,Singles,4,328,12,4,6,2
+2022-10-14,1,Southmapton Municipal,5,Singles,5,173,8,3,5,2
+2022-10-14,1,Southmapton Municipal,5,Singles,6,336,10,4,6,2
+2022-10-14,1,Southmapton Municipal,5,Singles,7,441,2,4,7,3
+2022-10-14,1,Southmapton Municipal,5,Singles,9,319,18,4,6,2
+2022-10-15,1,Hurtmore,4,Singles,1,321,12,4,7,3
+2022-10-15,1,Hurtmore,4,Singles,2,175,8,3,6,3
+2022-10-15,1,Hurtmore,4,Singles,3,436,2,4,4,0
+2022-10-15,1,Hurtmore,4,Singles,4,228,18,4,7,3
+2022-10-15,1,Hurtmore,4,Singles,5,116,6,3,8,5
+2022-10-15,1,Hurtmore,4,Singles,6,346,4,4,7,3
+2022-10-15,1,Hurtmore,4,Singles,7,264,16,4,6,2
+2022-10-15,1,Hurtmore,4,Singles,8,252,14,4,6,2
+2022-10-15,1,Hurtmore,4,Singles,9,347,10,4,9,5
+2022-10-15,1,Hurtmore,4,Singles,1,321,12,4,6,2
+2022-10-15,1,Hurtmore,4,Singles,2,175,8,3,6,3
+2022-10-15,1,Hurtmore,4,Singles,3,436,2,4,7,3
+2022-10-15,1,Hurtmore,4,Singles,4,228,18,4,6,2
+2022-10-15,1,Hurtmore,4,Singles,5,116,6,3,6,3
+2022-10-15,1,Hurtmore,4,Singles,6,346,4,4,5,1
+2022-10-15,1,Hurtmore,4,Singles,7,264,16,4,7,3
+2022-10-15,1,Hurtmore,4,Singles,8,252,14,4,7,3
+2022-10-15,1,Hurtmore,4,Singles,9,347,10,4,7,3
+2022-10-15,1,Hurtmore,4,Singles,1,321,12,4,6,2
+2022-10-15,1,Hurtmore,4,Singles,2,175,8,3,4,1
+2022-10-15,1,Hurtmore,4,Singles,3,436,2,4,10,6
+2022-10-15,1,Hurtmore,4,Singles,4,228,18,4,6,2
+2022-10-15,1,Hurtmore,4,Singles,5,116,6,3,5,2
+2022-10-15,1,Hurtmore,4,Singles,6,346,4,4,7,3
+2022-10-15,1,Hurtmore,4,Singles,7,264,16,4,4,0
+2022-10-15,1,Hurtmore,4,Singles,8,252,14,4,6,2
+2022-10-15,1,Hurtmore,4,Singles,9,347,10,4,10,6

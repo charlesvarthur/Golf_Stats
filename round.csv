@@ -1,0 +1,6 @@
+course_id,player_id,round_date,round_type,handicap,round_length,round_id
+1,1,2022-09-12,Singles,,9,1
+3,1,2022-10-08,Singles,,9,2
+2,1,2022-09-25,Scramble,,18,3
+4,1,2022-10-15,Singles,,18,4
+3,1,2022-10-14,Singles,,9,5

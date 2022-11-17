@@ -40,7 +40,7 @@ par = st.sidebar.multiselect(
 
 #Filter query, referencing filter variables
 gss = golf_stats.query(
-    "course_name == @course_name & round_date == @round_date & par == @par "
+    "Course == @course_name & Round == @round_date & Par == @par "
 )
 
 #Dataframe to streamlit

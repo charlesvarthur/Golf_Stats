@@ -15,7 +15,6 @@ st.set_page_config(page_title="CA Full Golf Stats",
 
 #Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
-st.dataframe(golf_stats)
 
 #Sidebar
 st.sidebar.header("Data Filters")
@@ -39,6 +38,13 @@ options=golf_stats["par"].unique(),
 default=golf_stats["par"].unique()
 )
 
+#Filter query, referencing filter variables
+golf_stats_select = golf_stats.query(
+    "Round == @round_date & Par == @par & Course == @course"
+)
 
+
+#Dataframe to streamlit
+st.dataframe(golf_stats_select)
 
 #print(golf_stats)

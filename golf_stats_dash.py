@@ -27,7 +27,7 @@ course_name = st.sidebar.multiselect(
 )
 
 score_vs_par = st.sidebar.multiselect(
-    "Select the round date:",
+    "Select the score vs the par:",
     options=golf_stats["score_vs_par"].unique(),
     default=golf_stats["score_vs_par"].unique()
 )

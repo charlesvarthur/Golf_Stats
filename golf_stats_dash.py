@@ -29,7 +29,7 @@ course_name = st.sidebar.multiselect(
 score_vs_par = st.sidebar.multiselect(
     "Select the round date:",
     options=golf_stats["score_vs_par"].unique(),
-    default=golf_stats["stroke_vs_par"].unique()
+    default=golf_stats["score_vs_par"].unique()
 )
 
 par = st.sidebar.multiselect(
@@ -48,12 +48,12 @@ st.dataframe(gss)
 
 
 #Creating a dashboard
-st.title(":bar_chart: Stats Dashboard")
-st.markdown("##")
+#st.markdown("##")
+#st.title(":bar_chart: Stats Dashboard")
 
 
 # Average score total score
-average_par = round(golf_stats["par"].mean(),1)
+#average_par = round(golf_stats["par"].mean(),1)
 
 
 # Average score by course

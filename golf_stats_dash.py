@@ -26,10 +26,10 @@ course_name = st.sidebar.multiselect(
     default=None
 )
 
-stroke_index = st.sidebar.multiselect(
+score_vs_par = st.sidebar.multiselect(
     "Select the round date:",
-    options=golf_stats["stroke_index"].unique(),
-    default=golf_stats["stroke_index"].unique()
+    options=golf_stats["score_vs_par"].unique(),
+    default=golf_stats["stroke_vs_par"].unique()
 )
 
 par = st.sidebar.multiselect(
@@ -46,4 +46,16 @@ gss = golf_stats.query(
 #Dataframe to streamlit
 st.dataframe(gss)
 
-#print(golf_stats)
+
+
+
+#Creating a dashboard
+st.title(":bar_chart: Stats Dashboard")
+st.markdown("##")
+
+
+# Average score total score
+average_par = round(golf_stats["par"].mean(),1)
+
+
+# Average score by course

@@ -14,7 +14,7 @@ st.set_page_config(page_title="CA Full Golf Stats",
                     )
 
 #Data source
-golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv",index=False)
+golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv", index_col=False)
 
 #Sidebar
 st.sidebar.header("Data Filters:")

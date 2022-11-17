@@ -21,27 +21,27 @@ st.sidebar.header("Data Filters")
 
 #Filters
 course = st.sidebar.multiselect(
-"Select the course:",
-options=golf_stats["course_name"].unique(),
-default=golf_stats["course_name"].unique()
+    "Select the course:",
+    options=golf_stats["course_name"].unique(),
+    default=golf_stats["course_name"].unique()
 )
 
 round_date = st.sidebar.multiselect(
-"Select the round date:",
-options=golf_stats["round_date"].unique(),
-default=golf_stats["round_date"].unique()
+    "Select the round date:",
+    options=golf_stats["round_date"].unique(),
+    default=golf_stats["round_date"].unique()
 )
 
 par = st.sidebar.multiselect(
-"Select the par:",
-options=golf_stats["par"].unique(),
-default=golf_stats["par"].unique()
+    "Select the par:",
+    options=golf_stats["par"].unique(),
+    default=golf_stats["par"].unique()
 )
 
 #Filter query, referencing filter variables
 gss = golf_stats.query("Course == @course & Round_type == @round_date & Par == @par ")
 
 #Dataframe to streamlit
-st.dataframe(golf_stats)
+st.dataframe(gss)
 
 #print(golf_stats)

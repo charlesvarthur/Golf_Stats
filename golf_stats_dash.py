@@ -39,7 +39,7 @@ default=golf_stats["par"].unique()
 )
 
 #Filter query, referencing filter variables
-#golf_stats_select = golf_stats.query("Course == @course & Round_type == @round_date & Par == @par ")
+gss = golf_stats.query("Course == @course & Round_type == @round_date & Par == @par ")
 
 #Dataframe to streamlit
 st.dataframe(golf_stats)

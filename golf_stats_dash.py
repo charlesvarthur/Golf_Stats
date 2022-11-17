@@ -40,13 +40,11 @@ par = st.sidebar.multiselect(
 
 #Filter query, referencing filter variables
 gss = golf_stats.query(
-    "course_name == @course_name & stroke_index == @stroke_index & par == @par "
+    "course_name == @course_name & score_vs_par == @score_vs_par & par == @par "
 )
 
 #Dataframe to streamlit
 st.dataframe(gss)
-
-
 
 
 #Creating a dashboard

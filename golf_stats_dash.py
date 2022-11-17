@@ -3,7 +3,7 @@
 # Charles Arthur
 
 import pandas as pd
-import plotly_express as pl
+import plotly_express as px
 import openpyxl as oyxl
 import streamlit as st
 
@@ -14,7 +14,7 @@ st.set_page_config(page_title="CA Full Golf Stats",
                     )
 
 #Data source
-golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv", index_col=False)
+golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
 
 #Sidebar
 st.sidebar.header("Data Filters:")
@@ -46,6 +46,10 @@ gss = golf_stats.query(
 #Dataframe to streamlit
 st.dataframe(gss)
 
+
+data_ = px.data.gapminder().query("course_name == 'Southampton Municipal'")
+fig = px.bar(golf_stats, x='hole', y='score')
+fig.show()
 
 #Creating a dashboard
 #st.markdown("##")

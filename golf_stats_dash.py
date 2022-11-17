@@ -26,10 +26,10 @@ course_name = st.sidebar.multiselect(
     default=None
 )
 
-round_date = st.sidebar.multiselect(
+stroke_index = st.sidebar.multiselect(
     "Select the round date:",
-    options=golf_stats["round_date"].unique(),
-    default=golf_stats["round_date"].unique()
+    options=golf_stats["stroke_index"].unique(),
+    default=golf_stats["stroke_index"].unique()
 )
 
 par = st.sidebar.multiselect(
@@ -40,7 +40,7 @@ par = st.sidebar.multiselect(
 
 #Filter query, referencing filter variables
 gss = golf_stats.query(
-    "course_name == @course_name & round_date == @round_date & par == @par "
+    "course_name == @course_name & stroke_index == @stroke_index & par == @par "
 )
 
 #Dataframe to streamlit

@@ -23,7 +23,7 @@ st.sidebar.header("Data Filters:")
 course_name = st.sidebar.multiselect(
     "Select the course:",
     options=golf_stats["course_name"].unique(),
-    default=golf_stats["course_name"].unique()
+    default=None
 )
 
 round_date = st.sidebar.multiselect(

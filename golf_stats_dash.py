@@ -43,7 +43,6 @@ golf_stats_select = golf_stats.query(
     "Round == @round_date & Par == @par & Course == @course"
 )
 
-
 #Dataframe to streamlit
 st.dataframe(golf_stats_select)
 

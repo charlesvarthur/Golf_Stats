@@ -13,8 +13,7 @@ st.set_page_config(page_title="CA Full Golf Stats",
                     layout="wide"
                     )
 
-golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv?token=GHSAT0AAAAAAB3I2DXYY3VEZQRBFMPVV2UEY3VFW4Q")
-    
+golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/8d3e1d7f3ffb10d54ee11e67e4e8803ca4ab8cd3/full_stats.csv?token=GHSAT0AAAAAAB3I2DXY35YZJMEDTPFPKZSKY3V6QWA")
 st.dataframe(golf_stats)
 
 #print(golf_stats)

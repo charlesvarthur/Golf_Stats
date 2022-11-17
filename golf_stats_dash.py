@@ -44,6 +44,6 @@ golf_stats_select = golf_stats.query(
 )
 
 #Dataframe to streamlit
-st.dataframe(golf_stats_select)
+st.dataframe(golf_stats)
 
 #print(golf_stats)

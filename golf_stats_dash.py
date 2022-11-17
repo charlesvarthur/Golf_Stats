@@ -27,4 +27,18 @@ options=golf_stats["course_name"].unique(),
 default=golf_stats["course_name"].unique()
 )
 
+round_date = st.sidebar.multiselect(
+"Select the round date:",
+options=golf_stats["round_date"].unique(),
+default=golf_stats["round_date"].unique()
+)
+
+par = st.sidebar.multiselect(
+"Select the par:",
+options=golf_stats["par"].unique(),
+default=golf_stats["par"].unique()
+)
+
+
+
 #print(golf_stats)

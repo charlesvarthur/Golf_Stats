@@ -19,9 +19,9 @@ golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_
 #Sidebar
 st.sidebar.header("Data Filters")
 
-#Course filters
+#Filters
 course = st.sidebar.multiselect(
-"Select the Course:",
+"Select the course:",
 options=golf_stats["course_name"].unique(),
 default=golf_stats["course_name"].unique()
 )
@@ -40,7 +40,7 @@ default=golf_stats["par"].unique()
 
 #Filter query, referencing filter variables
 golf_stats_select = golf_stats.query(
-    "Round == @round_date & Par == @par & Course == @course"
+    "Course == @course & Round_Date == @round_date & Par == @par "
 )
 
 #Dataframe to streamlit

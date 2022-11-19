@@ -47,9 +47,9 @@ gss = golf_stats.query(
 st.dataframe(gss)
 
 
-data_ = px.data.gapminder().query("course_name == 'Southampton Municipal'")
-fig = px.bar(golf_stats, x='hole', y='score')
-fig.show()
+# data_ = px.data.gapminder().query("course_name == 'Southampton Municipal'")
+# fig = px.bar(golf_stats, x='hole', y='score')
+# fig.show()
 
 #Creating a dashboard
 #st.markdown("##")

@@ -1,23 +1,23 @@
 --inserting scores 
 
--- insert into scores VALUES (1,3,37,8,3);
--- insert into scores VALUES (1,3,38,8,9);
--- insert into scores VALUES (1,3,39,8,6);
--- insert into scores VALUES (1,3,40,8,5);
--- insert into scores VALUES (1,3,41,8,5);
--- insert into scores VALUES (1,3,42,8,9);
--- insert into scores VALUES (1,3,43,8,8);
--- insert into scores VALUES (1,3,44,8,8);
--- insert into scores VALUES (1,3,45,8,5);
--- insert into scores VALUES (1,3,46,8,4);
--- insert into scores VALUES (1,3,47,8,7);
--- insert into scores VALUES (1,3,48,8,9);
--- insert into scores VALUES (1,3,49,8,6);
--- insert into scores VALUES (1,3,50,8,8);
--- insert into scores VALUES (1,3,51,8,9);
--- insert into scores VALUES (1,3,52,8,9);
--- insert into scores VALUES (1,3,53,8,4);
--- insert into scores VALUES (1,3,54,8,5);
+-- insert into scores VALUES (1,8,127,10,5);
+-- insert into scores VALUES (1,8,128,10,8);
+-- insert into scores VALUES (1,8,129,10,5);
+-- insert into scores VALUES (1,8,130,10,5);
+-- insert into scores VALUES (1,8,131,10,6);
+-- insert into scores VALUES (1,8,132,10,4);
+-- insert into scores VALUES (1,8,133,10,8);
+-- insert into scores VALUES (1,8,134,10,5);
+-- insert into scores VALUES (1,8,135,10,6);
+-- insert into scores VALUES (1,8,136,10,6);
+-- insert into scores VALUES (1,8,137,10,6);
+-- insert into scores VALUES (1,8,138,10,5);
+-- insert into scores VALUES (1,8,139,10,7);
+-- insert into scores VALUES (1,8,140,10,7);
+-- insert into scores VALUES (1,8,141,10,5);
+-- insert into scores VALUES (1,8,142,10,8);
+-- insert into scores VALUES (1,8,142,10,7);
+-- insert into scores VALUES (1,8,144,10,7);
 
 -- insert into scores VALUES (4,5,82,6,8);
 -- insert into scores VALUES (4,5,83,6,7);
@@ -36,6 +36,7 @@
 -- ON hs.course_id = c.course_id
 -- where c.course_id=5
 -- order by 1;
---select hole_number,hole_id,notes from hole_stats where course_id=3 order by 2;
-select * from scores where round_id=8 order by 2;
+--select hole_number,hole_id,notes from hole_stats where course_id=8 order by 2;
+
+select * from scores where round_id=10 order by 2;
 -- select * from player

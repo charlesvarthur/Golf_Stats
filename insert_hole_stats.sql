@@ -1,23 +1,23 @@
 --insert into the hole_stats table with hole_id_seq
 
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),1,4,4,4,12,312,332,336);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),2,3,3,3,8,168,175,184);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),3,5,4,4,2,388,436,442);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),4,4,4,4,18,218,228,232);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),5,3,3,3,6,101,116,131);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),6,4,4,4,4,289,346,350);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),7,4,4,4,16,259,264,270);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),8,4,4,4,14,234,252,283);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),9,4,4,4,10,343,347,389);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),10,4,4,4,11,281,318,333);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),11,4,4,4,15,248,257,271);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),12,5,4,4,1,345,359,373);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),13,4,4,4,13,274,303,312);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),14,4,4,4,3,257,294,321);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),15,5,5,5,5,491,511,530);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),16,3,3,3,7,103,125,153);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),17,4,4,4,17,224,238,238);
--- insert into hole_stats VALUES (4,nextval('hole_stats_hole_id_seq'),18,4,4,4,9,312,325,347);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),1,4,4,4,15,295,309,318,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),2,5,5,5,8,475,517,536,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),3,3,3,3,12,153,170,174,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),4,4,4,4,6,388,396,404,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),5,4,4,4,2,354,369,406,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),6,3,3,3,11,177,183,191,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),7,5,5,5,4,460,476,545,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),8,3,3,3,17,132,143,148,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),9,5,5,5,14,401,459,467,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),10,4,4,4,13,343,371,379,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),11,4,4,4,10,324,338,344,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),12,3,3,3,18,108,120,126,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),13,5,5,5,7,431,468,476,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),14,4,4,4,5,363,376,382,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),15,3,3,3,9,114,154,161,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),16,4,4,4,3,383,424,430,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),17,4,4,4,1,406,448,456,NULL);
+-- insert into hole_stats VALUES (8,nextval('hole_stats_hole_id_seq'),18,4,4,4,16,284,290,295,NULL);
 
 -- insert into hole_stats VALUES (5,nextval('hole_stats_hole_id_seq'),1,4,4,4,18,287,280,287,NULL);
 -- insert into hole_stats VALUES (5,nextval('hole_stats_hole_id_seq'),2,4,4,4,4,296,370,374,NULL);

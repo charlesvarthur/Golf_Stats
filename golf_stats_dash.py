@@ -4,7 +4,7 @@
 
 import pandas as pd
 import plotly_express as px
-import openpyxl as oyxl
+import openpyxl as opxl
 import streamlit as st
 
 #Steamlit app basic config
@@ -23,7 +23,7 @@ st.sidebar.header("Data Filters:")
 course_name = st.sidebar.multiselect(
     "Select the course:",
     options=golf_stats["course_name"].unique(),
-    default=None
+    default=golf_stats["course_name"].unique()
 )
 
 score_vs_par = st.sidebar.multiselect(
@@ -46,18 +46,6 @@ gss = golf_stats.query(
 #Dataframe to streamlit
 st.dataframe(gss)
 
+#Create a bar charts with the scores for each round. 
 
-# data_ = px.data.gapminder().query("course_name == 'Southampton Municipal'")
-# fig = px.bar(golf_stats, x='hole', y='score')
-# fig.show()
-
-#Creating a dashboard
-#st.markdown("##")
-#st.title(":bar_chart: Stats Dashboard")
-
-
-# Average score total score
-#average_par = round(golf_stats["par"].mean(),1)
-
-
-# Average score by course
+#Average score by stroke_index

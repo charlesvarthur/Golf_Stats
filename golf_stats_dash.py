@@ -6,7 +6,6 @@ import pandas as pd
 import plotly_express as px
 import openpyxl as opxl
 import streamlit as st
-import plotly.graph_objects as go
 
 #Steamlit app basic config
 st.set_page_config(page_title="CA Full Golf Stats",
@@ -55,7 +54,7 @@ st.markdown("##")
 #Total score by course
 score_by_course = golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).sum()
 
-fig_score_by_course = go.bar(
+fig_score_by_course = px.bar(
     score_by_course,
     x=score_by_course.index,
     y="score_vs_par",

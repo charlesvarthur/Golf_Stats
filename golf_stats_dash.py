@@ -64,7 +64,7 @@ fig_score_by_course = go.bar(
     template="plotly_white",
 )
 
-st.plotly_chart(score_by_course)
+st.plotly_chart(fig_score_by_course)
 
 #Average score by stroke_index
 #average_score_by_stroke_index = golf_stats.loc[:,['course_name','stroke_index','score_vs_par']].groupby(by=['stroke_index']).sum().rename("stroke_index")

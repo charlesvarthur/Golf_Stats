@@ -46,6 +46,13 @@ gss = golf_stats.query(
 #Dataframe to streamlit
 st.dataframe(gss)
 
+
+st.title(":bar_chart: Targets Dashboard")
+st.markdown("##")
+
+
+
+
 #Create a bar charts with the scores for each round. 
 
 #Average score by stroke_index

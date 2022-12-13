@@ -51,16 +51,29 @@ st.markdown("##")
 
 #Create a bar charts with the scores for each round. 
 
-#Average score by stroke_index
-average_score_by_stroke_index = golf_stats.loc[:,['course_name','stroke_index','score_vs_par']].groupby(by=['stroke_index']).sum().rename("stroke_index")
+#Total score by course
+score_by_course = golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).sum()
 
-fig_average_score_by_stroke_index = px.bar(
-    average_score_by_stroke_index,
-    x="stroke_index",
+fig_score_by_course = px.bar(
+    score_by_course,
+    x=score_by_course.index,
     y="score_vs_par",
     orientation="v",
     title="<b>Average Score by Stroke Index</b>",
     template="plotly_white",
 )
 
-st.plotly_chart(fig_average_score_by_stroke_index)
+#Average score by stroke_index
+#average_score_by_stroke_index = golf_stats.loc[:,['course_name','stroke_index','score_vs_par']].groupby(by=['stroke_index']).sum().rename("stroke_index")
+#print(average_score_by_stroke_index)
+
+# fig_average_score_by_stroke_index = px.bar(
+#     average_score_by_stroke_index,
+#     x="stroke_index",
+#     y="score_vs_par",
+#     orientation="v",
+#     title="<b>Average Score by Stroke Index</b>",
+#     template="plotly_white",
+# )
+
+# st.plotly_chart(fig_average_score_by_stroke_index)

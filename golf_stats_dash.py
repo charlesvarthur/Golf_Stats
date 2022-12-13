@@ -44,7 +44,7 @@ gss = golf_stats.query(
 )
 
 #Dataframe to streamlit
-st.dataframe(gss)
+#st.dataframe(gss)
 
 st.title(":bar_chart: Golf stats")
 st.markdown("##")
@@ -52,7 +52,7 @@ st.markdown("##")
 #Create a bar charts with the scores for each round. 
 
 #Average score by stroke_index
-average_score_by_stroke_index = golf_stats.loc[:,['stroke_index','score_vs_par']].groupby(by=['stroke_index']).sum().rename('stoke_index')
+average_score_by_stroke_index = golf_stats.loc[:,['stroke_index','score_vs_par']].groupby(['stroke_index']).sum()
 
 fig_average_score_by_stroke_index = px.bar(
     average_score_by_stroke_index,

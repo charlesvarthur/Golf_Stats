@@ -44,7 +44,7 @@ gss = golf_stats.query(
 )
 
 #Dataframe to streamlit
-#st.dataframe(gss)
+st.dataframe(gss)
 
 st.title(":bar_chart: Golf stats")
 st.markdown("##")

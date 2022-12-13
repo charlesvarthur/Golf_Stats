@@ -52,13 +52,13 @@ st.markdown("##")
 #Create a bar charts with the scores for each round. 
 
 #Average score by stroke_index
-average_score_by_stroke_index = golf_stats.loc[:,['stroke_index','score_vs_par']].groupby(by=['stroke_index']).sum().rename("stroke_index")
+average_score_by_stroke_index = golf_stats.loc[:,['course_name','stroke_index','score_vs_par']].groupby(by=['stroke_index']).sum().rename("stroke_index")
 
 fig_average_score_by_stroke_index = px.bar(
     average_score_by_stroke_index,
-    x=average_score_by_stroke_index.index,
+    x="stroke_index",
     y="score_vs_par",
-    orientation="h",
+    orientation="v",
     title="<b>Average Score by Stroke Index</b>",
     template="plotly_white",
 )

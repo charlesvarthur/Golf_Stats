@@ -60,7 +60,7 @@ fig_score_by_course = px.bar(
     y="score_vs_par",
     orientation="v",
     title="<b>Average Score by Course</b>",
-    template="plotly_white",
+    template="plotly_dark",
 )
 
 st.plotly_chart(fig_score_by_course)

@@ -56,7 +56,7 @@ average_score_by_stroke_index = golf_stats.loc[:,['stroke_index','score_vs_par']
 
 fig_average_score_by_stroke_index = px.bar(
     average_score_by_stroke_index,
-    x="stroke_index",
+    x=average_score_by_stroke_index.index,
     y="score_vs_par",
     orientation="h",
     title="<b>Average Score by Stroke Index</b>",

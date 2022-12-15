@@ -17,7 +17,7 @@ st.set_page_config(page_title="CA Full Golf Stats",
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
 
 #Total score by course
-score_by_course = golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).sum()
+score_by_course = golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).sum().rename(columns={"index": "course_name"})
 
 #Sidebar
 st.sidebar.header("Data Filters:")
@@ -42,12 +42,12 @@ score_vs_par = st.sidebar.multiselect(
 # )
 
 #Filter query, referencing filter variables
-gss = score_by_course.query(
+golf_stats_selection = score_by_course.query(
     "course_name == @course_name & score_vs_par == @score_vs_par" #& par == @par "
 )
 
 #Dataframe to streamlit
-#st.dataframe(gss)
+#st.dataframe(golf_stats_selection)
 
 st.title(":bar_chart: Golf stats")
 st.markdown("##")
@@ -63,18 +63,3 @@ fig_score_by_course = px.bar(
 )
 
 st.plotly_chart(fig_score_by_course)
-
-#Average score by stroke_index
-#average_score_by_stroke_index = golf_stats.loc[:,['course_name','stroke_index','score_vs_par']].groupby(by=['stroke_index']).sum().rename("stroke_index")
-#print(average_score_by_stroke_index)
-
-# fig_average_score_by_stroke_index = px.bar(
-#     average_score_by_stroke_index,
-#     x="stroke_index",
-#     y="score_vs_par",
-#     orientation="v",
-#     title="<b>Average Score by Stroke Index</b>",
-#     template="plotly_white",
-# )
-
-# st.plotly_chart(fig_average_score_by_stroke_index)

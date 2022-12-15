@@ -55,7 +55,7 @@ st.markdown("##")
 #Create a bar charts with the scores for each round. 
 fig_score_by_course = px.bar(
     score_by_course,
-    x=score_by_course.index,
+    x="course_name",
     y="score_vs_par",
     orientation="v",
     title="<b>Average Score by Course</b>",

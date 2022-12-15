@@ -25,14 +25,14 @@ st.sidebar.header("Data Filters:")
 #Filters
 course_name = st.sidebar.multiselect(
     "Select the course:",
-    options=golf_stats["course_name"].unique(),
-    default=golf_stats["course_name"].unique()
+    options=score_by_course["course_name"].unique(),
+    default=score_by_course["course_name"].unique()
 )
 
 score_vs_par = st.sidebar.multiselect(
     "Select the score vs the par:",
-    options=golf_stats["score_vs_par"].unique(),
-    default=golf_stats["score_vs_par"].unique()
+    options=score_by_course["score_vs_par"].unique(),
+    default=score_by_course["score_vs_par"].unique()
 )
 
 # par = st.sidebar.multiselect(

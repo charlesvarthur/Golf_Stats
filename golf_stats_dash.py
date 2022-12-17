@@ -4,7 +4,6 @@
 
 import pandas as pd
 import plotly_express as px
-import openpyxl as opxl
 import streamlit as st
 
 #Steamlit app basic config

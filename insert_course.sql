@@ -9,4 +9,6 @@
 -- INSERT INTO course VALUES (nextval('course_course_id_seq'),'Boundary Lakes',103,116,119);
 -- INSERT INTO course VALUES (nextval('course_course_id_seq'),'Paultons Golf Centre',120,115,118);
 
+INSERT INTO course VALUES (nextval('course_course_id_seq'),'Etchinghill Golf Trust',125,120,123);
+
 select * from course;

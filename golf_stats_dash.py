@@ -23,6 +23,6 @@ st.write('This page is solely dedicated to golf and keeping track of my scores, 
 st.subheader('Average Score vs Par Per Hole, By Course')
 score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).mean('score_vs_par'))
 score_vs_par_by_course = score_vs_par_by_course['score_vs_par'].round(decimals=2)
-st.line_chart(score_vs_par_by_course)
+st.bar_chart(score_vs_par_by_course)
 
 st.selectbox('Select a course to for hole specific averages:',[''])

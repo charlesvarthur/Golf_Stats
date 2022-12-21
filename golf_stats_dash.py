@@ -29,4 +29,5 @@ st.bar_chart(score_vs_par_by_course)
 # fig = px.histogram(score_vs_par_by_course)
 # st.plotly_chart(fig)
 
-st.selectbox('Select a course to for hole specific averages:',[''])
+courses_list = pd.DataFrame(golf_stats['course_name'].drop_duplicates())
+course_var = st.selectbox('Select a course to for hole specific averages:',[courses_list])

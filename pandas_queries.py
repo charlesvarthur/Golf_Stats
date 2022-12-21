@@ -13,3 +13,6 @@ print(golf_stats)
 score_vs_par_by_round = pd.DataFrame(golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).mean('score_vs_par'))
 score_vs_par_by_round = score_vs_par_by_round['score_vs_par'].round(decimals=2)
 print(score_vs_par_by_round)
+
+courses_list = pd.DataFrame(golf_stats['course_name'].drop_duplicates())
+print(courses_list)

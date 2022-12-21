@@ -25,4 +25,4 @@ avg_hole_score = pd.DataFrame(golf_stats.groupby(['course_name',]).count()['scor
 st.line_chart(avg_hole_score)
 
 
-st.selectbox('Select a course to for hole specific averages:',['']
+st.selectbox('Select a course to for hole specific averages:',[''])

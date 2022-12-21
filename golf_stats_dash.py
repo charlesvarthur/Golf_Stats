@@ -27,7 +27,7 @@ st.bar_chart(score_vs_par_by_course)
 
 st.subheader('Matplotlib Chart')
 fig_svpbc, ax_mpl = plt.subplots()
-ax_mpl = plt.hist(score_vs_par_by_course['course_name'])
+ax_mpl = plt.hist(score_vs_par_by_course)
 plt.xlabel('Course Name')
 st.pyplot(fig_svpbc)
 

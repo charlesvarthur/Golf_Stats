@@ -29,5 +29,4 @@ st.bar_chart(score_vs_par_by_course)
 # fig = px.histogram(score_vs_par_by_course)
 # st.plotly_chart(fig)
 
-courses_list = pd.DataFrame(golf_stats['course_name'].drop_duplicates(),index=None)
-course_var = st.selectbox('Select a course to for hole specific averages:',[courses_list[0],courses_list[1]])
+course_var = st.selectbox('Select a course to for hole specific averages:',['Godstone Golf Club','The Oaks','Southampton Municapal Golf Course','Hurtmore Golf Club','Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Paultons Golf Centre','Etchinghill Golf Trust'])

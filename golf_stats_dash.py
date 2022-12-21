@@ -25,8 +25,8 @@ score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','score_vs_
 score_vs_par_by_course = score_vs_par_by_course['score_vs_par'].round(decimals=2)
 st.bar_chart(score_vs_par_by_course)
 
-st.subheader('Plotly Charts')
-fig = px.histogram(score_vs_par_by_course['score_vs_par'])
-st.plotly_chart(fig)
+# st.subheader('Plotly Charts')
+# fig = px.histogram(score_vs_par_by_course)
+# st.plotly_chart(fig)
 
 st.selectbox('Select a course to for hole specific averages:',[''])

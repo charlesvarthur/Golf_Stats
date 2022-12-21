@@ -22,5 +22,5 @@ st.write('This page is solely dedicated to golf and keeping track of my scores, 
 
 st.subheader('Average Scores per Hole')
 
-avg_hole_score = pd.DataFrame(golf_stats.groupby(['hole_number']).count()['course_name'])
+avg_hole_score = pd.DataFrame(golf_stats.groupby(['course_name']).count()['score_vs_par'])
 st.bar_chart(avg_hole_score)

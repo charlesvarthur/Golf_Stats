@@ -4,3 +4,5 @@ pandas
 openpyxl
 plotly_express
 streamlit
+seaborn
+datetime

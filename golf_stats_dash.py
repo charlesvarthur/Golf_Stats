@@ -21,6 +21,8 @@ st.header('Golf Stats')
 st.write('This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
 st.subheader('Average Scores per Hole')
-
-avg_hole_score = pd.DataFrame(golf_stats.groupby(['course_name']).count()['score_vs_par'].rename('score vs par'))
+avg_hole_score = pd.DataFrame(golf_stats.groupby(['course_name',]).count()['score_vs_par'].rename('score vs par'))
 st.line_chart(avg_hole_score)
+
+
+st.selectbox('Select a course to for hole specific averages:',['']

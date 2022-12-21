@@ -25,4 +25,10 @@ score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','score_vs_
 score_vs_par_by_course = score_vs_par_by_course['score_vs_par'].round(decimals=2)
 st.bar_chart(score_vs_par_by_course)
 
+st.subheader('Matplotlib Chart')
+fig_svpbc, ax_mpl = plt.subplots()
+ax_mpl = plt.hist(score_vs_par_by_course['course_name'])
+plt.xlabel('Course Name')
+st.pyplot(fig_svpbc)
+
 st.selectbox('Select a course to for hole specific averages:',[''])

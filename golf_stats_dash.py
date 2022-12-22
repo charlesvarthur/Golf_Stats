@@ -36,7 +36,6 @@ def dark_theme():
 
 alt.themes.register('dark_theme',dark_theme)
 alt.themes.enable('dark_theme')
-alt.themes.a
 
 st.header('Golf Stats')
 st.write('This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')

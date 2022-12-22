@@ -33,7 +33,7 @@ course_var = st.selectbox('Select a course to for hole specific averages:',['Alt
 
 if course_var in ['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchinghill Golf Trust','Godstone Golf Club','Hurtmore Golf Club','Paultons Golf Centre','Southampton Municapal Golf Course','The Oaks']:
     golf_stats_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
-    golf_stats_tb = pd.DataFrame(golf_stats_tb.loc[:,['hole_number','score']].groupby(['hole_number']).mean().rename(['hole_number']))
+    golf_stats_tb = pd.DataFrame(golf_stats_tb.loc[:,['hole_number','score']].groupby(['hole_number']).mean().rename('hole_number'))
     st.write(golf_stats_tb)
 else:
     pass
@@ -41,7 +41,7 @@ else:
 sns.set_theme(style = 'darkgrid', palette='deep')
 sns.axes_style("darkgrid")
 fig, ax = plt.subplots()
-ax = sns.barplot(data = golf_stats_tb, x = golf_stats_tb['hole_number'], y = golf_stats_tb['score'])
+ax = sns.barplot(data = golf_stats_tb, x = golf_stats_tb.index, y = golf_stats_tb['score'])
 plt.title('Average Score by course')#.format(selected_species))
 plt.xlabel('Hole Number')
 plt.ylabel('Average Score Per hole')

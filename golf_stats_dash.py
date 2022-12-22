@@ -34,7 +34,7 @@ def dark_theme():
         }
     }
 
-alt.themes.register('dark_theme',dark_theme)
+#alt.themes.register('dark_theme',dark_theme)
 #alt.themes.enable('dark_theme')
 
 st.header('Golf Stats')

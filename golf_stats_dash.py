@@ -29,7 +29,7 @@ def dark_theme():
             },
             'mark':{
                 'color':'grey',
-                'fill':'grey'
+                #'fill':'grey'
             }
         }
     }

@@ -19,6 +19,24 @@ st.set_page_config(page_title="Full Golf Stats",
 #Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
 
+# Chart theme
+def dark_theme():
+    return {
+        'config':{
+            'view':{
+                'height':300,
+                'width':700,
+            },
+            'mark':{
+                'color':'grey',
+                'fill':'grey'
+            }
+        }
+    }
+
+alt.themes.register('dark_theme',dark_theme)
+alt.themes.enable('dark_theme')
+
 st.header('Golf Stats')
 st.write('This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
@@ -31,14 +49,6 @@ st.bar_chart(score_vs_par_by_course)
 # fig = px.histogram(score_vs_par_by_course)
 # st.plotly_chart(fig)
 
-course_var = st.selectbox('Select a course to for hole specific averages:',['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchinghill Golf Trust','Godstone Golf Club','Hurtmore Golf Club','Paultons Golf Centre','Southampton Municapal Golf Course','The Oaks'])
-
-if course_var in ['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchinghill Golf Trust','Godstone Golf Club','Hurtmore Golf Club','Paultons Golf Centre','Southampton Municapal Golf Course','The Oaks']:
-    avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
-    avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_number','score','par']].groupby(['course_name','hole_number','par'], as_index=False).mean())
-else:
-    pass
-
 #commented out sns chart - preferred altair
 # sns.set_theme(style = 'darkgrid', palette='deep')
 # sns.axes_style("darkgrid")
@@ -49,6 +59,13 @@ else:
 # plt.ylabel('Average Score Per hole')
 # st.pyplot(fig)  
 
+course_var = st.selectbox('Select a course to for hole specific averages:',['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchinghill Golf Trust','Godstone Golf Club','Hurtmore Golf Club','Paultons Golf Centre','Southampton Municapal Golf Course','The Oaks'])
+
+if course_var in ['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchinghill Golf Trust','Godstone Golf Club','Hurtmore Golf Club','Paultons Golf Centre','Southampton Municapal Golf Course','The Oaks']:
+    avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
+    avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_number','score','par']].groupby(['course_name','hole_number','par'], as_index=False).mean())
+else:
+    pass
 
 st.subheader('Average Hole Score for '+ course_var)
 fig2 = alt.Chart(avg_hole_score_tb).mark_bar(size=20, opacity=0.7).encode(x = 'score:Q', y = 'hole_number:O',

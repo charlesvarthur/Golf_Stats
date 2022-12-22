@@ -52,5 +52,5 @@ else:
 
 st.subheader('Average Hole Score for '+ course_var)
 fig2 = alt.Chart(avg_hole_score_tb).mark_bar(size=20).encode(x = 'score:Q', y = 'hole_number:O',
-).properties(height=300)
+).properties(height=700)
 st.altair_chart(fig2, use_container_width=True)

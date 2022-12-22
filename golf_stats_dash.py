@@ -84,7 +84,7 @@ else:
     pass
 
 st.subheader('Course Round Comparison for '+ course_var)
-fig3 = alt.Chart(round_comparison).mark_line(size=20, opacity=0.7).encode(x = 'round_date', y = 'score:Q',
+fig3 = alt.Chart(round_comparison).mark_line(size=5, opacity=0.7).encode(x = 'round_date', y = 'score:Q',
 ).properties(height=alt.Step(30))
 fig3.encoding.x.title='round_date'
 st.altair_chart(fig3, use_container_width=True)

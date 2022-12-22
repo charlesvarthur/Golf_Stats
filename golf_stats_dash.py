@@ -40,7 +40,7 @@ else:
 sns.set_theme(style = 'darkgrid', palette='deep')
 sns.axes_style("darkgrid")
 fig, ax = plt.subplots()
-ax = sns.barplot(data = golf_stats_tb, x = golf_stats_tb['hole_number'], y = golf_stats_tb['score'].mean())
+ax = sns.barplot(data = golf_stats_tb, x = golf_stats_tb['hole_number'], y = golf_stats_tb['score'])
 plt.title('Average Score by course')#.format(selected_species))
 plt.xlabel('Hole Number')
 plt.ylabel('Average Score Per hole')

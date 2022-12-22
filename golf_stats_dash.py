@@ -76,15 +76,11 @@ st.altair_chart(fig2, use_container_width=True)
 
 
 #Third chart - round comparisons
+round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
+round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
 
-if course_var in ['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchinghill Golf Trust','Godstone Golf Club','Hurtmore Golf Club','Paultons Golf Centre','Southampton Municapal Golf Course','The Oaks']:
-    round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
-    round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
-else:
-    pass
-
-st.subheader('Course Round Comparison for '+ course_var)
+st.subheader('Round scores by date')
 fig3 = alt.Chart(round_comparison).mark_line(size=5, opacity=0.7).encode(x = 'round_date', y = 'score:Q',
-).properties(height=alt.Step(30))
+).properties(width=alt.Step(30))
 fig3.encoding.x.title='round_date'
 st.altair_chart(fig3, use_container_width=True)

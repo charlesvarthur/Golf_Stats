@@ -11,6 +11,7 @@
 --insert into round VALUES (nextval('round_round_id_seq'),'2022-12-04',9,'yellow','Singles',18);
 --insert into round VALUES (nextval('round_round_id_seq'),'2022-12-10',4,'yellow','Singles',18);
 --insert into round VALUES (nextval('round_round_id_seq'),'2022-12-16',3,'yellow','Singles',9);
+--insert into round VALUES (nextval('round_round_id_seq'),'2022-12-16',6,'yellow','Singles',18);
 
 --select * from course;
 

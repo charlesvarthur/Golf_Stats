@@ -34,7 +34,7 @@ course_var = st.selectbox('Select a course to for hole specific averages:',['Alt
 sns.set_theme(style = 'darkgrid', palette='deep')
 sns.axes_style("darkgrid")
 fig, ax = plt.subplots()
-ax = sns.barplot(data = golf_stats['course_name'] == course_var, x = golf_stats['hole_number'], y = golf_stats['score'].mean())
+ax = sns.barplot(data = golf_stats.loc[['course_name'] == course_var], x = golf_stats['hole_number'], y = golf_stats['score'].mean())
 plt.title('Characteristics of penguins')#.format(selected_species))
 plt.xlabel('Hole Number')
 plt.ylabel('Average Score Per hole')

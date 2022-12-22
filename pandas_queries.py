@@ -10,10 +10,11 @@ golf_stats = pd.read_csv('https://raw.githubusercontent.com/charlesvarthur/Golf_
 #Tests
 print(golf_stats)
 
-score_vs_par_by_round = pd.DataFrame(golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).mean('score_vs_par'))
-score_vs_par_by_round = score_vs_par_by_round['score_vs_par'].round(decimals=2)
-print(score_vs_par_by_round)
+# score_vs_par_by_round = pd.DataFrame(golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).mean('score_vs_par'))
+# score_vs_par_by_round = score_vs_par_by_round['score_vs_par'].round(decimals=2)
+# print(score_vs_par_by_round)
 
-courses_list = pd.DataFrame(golf_stats['course_name'].drop_duplicates(),index=None)
-courses_list = (courses_list['course_name'])
-print(courses_list)
+# courses_list = pd.DataFrame(golf_stats['course_name'].drop_duplicates(),index=None)
+# courses_list = (courses_list['course_name'])
+# print(courses_list)
+

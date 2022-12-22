@@ -19,7 +19,7 @@ st.set_page_config(page_title="Full Golf Stats",
 #Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
 
-# Chart theme
+# Create custom chart theme for all altair charts in this document. 
 def dark_theme():
     return {
         'config':{

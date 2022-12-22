@@ -41,7 +41,7 @@ else:
 sns.set_theme(style = 'darkgrid', palette='deep')
 sns.axes_style("darkgrid")
 fig, ax = plt.subplots()
-ax = sns.displot(data = avg_hole_score_tb, x = avg_hole_score_tb.index, y = avg_hole_score_tb['score'])
+ax = sns.histplot(data = avg_hole_score_tb, x = avg_hole_score_tb.index, y = avg_hole_score_tb['score'])
 plt.title('Average hole score by course')#.format(selected_species))
 plt.xlabel('Hole Number')
 plt.ylabel('Average Score Per hole')

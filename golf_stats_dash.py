@@ -59,6 +59,7 @@ st.bar_chart(score_vs_par_by_course)
 # plt.ylabel('Average Score Per hole')
 # st.pyplot(fig)  
 
+#Second chart and selection box for the courses
 course_var = st.selectbox('Select a course to for hole specific averages:',['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchinghill Golf Trust','Godstone Golf Club','Hurtmore Golf Club','Paultons Golf Centre','Southampton Municapal Golf Course','The Oaks'])
 
 if course_var in ['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchinghill Golf Trust','Godstone Golf Club','Hurtmore Golf Club','Paultons Golf Centre','Southampton Municapal Golf Course','The Oaks']:
@@ -72,3 +73,7 @@ fig2 = alt.Chart(avg_hole_score_tb).mark_bar(size=20, opacity=0.7).encode(x = 's
 ).properties(height=alt.Step(30))
 fig2.encoding.y.title='hole number'
 st.altair_chart(fig2, use_container_width=True)
+
+
+#Third chart - metrics on hole score vs par
+

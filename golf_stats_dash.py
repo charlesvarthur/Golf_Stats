@@ -39,16 +39,16 @@ if course_var in ['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchi
 else:
     pass
 
-sns.set_theme(style = 'darkgrid', palette='deep')
-sns.axes_style("darkgrid")
-fig, ax = plt.subplots()
-ax = sns.barplot(data = avg_hole_score_tb, x = avg_hole_score_tb.index, y = avg_hole_score_tb['score'])
-plt.title('Average hole score by course')
-plt.xlabel('Hole Number')
-plt.ylabel('Average Score Per hole')
-st.pyplot(fig)  
+# sns.set_theme(style = 'darkgrid', palette='deep')
+# sns.axes_style("darkgrid")
+# fig, ax = plt.subplots()
+# ax = sns.barplot(data = avg_hole_score_tb, x = avg_hole_score_tb.index, y = avg_hole_score_tb['score'])
+# plt.title('Average hole score by course')
+# plt.xlabel('Hole Number')
+# plt.ylabel('Average Score Per hole')
+# st.pyplot(fig)  
 
 
 
-fig = alt.Chart(avg_hole_score_tb).mark_bar().encode(x = 'Hole Number', y = 'Average Score By Hole')
+fig = alt.Chart(avg_hole_score_tb).mark_bar().encode(x = 'Hole Number', y = 'count(*):Q')
 st.altair_chart(fig)

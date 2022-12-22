@@ -76,9 +76,10 @@ st.altair_chart(fig2, use_container_width=True)
 
 
 #Third chart - round comparisons
+round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
 
-st.subheader('Round scores by date')
+st.subheader('Course Round Comparison for '+ course_var)
 fig3 = alt.Chart(round_comparison).mark_line(size=5, opacity=0.7).encode(x = 'round_date', y = 'score:Q',
 ).properties(width=alt.Step(30))
 fig3.encoding.x.title='round_date'

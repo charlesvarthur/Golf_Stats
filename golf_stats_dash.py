@@ -50,6 +50,6 @@ else:
 # st.pyplot(fig)  
 
 
-st.subheader('Average Hole Score for {course_var}')
+st.subheader('Average Hole Score for '+ course_var)
 fig2 = alt.Chart(avg_hole_score_tb).mark_bar().encode(x = 'hole_number', y = 'score')
 st.altair_chart(fig2)

@@ -34,7 +34,8 @@ course_var = st.selectbox('Select a course to for hole specific averages:',['Alt
 
 if course_var in ['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchinghill Golf Trust','Godstone Golf Club','Hurtmore Golf Club','Paultons Golf Centre','Southampton Municapal Golf Course','The Oaks']:
     golf_stats_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
-    golf_stats_tb = pd.DataFrame(golf_stats_tb.loc[:,['course_name','hole_number','score']].groupby(['course_name','hole_number'], as_index=False).mean().apply(np.floor))
+    golf_stats_tb = pd.DataFrame(golf_stats_tb.loc[:,['course_name','hole_number','score']].groupby(['course_name','hole_number'], as_index=False).mean())
+    np.round(golf_stats_tb['score'],decimals=2)
     st.write(golf_stats_tb)
 else:
     pass

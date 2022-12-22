@@ -48,5 +48,5 @@ plt.xlabel('Hole Number')
 plt.ylabel('Average Score Per hole')
 st.pyplot(fig)  
 
-fig2 = alt.Chart(avg_hole_score_tb).mark_bar().encode(x = 'Hole Number', y = 'count(*):Q')
+fig2 = alt.Chart(avg_hole_score_tb).mark_bar().encode(x = 'hole_number', y = 'score')
 st.altair_chart(fig2)

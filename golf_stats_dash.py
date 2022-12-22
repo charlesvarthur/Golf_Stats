@@ -33,17 +33,16 @@ st.bar_chart(score_vs_par_by_course)
 course_var = st.selectbox('Select a course to for hole specific averages:',['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchinghill Golf Trust','Godstone Golf Club','Hurtmore Golf Club','Paultons Golf Centre','Southampton Municapal Golf Course','The Oaks'])
 
 if course_var in ['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchinghill Golf Trust','Godstone Golf Club','Hurtmore Golf Club','Paultons Golf Centre','Southampton Municapal Golf Course','The Oaks']:
-    golf_stats_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
-    golf_stats_tb = pd.DataFrame(golf_stats_tb.loc[:,['course_name','hole_number','score']].groupby(['course_name','hole_number'], as_index=False).mean())
-    st.write(golf_stats_tb)
+    avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
+    avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_number','score']].groupby(['course_name','hole_number'], as_index=False).mean())
 else:
     pass
 
 sns.set_theme(style = 'darkgrid', palette='deep')
 sns.axes_style("darkgrid")
 fig, ax = plt.subplots()
-ax = sns.barplot(data = golf_stats_tb, x = golf_stats_tb.index, y = golf_stats_tb['score'])
-plt.title('Average Score by course')#.format(selected_species))
+ax = sns.barplot(data = avg_hole_score_tb, x = avg_hole_score_tb.index, y = avg_hole_score_tb['score'])
+plt.title('Average hole score by course')#.format(selected_species))
 plt.xlabel('Hole Number')
 plt.ylabel('Average Score Per hole')
 st.pyplot(fig)  

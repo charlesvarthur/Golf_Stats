@@ -76,7 +76,6 @@ st.altair_chart(fig2, use_container_width=True)
 
 
 #Third chart - round comparisons
-round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
 
 st.subheader('Round scores by date')

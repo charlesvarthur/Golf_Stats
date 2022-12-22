@@ -19,7 +19,24 @@ st.set_page_config(page_title="Full Golf Stats",
 #Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
 
+# Create custom chart theme for all altair charts in this document. 
+def dark_theme():
+    return {
+        'config':{
+            'view':{
+                'height':300,
+                'width':700,
+            },
+            'mark':{
+                'color':'blue',
+                #'fill':'grey'
+            }
+        }
+    }
 
+alt.themes.register('dark_theme',dark_theme)
+alt.themes.enable('dark_theme')
+alt.themes.a
 
 st.header('Golf Stats')
 st.write('This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')

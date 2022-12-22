@@ -8,6 +8,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import altair as alt
 
 #Steamlit app basic config
 st.set_page_config(page_title="Full Golf Stats",
@@ -46,3 +47,8 @@ plt.title('Average hole score by course')
 plt.xlabel('Hole Number')
 plt.ylabel('Average Score Per hole')
 st.pyplot(fig)  
+
+
+
+fig = alt.Chart(avg_hole_score_tb).mark_bar().encode(x = 'Hole Number', y = 'Average Score By Hole')
+st.altair_chart(fig)

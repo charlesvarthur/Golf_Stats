@@ -30,3 +30,12 @@ st.bar_chart(score_vs_par_by_course)
 # st.plotly_chart(fig)
 
 course_var = st.selectbox('Select a course to for hole specific averages:',['Alton Golf Club','Ampfield Golf Club','Boundary Lakes','Etchinghill Golf Trust','Godstone Golf Club','Hurtmore Golf Club','Paultons Golf Centre','Southampton Municapal Golf Course','The Oaks'])
+
+sns.set_theme(style = 'darkgrid', palette='deep')
+sns.axes_style("darkgrid")
+fig, ax = plt.subplots()
+ax = sns.barplot(data = golf_stats['course_name'] == course_var, x = golf_stats['hole_number'], y = golf_stats['score'].mean(), hue ='species', style ='species')
+plt.title('Characteristics of penguins')#.format(selected_species))
+plt.xlabel('Hole Number')
+plt.ylabel('Average Score Per hole')
+st.pyplot(fig)  

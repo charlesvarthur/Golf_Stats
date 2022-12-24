@@ -95,10 +95,10 @@ st.altair_chart(fig3, use_container_width=True)
 
 # #datebox=('Which date would you like scores from?',[round_dates[:]])
 
-round_hole_scores = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
-round_hole_scores = pd.DataFrame(round_comparison.loc[:,['course_name','score','hole_number','par']])
+# round_hole_scores = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
+# round_hole_scores = pd.DataFrame(round_comparison.loc[:,['course_name','score','hole_number','par']])
 
-st.subheader('Scores by Round Date for ' + course_var)
+# st.subheader('Scores by Round Date for ' + course_var)
 
 # fig4 = alt.Chart(round_hole_scores).mark_bar(point=True, size=20, opacity=-0.7).encode(x = 'hole_number', y = 'score',
 # ).properties(width=alt.Step(30))

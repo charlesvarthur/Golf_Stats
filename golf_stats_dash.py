@@ -88,7 +88,7 @@ st.altair_chart(fig3, use_container_width=True)
 
 #Score & par
 
-round_dates = pd.DataFrame(golf_stats.loc[:,['round_date']])
+round_dates = pd.DataFrame(golf_stats.loc[:,['round_date']], as_index=False)
 round_dates = round_dates.values.tolist()
 st.write(round_dates)
 

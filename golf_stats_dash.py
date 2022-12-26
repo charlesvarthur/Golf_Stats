@@ -17,8 +17,8 @@ st.set_page_config(page_title="Full Golf Stats",
                     )
 
 #Data source
-golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
-
+golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv",index_col = False)
+st.write(golf_stats)
 # Create custom chart theme for all altair charts in this document. 
 def dark_theme():
     return {
@@ -91,7 +91,7 @@ st.altair_chart(fig3, use_container_width=True)
 round_dates = pd.DataFrame(golf_stats.loc[:,['round_date']]).drop_duplicates()
 round_dates = pd.DataFrame(round_dates).reset_index(drop=True)
 round_dates = round_dates.values.tolist()
-st.write(round_dates[0:1].values())
+st.write(round_dates)
 
 # #datebox=('Which date would you like scores from?',[round_dates[:]])
 

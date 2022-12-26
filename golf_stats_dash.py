@@ -87,13 +87,12 @@ fig3.encoding.y.title='total score'
 st.altair_chart(fig3, use_container_width=True)
 
 #Score & par
-
 round_dates = pd.DataFrame(golf_stats.loc[:,['round_date']]).drop_duplicates()
 round_dates = pd.DataFrame(round_dates).reset_index(drop=True)
 round_dates = round_dates['round_date'].values.tolist()
-st.write(round_dates)
 
-datebox=st.selectbox('Which date would you like scores from?',[round_dates[0:-1]])
+datebox=st.selectbox('Which date would you like scores from?',[round_dates[:]])
+st.write(datebox)
 
 round_hole_scores = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 st.subheader('Scores by Round Date for ' + course_var)

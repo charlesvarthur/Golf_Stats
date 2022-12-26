@@ -93,12 +93,12 @@ round_dates = pd.DataFrame(round_dates).reset_index(drop=True)
 round_dates = round_dates['round_date'].values.tolist()
 st.write(round_dates)
 
-# #datebox=('Which date would you like scores from?',[round_dates[:]])
+datebox=('Which date would you like scores from?',[round_dates[:]])
 
-# round_hole_scores = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
-# st.subheader('Scores by Round Date for ' + course_var)
+round_hole_scores = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
+st.subheader('Scores by Round Date for ' + course_var)
 
-# fig4 = alt.Chart(round_hole_scores).mark_bar(point=True, size=20, opacity=-0.7).encode(x = 'hole_number', y = 'score',
-# ).properties(width=alt.Step(30))
-# fig4.encoding.x.title='hole number'
-# st.altair_chart(fig4, use_container_width=True)
+fig4 = alt.Chart(round_hole_scores).mark_bar(point=True, size=20, opacity=-0.7).encode(x = 'hole_number', y = 'score',
+).properties(width=alt.Step(30))
+fig4.encoding.x.title='hole number'
+st.altair_chart(fig4, use_container_width=True)

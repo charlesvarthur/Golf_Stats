@@ -93,7 +93,6 @@ round_dates = round_dates['round_date'].values.tolist()
 
 
 datebox=st.selectbox('Which date would you like scores from?')
-datebox=[]
 for d in len(round_dates):
     datebox.append()
 st.write(datebox)

@@ -93,7 +93,7 @@ round_dates = round_dates['round_date'].values.tolist()
 
 datebox=st.selectbox('Which date would you like scores from?', round_dates[:])
 
-round_hole_scores = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
+round_hole_scores = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var & golf_stats['course_date'] == datebox])
 st.subheader('Scores by Round Date for ' + course_var)
 
 fig4 = alt.Chart(round_hole_scores).mark_bar(size=20).encode(x = 'hole_number', y = 'score',

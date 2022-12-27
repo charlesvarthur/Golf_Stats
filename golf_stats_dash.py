@@ -95,7 +95,7 @@ round_hole_scores = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == co
 st.subheader('Scores by Round Date for ' + course_var)
 
 fig4 = alt.Chart(round_hole_scores).mark_bar(size=20).encode(x = 'hole_number', y = 'score')
-rule = alt.Chart(round_hole_scores).mark_rule(color='red').encode(y = 'mean(par):Q')
+rule = alt.Chart(round_hole_scores).mark_rule(color='red').encode(y = 'par:Q')
 
 (fig4 + rule).properties(width=alt.Step(30))
 (fig4).encoding.x.title='hole number'

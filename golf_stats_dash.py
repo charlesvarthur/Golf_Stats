@@ -94,7 +94,9 @@ datebox=st.selectbox('Which date would you like scores from?', round_dates[:])
 round_hole_scores = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox)])
 st.subheader('Scores by Round Date for ' + course_var)
 
-fig4 = alt.Chart(round_hole_scores).mark_bar(size=20).encode(x = 'hole_number', y = 'score',
-).properties(width=alt.Step(30))
-fig4.encoding.x.title='hole number'
-st.altair_chart(fig4, use_container_width=True)
+fig4 = alt.Chart(round_hole_scores).mark_bar(size=20).encode(x = 'hole_number', y = 'score')
+rule = alt.Chart(round_hole_scores).mark_rule(color='red').encode(y = 'par')
+
+(fig4 + rule).properties(width=alt.Step(30))
+(fig4 + rule).encoding.x.title='hole number'
+st.altair_chart(fig4 + rule, use_container_width=True)

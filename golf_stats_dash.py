@@ -100,3 +100,6 @@ fig4 = alt.Chart(round_hole_scores).mark_bar(size=20).encode(x = 'hole_number', 
 (fig4).properties(width=alt.Step(30))
 (fig4).encoding.x.title='hole number'
 st.altair_chart(fig4, use_container_width=True)
+
+score_n_par = round_hole_scores['par'].astype(str) + round_hole_scores['score'].astype(str)
+st.write(score_n_par)

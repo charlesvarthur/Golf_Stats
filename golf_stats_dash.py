@@ -74,7 +74,6 @@ fig2 = alt.Chart(avg_hole_score_tb).mark_bar(size=20, opacity=0.7).encode(x = 's
 fig2.encoding.y.title='hole number'
 st.altair_chart(fig2, use_container_width=True)
 
-
 #Third chart - round comparisons
 round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
@@ -93,7 +92,7 @@ round_dates = round_dates['round_date'].values.tolist()
 
 datebox=st.selectbox('Which date would you like scores from?', round_dates[:])
 
-round_hole_scores = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var & golf_stats['course_date'] == datebox])
+round_hole_scores = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var & golf_stats['round_date'] == datebox])
 st.subheader('Scores by Round Date for ' + course_var)
 
 fig4 = alt.Chart(round_hole_scores).mark_bar(size=20).encode(x = 'hole_number', y = 'score',

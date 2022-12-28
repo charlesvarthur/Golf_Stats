@@ -141,5 +141,5 @@ line = base.mark_line(stroke='#5276A7', interpolate='monotone').encode(
 alt.layer(area, line).resolve_scale(
     y = 'independent'
 )
-
-st.altair_chart(base + area + line, use_container_width=True)
+layerd_chart = alt.concat(base + area + line)
+st.altair_chart(layerd_chart, use_container_width=True)

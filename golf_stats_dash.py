@@ -101,6 +101,9 @@ def orange_theme():
     }
 
 
+alt.themes.register('orange_theme',orange_theme)
+alt.themes.enable('orange_theme')
+
 #Score & par
 round_dates = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var, ['round_date']]).drop_duplicates().reset_index(drop=True)
 round_dates = round_dates['round_date'].values.tolist()

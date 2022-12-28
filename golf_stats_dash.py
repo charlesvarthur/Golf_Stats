@@ -129,7 +129,7 @@ fig5_par = alt.Chart(round_par).mark_bar().encode(
     x = 'hole_number', y = 'par'
 )
 
-fig5_score = alt.Chart(round_par).mark_line.encode(
+fig5_score = alt.Chart(round_par).mark_line().encode(
     x = 'hole_number', y = 'score'
 )
 

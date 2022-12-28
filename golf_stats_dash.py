@@ -95,7 +95,7 @@ def orange_theme():
             },
             'mark':{
                 'color':'orange',
-                'fill':'orange'
+                #'fill':'orange'
             }
         }
     }

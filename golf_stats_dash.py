@@ -129,7 +129,7 @@ fig5_par = alt.Chart(round_par).encode(
     x = 'hole_number', y = 'par', axis=alt.Axis(title=None)
 )
 
-fig5_score = alt.Chart(round_par).mark_area(opacity=0.3, color='#57A44C').encode(
+fig5_score = alt.Chart(round_par).encode(
     x = 'hole_number', y = 'score', axis=alt.Axis(title='Round Score', titleColor='#57A44C')
 )
 

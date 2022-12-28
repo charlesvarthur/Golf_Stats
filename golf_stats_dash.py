@@ -122,5 +122,5 @@ st.altair_chart(fig4, use_container_width=True)
 
 #Fig 5 - alternative to Fig 4
 
-round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox)], ['course_name','par','score'])
+round_par = pd.DataFrame(golf_stats.loc[:,(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox)], ['course_name','par','score'])
 st.write(round_par)

@@ -130,7 +130,7 @@ fig5_par = alt.Chart(round_par).encode(
 )
 
 fig5_score = alt.Chart(round_par).encode(
-    x = 'hole_number', y = 'score')
+    x = 'hole_number', y = 'score'
 )
 
 fig_5_layer = alt.layer(fig5_par, fig5_score).resolve_scale(

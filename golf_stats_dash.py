@@ -125,21 +125,16 @@ st.altair_chart(fig4, use_container_width=True)
 round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox), ['course_name','par','score','hole_number']])
 #st.write(round_par)
 
-base = alt.Chart(round_par).encode(
-    alt.X('hole_number:T', axis=alt.Axis(title=None))
+fig5_par = alt.Chart(round_par).encode(
+    x = 'hole_number', y = 'par', axis=alt.Axis(title=None)
 )
 
-area = base.mark_area(opacity=0.3, color='#57A44C').encode(
-    alt.Y('score',
-          axis=alt.Axis(title='Round Score', titleColor='#57A44C')),
+fig5_score = base.mark_area(opacity=0.3, color='#57A44C').encode(
+    x = 'hole_number', y = 'score', axis=alt.Axis(title='Round Score', titleColor='#57A44C')
 )
 
-line = base.mark_line(stroke='#5276A7', interpolate='monotone').encode(
-    alt.Y('par',
-          axis=alt.Axis(title='Par', titleColor='#5276A7'))
-)
-alt.layer(area, line).resolve_scale(
+fig_5_layer = alt.layer(fig5_par, fig5_score).resolve_scale(
     y = 'independent'
 )
-layerd_chart = alt.layer(base, area, line)
-st.altair_chart(layerd_chart, use_container_width=True)
+
+st.altair_chart(fig_5_layer, use_container_width=True)

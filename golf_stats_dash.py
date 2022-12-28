@@ -85,6 +85,22 @@ fig3.encoding.x.title='round_date'
 fig3.encoding.y.title='total score'
 st.altair_chart(fig3, use_container_width=True)
 
+
+def orange_theme():
+    return {
+        'config':{
+            'view':{
+                'height':300,
+                'width':700,
+            },
+            'mark':{
+                'color':'orange',
+                'fill':'orange'
+            }
+        }
+    }
+
+
 #Score & par
 round_dates = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var, ['round_date']]).drop_duplicates().reset_index(drop=True)
 round_dates = round_dates['round_date'].values.tolist()

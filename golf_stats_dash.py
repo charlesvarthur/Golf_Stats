@@ -105,34 +105,30 @@ alt.themes.register('orange_theme',orange_theme)
 alt.themes.enable('orange_theme')
 
 #Score & par
-round_dates = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var, ['round_date']]).drop_duplicates().reset_index(drop=True)
-round_dates = round_dates['round_date'].values.tolist()
+# round_dates = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var, ['round_date']]).drop_duplicates().reset_index(drop=True)
+# round_dates = round_dates['round_date'].values.tolist()
 
-datebox=st.selectbox('Which date would you like scores from?', round_dates[:])
+# datebox=st.selectbox('Which date would you like scores from?', round_dates[:])
 
-round_hole_scores = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox)])
-st.subheader('Scores by Round Date for ' + course_var)
+# round_hole_scores = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox)])
+# st.subheader('Scores by Round Date for ' + course_var)
 
-fig4 = alt.Chart(round_hole_scores).mark_bar(size=20).encode(x = 'hole_number', y = 'score')
-#rule = alt.Chart(round_hole_scores).mark_rule(color='red').encode(y = 'par')
+# fig4 = alt.Chart(round_hole_scores).mark_bar(size=20).encode(x = 'hole_number', y = 'score')
+# #rule = alt.Chart(round_hole_scores).mark_rule(color='red').encode(y = 'par')
 
-(fig4).properties(width=alt.Step(30))
-(fig4).encoding.x.title='hole number'
-st.altair_chart(fig4, use_container_width=True)
+# (fig4).properties(width=alt.Step(30))
+# (fig4).encoding.x.title='hole number'
+# st.altair_chart(fig4, use_container_width=True)
 
 #Fig 5 - alternative to Fig 4
-
 round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox), ['course_name','par','score','hole_number']])
 #st.write(round_par)
-
 fig5_par = alt.Chart(round_par).mark_bar(size=20,color='grey').encode(
     x = 'hole_number', y = 'par'
 )
-
 fig5_score = alt.Chart(round_par).mark_line(size=5,color='pink').encode(
     x = 'hole_number', y = 'score'
 )
-
 fig_5_layer = alt.layer(fig5_par, fig5_score).resolve_axis(
     y = 'independent'
 )

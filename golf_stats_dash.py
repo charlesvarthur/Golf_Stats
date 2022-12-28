@@ -69,7 +69,7 @@ else:
     pass
 
 st.subheader('Average Hole Score for '+ course_var)
-fig2 = alt.Chart(avg_hole_score_tb).mark_bar(size=20, opacity=0.7).encode(x = 'score:Q', y = 'hole_number:O',
+fig2 = alt.Chart(avg_hole_score_tb).mark_bar(   ).encode(x = 'score:Q', y = 'hole_number:O',
 ).properties(height=alt.Step(30))
 fig2.encoding.y.title='hole number'
 st.altair_chart(fig2, use_container_width=True)
@@ -119,3 +119,8 @@ fig4 = alt.Chart(round_hole_scores).mark_bar(size=20).encode(x = 'hole_number', 
 (fig4).properties(width=alt.Step(30))
 (fig4).encoding.x.title='hole number'
 st.altair_chart(fig4, use_container_width=True)
+
+#Fig 5 - alternative to Fig 4
+
+round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox)], ['course_name','par','score'])
+st.write(round_par)

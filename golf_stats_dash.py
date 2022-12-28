@@ -122,5 +122,22 @@ st.altair_chart(fig4, use_container_width=True)
 
 #Fig 5 - alternative to Fig 4
 
-round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox), ['course_name','par','score']])
-st.write(round_par)
+round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox), ['course_name','par','score','hole_number']])
+#st.write(round_par)
+
+base = alt.Chart(round_par).encode(
+    alt.X('hole_number:T', axis=alt.Axis(title=None))
+)
+
+area = base.mark_area(opacity=0.3, color='#57A44C').encode(
+    alt.Y('score',
+          axis=alt.Axis(title='Round Score', titleColor='#57A44C')),
+)
+
+line = base.mark_line(stroke='#5276A7', interpolate='monotone').encode(
+    alt.Y('par',
+          axis=alt.Axis(title='Par', titleColor='#5276A7'))
+)
+alt.layer(area, line).resolve_scale(
+    y = 'independent'
+)

@@ -125,11 +125,11 @@ st.altair_chart(fig4, use_container_width=True)
 round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox), ['course_name','par','score','hole_number']])
 #st.write(round_par)
 
-fig5_par = alt.Chart(round_par).mark_bar().encode(
+fig5_par = alt.Chart(round_par).mark_bar(size=20,color='grey').encode(
     x = 'hole_number', y = 'par'
 )
 
-fig5_score = alt.Chart(round_par).mark_line().encode(
+fig5_score = alt.Chart(round_par).mark_line(size=5,color='pink').encode(
     x = 'hole_number', y = 'score'
 )
 

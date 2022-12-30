@@ -61,7 +61,7 @@ st.bar_chart(score_vs_par_by_course)
 
 
 #Second chart and selection box for the courses
-course_names = pd.DataFrame(golf_stats.loc['course_name']).drop_duplicates().reset_index(drop=True)
+course_names = pd.DataFrame(golf_stats.loc[:,['course_name']]).drop_duplicates().reset_index(drop=True)
 course_names = course_names['course_name'].values.tolist()
 st.write(course_names)
 course_var = st.selectbox('Select a course to for hole specific averages:',course_names[:])

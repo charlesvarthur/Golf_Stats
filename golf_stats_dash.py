@@ -49,7 +49,7 @@ full_stats= pd.DataFrame(golf_stats)
 st.write(full_stats)
 
 #First Chart is to measure the averge score for each course - where the round is and 18, 
-average_18 = pd.DataFrame(golf_stats.loc[golf_stats['hole_number'].count() == 18,['course_name', 'round_date', 'score',]].groupby(['course_name','round_date'], as_index=False).sum())
+average_18 = pd.DataFrame(golf_stats.loc[golf_stats['course_name', 'round_date', 'score',]].groupby(['course_name','round_date'], as_index=False).sum())
 st.write(average_18)
 
 #Second chart and selection box for the courses

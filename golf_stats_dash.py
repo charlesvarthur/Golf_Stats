@@ -25,7 +25,7 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-rows = run_query("SELECT * from scores;")
+rows = run_query("SELECT * from public.scores;")
 
 # Print results.
 for row in rows:

@@ -50,7 +50,6 @@ st.write(full_stats)
 
 #First Chart is to measure the averge score for each course - where the round is and 18, 
 average_18 = pd.DataFrame(golf_stats.loc[:,['course_name', 'round_date', 'score',]].groupby(['course_name','round_date'], as_index=False).sum())
-average_18 = pd.DataFrame(average_18).mean().drop_duplicates
 st.write(average_18)
 
 #Second chart and selection box for the courses

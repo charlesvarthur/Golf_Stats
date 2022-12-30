@@ -46,7 +46,7 @@ st.write('This page is solely dedicated to golf and keeping track of my scores, 
 # st.bar_chart(score_vs_par_by_course)
 
 #First Chart is to measure the averge score for each course - where the round is and 18, 
-average_18 = pd.DataFrame(golf_stats.loc[:,['course_name', 'score']].groupby(['course_name'], as_index=False).sum())
+average_18 = pd.DataFrame(golf_stats.loc[:,['course_name', 'score']].groupby(['course_name'], as_index=False).mean())
 st.write(average_18)
 
 #Second chart and selection box for the courses

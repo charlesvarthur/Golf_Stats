@@ -31,14 +31,14 @@ import altair as alt
 # rows = run_query("SELECT * from public.scores;")
 
 # Print results.
-for row in rows:
-    st.write(f"{row[0]} has a :{row[1]}:")
+# for row in rows:
+#     st.write(f"{row[0]} has a :{row[1]}:")
 
-#Steamlit app basic config
-st.set_page_config(page_title="Full Golf Stats",
-                    page_icon=":bar_chart:",
-                    layout="wide"
-                    )
+# #Steamlit app basic config
+# st.set_page_config(page_title="Full Golf Stats",
+#                     page_icon=":bar_chart:",
+#                     layout="wide"
+#                     )
 
 #Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")

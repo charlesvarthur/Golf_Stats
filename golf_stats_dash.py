@@ -40,17 +40,17 @@ alt.themes.enable('dark_theme')
 st.header('Golf Stats')
 st.write('This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
-# st.subheader('Average Score vs Par Per Hole, By Course')
-# score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).mean('score_vs_par'))
-# score_vs_par_by_course = score_vs_par_by_course['score_vs_par'].round(decimals=2)
-# st.bar_chart(score_vs_par_by_course)
+st.subheader('Average Score vs Par Per Hole, By Course')
+score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).mean('score_vs_par'))
+score_vs_par_by_course = score_vs_par_by_course['score_vs_par'].round(decimals=2)
+st.bar_chart(score_vs_par_by_course)
 
 full_stats= pd.DataFrame(golf_stats)
-st.write(full_stats)
+#st.write(full_stats)
 
 #First Chart is to measure the averge score for each course - where the round is and 18, 
 average_18 = pd.DataFrame(golf_stats.loc[:,['course_name', 'round_date', 'score',]].groupby(['course_name','round_date'], as_index=False).sum())
-st.write(average_18)
+#st.write(average_18)
 
 #Second chart and selection box for the courses
 course_names = pd.DataFrame(golf_stats.loc[:,['course_name']].sort_values(by=['course_name'],ascending=True)).drop_duplicates().reset_index(drop=True)

@@ -9,6 +9,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 import altair as alt
+import psycopg2 as pg
+
+@st.experimental_singleton
+def init_connection():
+    return pg.connect(**st.secrets["postgres"])
+
+conn = init_connection()
 
 #Steamlit app basic config
 st.set_page_config(page_title="Full Golf Stats",

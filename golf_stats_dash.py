@@ -40,25 +40,14 @@ alt.themes.enable('dark_theme')
 st.header('Golf Stats')
 st.write('This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
-st.subheader('Average Score vs Par Per Hole, By Course')
-score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).mean('score_vs_par'))
-score_vs_par_by_course = score_vs_par_by_course['score_vs_par'].round(decimals=2)
-st.bar_chart(score_vs_par_by_course)
+# st.subheader('Average Score vs Par Per Hole, By Course')
+# score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).mean('score_vs_par'))
+# score_vs_par_by_course = score_vs_par_by_course['score_vs_par'].round(decimals=2)
+# st.bar_chart(score_vs_par_by_course)
 
-# st.subheader('Plotly Charts')
-# fig = px.histogram(score_vs_par_by_course)
-# st.plotly_chart(fig)
-
-#commented out sns chart - preferred altair
-# sns.set_theme(style = 'darkgrid', palette='deep')
-# sns.axes_style("darkgrid")
-# fig, ax = plt.subplots()
-# ax = sns.barplot(data = avg_hole_score_tb, x = avg_hole_score_tb.index, y = avg_hole_score_tb['score'])
-# plt.title('Average hole score by course')
-# plt.xlabel('Hole Number')
-# plt.ylabel('Average Score Per hole')
-# st.pyplot(fig)  
-
+#First Chart is to measure the averge score for each course - where the round is and 18, 
+average_18 = pd.DataFrame(golf_stats.loc[:,['course_name', 'score']].groupby(['course_name'], as_index=False).sum())
+st.write(average_18)
 
 #Second chart and selection box for the courses
 course_names = pd.DataFrame(golf_stats.loc[:,['course_name']].sort_values(by=['course_name'],ascending=True)).drop_duplicates().reset_index(drop=True)
@@ -72,7 +61,7 @@ st.subheader('Average Hole Score for '+ course_var)
 fig2 = alt.Chart(avg_hole_score_tb).mark_bar(   ).encode(x = 'score:Q', y = 'hole_number:O',
 ).properties(height=alt.Step(30))
 fig2.encoding.y.title='hole number'
-st.altair_chart(fig2, use_container_width=True)
+st.altair_chart(fig2, use_container_xwidth=True)
 
 #Third chart - round comparisons
 round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])

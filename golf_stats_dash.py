@@ -64,7 +64,7 @@ st.subheader('Average Hole Score for '+ course_var)
 fig2 = alt.Chart(avg_hole_score_tb).mark_bar(   ).encode(x = 'score:Q', y = 'hole_number:O',
 ).properties(height=alt.Step(30))
 fig2.encoding.y.title='hole number'
-st.altair_chart(fig2, use_container_xwidth=True)
+st.altair_chart(fig2, use_container_width=True)
 
 #Third chart - round comparisons
 round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])

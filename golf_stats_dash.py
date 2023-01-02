@@ -139,7 +139,7 @@ st.subheader('Scores by Round Date for ' + course_var)
 #Fig 5 - alternative to Fig 4
 round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox), ['course_name','par','score','hole_number']])
 #st.write(round_par)
-fig5_par = alt.Chart(round_par).mark_bar(size=20,color='grey').encode(
+fig5_par = alt.Chart(round_par).mark_bar(size=10,color='grey').encode(
     x = 'hole_number', y = 'par'
 )
 fig5_score = alt.Chart(round_par).mark_line(size=5,color='pink').encode(

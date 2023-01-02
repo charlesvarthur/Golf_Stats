@@ -142,7 +142,7 @@ round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var
 fig5_par = alt.Chart(round_par).mark_bar(size=10,color='grey').encode(
     x = 'hole_number', y = 'par'
 )
-fig5_score = alt.Chart(round_par).mark_line(size=5,color='pink').encode(
+fig5_score = alt.Chart(round_par).mark_line(size=3,color='pink').encode(
     x = 'hole_number', y = 'score'
 )
 fig_5_layer = alt.layer(fig5_par, fig5_score).resolve_axis(

@@ -26,8 +26,7 @@ def dark_theme():
                 'width':700,
             },
             'mark':{
-                'color':'black',
-                'fill':'white'
+                'color':'white',
             }
         }
     }

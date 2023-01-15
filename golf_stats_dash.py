@@ -63,15 +63,6 @@ fig2.encoding.y.title='hole number'
 st.altair_chart(fig2, use_container_width=True)
 
 
-#Figure 2 alt - heatmap
-z = avg_hole_score_tb['score'] ** 2 +avg_hole_score_tb['hole_number']  ** 2
-fig2a = alt.Chart(avg_hole_score_tb).mark_rect().encode(
-    x='score:O',
-    y='hole_number:O',
-    color='z:Q'
-) 
-st.altair_chart(fig2a, use_container_width=True)
-
 #Third chart - round comparisons line graph
 round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())

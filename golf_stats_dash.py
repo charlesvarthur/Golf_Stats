@@ -6,33 +6,7 @@ import pandas as pd
 import plotly_express as px
 import streamlit as st
 import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
 import altair as alt
-
-#Postgres connection and test
-
-# import psycopg2 as pg
-
-# @st.experimental_singleton
-# def init_connection():
-#     return pg.connect(**st.secrets["postgres"])
-
-# conn = init_connection()
-
-# # Perform query.
-# # Uses st.experimental_memo to only rerun when the query changes or after 10 min.
-# @st.experimental_memo(ttl=600)
-# def run_query(query):
-#     with conn.cursor() as cur:
-#         cur.execute(query)
-#         return cur.fetchall()
-
-# rows = run_query("SELECT * from public.scores;")
-
-# Print results.
-# for row in rows:
-#     st.write(f"{row[0]} has a :{row[1]}:")
 
 #Steamlit app basic config
 st.set_page_config(page_title="Full Golf Stats",
@@ -71,9 +45,12 @@ st.write(score_vs_par_by_course)
 
 fig1 = alt.Chart(score_vs_par_by_course).mark_boxplot(extent='min-max').encode(
     x='course_name:O',
-    y='score_vs_par:Q'
+    y=alt.Y('score_vs_par:Q', color=alt.Color('species'))
 )
+fig1.encoding.x.title='course_name'
+fig1.encoding.x.title='score_vs_par'
 st.altair_chart(fig1, use_container_width=True)
+
 #st.bar_chart(score_vs_par_by_course)
 
 full_stats= pd.DataFrame(golf_stats)

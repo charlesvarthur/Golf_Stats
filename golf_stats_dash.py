@@ -14,23 +14,26 @@ st.set_page_config(page_title="Full Golf Stats",
                     layout="wide"
                     )
 
-#Data source
+#Core Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
 
-
+#Page Header and Introduction
 st.header('Golf Stats')
 st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data analyst! '
 'This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
-st.subheader('Average Score vs Par Per Hole, By Course')
-
 
 #First Chart, box and whisker score for course avaerage scores_vs_par 
+st.subheader('Shots Over/Under Each Hole, by Course')
+
+#Box & Whisker Data Source
 score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
-st.write('Figure one, shows how many shots over or under (wishful thinking) I am on each course,'
-'This \'box and whiker\' diagram shows the low, high middle median and each box will be the bulk of results between the '
+
+st.write('Figure one, shows how many shots over or under (wishful thinking) I am on each course. '
+'This \'box and whiker\' diagram shows the low, high and median scores, and each box will be the bulk of results between the '
 '25th and 75th percentiles.')
 
+#Figure 1
 fig1 = alt.Chart(score_vs_par_by_course).mark_boxplot(color='grey', extent='min-max').encode(
     x=alt.X('course_name:O', axis=alt.Axis(labels=False)),
     y=alt.Y('score_vs_par:Q'),
@@ -40,24 +43,24 @@ fig1.encoding.x.title='course'
 fig1.encoding.y.title='score vs par'
 st.altair_chart(fig1, use_container_width=True)
 
-
-full_stats= pd.DataFrame(golf_stats)
-#st.write(full_stats)
-
-
-#Second chart and selection box for the courses
+#Course Dropdown box variables
 course_names = pd.DataFrame(golf_stats.loc[:,['course_name']].sort_values(by=['course_name'],ascending=True)).drop_duplicates().reset_index(drop=True)
 course_names = course_names['course_name'].values.tolist()
 course_var = st.selectbox('Select a course to for hole specific averages:',course_names[:])
 
+#Figure 2 dataset
 avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_number','score','par']].groupby(['course_name','hole_number','par'], as_index=False).mean())
 
-st.subheader('Average Hole Score for '+ course_var)
-fig2 = alt.Chart(avg_hole_score_tb).mark_bar(color='grey').encode(x = 'score:Q', y = 'hole_number:O',
+#Figure 2
+fig2 = alt.Chart(avg_hole_score_tb).mark_rect().encode(
+    x = alt.X('score:Q', bin=alt.Bin(maxbins=60)), 
+    y = alt.Y('hole_number:O', bin=alt.Bin(maxbins=60)),
+    alt.Color('score:Q)', scale=alt.Scale(scheme='greenblue'))
 ).properties(height=alt.Step(30))
 fig2.encoding.y.title='hole number'
 st.altair_chart(fig2, use_container_width=True)
+
 
 
 #Third chart - round comparisons line graph

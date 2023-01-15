@@ -33,8 +33,8 @@ fig1 = alt.Chart(score_vs_par_by_course).mark_boxplot(color='grey', extent='min-
     y=alt.Y('score_vs_par:Q',scale=alt.Scale(zero=False)),
     color=alt.Color('course_name')
 )
-fig1.encoding.x.title='course_name'
-fig1.encoding.x.title='score_vs_par'
+fig1.encoding.x.title='course name'
+fig1.encoding.y.title='score vs par'
 st.altair_chart(fig1, use_container_width=True)
 
 

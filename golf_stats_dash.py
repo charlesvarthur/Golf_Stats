@@ -65,7 +65,7 @@ st.header('Golf Stats')
 st.write('This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
 st.subheader('Average Score vs Par Per Hole, By Course')
-score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','score_vs_par']].groupby(['course_name']).mean('score_vs_par'))
+score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
 score_vs_par_by_course = score_vs_par_by_course['score_vs_par'].round(decimals=2)
 
 fig1 = alt.Chart(score_vs_par_by_course).mark_boxplot(extent='min-max').encode(

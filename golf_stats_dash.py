@@ -66,7 +66,6 @@ st.write('This page is solely dedicated to golf and keeping track of my scores, 
 
 st.subheader('Average Score vs Par Per Hole, By Course')
 score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
-score_vs_par_by_course = score_vs_par_by_course['score_vs_par'].round(decimals=2)
 
 st.write(score_vs_par_by_course)
 

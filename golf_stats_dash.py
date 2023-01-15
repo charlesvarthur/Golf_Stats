@@ -53,7 +53,7 @@ def dark_theme():
             },
             'mark':{
                 'color':'white',
-                #'fill':'grey'
+                'fill':'white'
             }
         }
     }

@@ -19,20 +19,23 @@ golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_
 
 
 st.header('Golf Stats')
-st.write('This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
+st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data analyst! '
+'This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
 st.subheader('Average Score vs Par Per Hole, By Course')
 
 
-
 #First Chart, box and whisker score for course avaerage scores_vs_par 
 score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
+st.write('Figure one, shows how many shots over or under (wishful thinking) I am on each course,'
+'This \'box and whiker\' diagram shows the low, high middle median and each box will be the bulk of results between the '
+'25th and 75th percentiles.')
 
 fig1 = alt.Chart(score_vs_par_by_course).mark_boxplot(color='grey', extent='min-max').encode(
     x=alt.X('course_name:O', axis=alt.Axis(labels=False)),
     y=alt.Y('score_vs_par:Q'),
     color=alt.Color('course_name', legend=alt.Legend(orient='bottom', direction='vertical'))
-).properties(height=600)
+).properties(height=500)
 fig1.encoding.x.title='course'
 fig1.encoding.y.title='score vs par'
 st.altair_chart(fig1, use_container_width=True)

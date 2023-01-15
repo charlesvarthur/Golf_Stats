@@ -31,7 +31,7 @@ score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_numb
 fig1 = alt.Chart(score_vs_par_by_course).mark_boxplot(color='grey', extent='min-max').encode(
     x='course_name:O',
     y=alt.Y('score_vs_par:Q'),
-    color=alt.Color('course_name', legend=alt.Legend(orient='bottom',direction='vertical'))
+    color=alt.Color('course_name', legend=alt.Legend(orient='bottom', direction='vertical'))
 )
 fig1.encoding.x.title='course name'
 fig1.encoding.y.title='score vs par'
@@ -51,7 +51,7 @@ avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == cou
 avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_number','score','par']].groupby(['course_name','hole_number','par'], as_index=False).mean())
 
 st.subheader('Average Hole Score for '+ course_var)
-fig2 = alt.Chart(avg_hole_score_tb).mark_bar(   ).encode(x = 'score:Q', y = 'hole_number:O',
+fig2 = alt.Chart(avg_hole_score_tb).mark_bar(color='grey').encode(x = 'score:Q', y = 'hole_number:O',
 ).properties(height=alt.Step(30))
 fig2.encoding.y.title='hole number'
 st.altair_chart(fig2, use_container_width=True)

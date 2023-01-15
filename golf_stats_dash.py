@@ -64,7 +64,7 @@ st.altair_chart(fig2, use_container_width=True)
 
 
 #Figure 2 alt - heatmap
-
+z = avg_hole_score_tb['score'] ** 2 +avg_hole_score_tb['hole_number']  ** 2
 fig2a = alt.Chart(avg_hole_score_tb).mark_rect().encode(
     x='score:O',
     y='hole_number:O',

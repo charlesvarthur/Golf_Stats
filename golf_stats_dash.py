@@ -26,7 +26,7 @@ st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data anal
 #First Chart, box and whisker score for course avaerage scores_vs_par 
 st.subheader('Shots Over/Under Each Hole, by Course')
 
-#Box & Whisker Data Source
+#Figure 1 dataset
 score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
 
 st.write('Figure one, shows how many shots over or under (wishful thinking) I am on each course. '
@@ -47,6 +47,8 @@ st.altair_chart(fig1, use_container_width=True)
 course_names = pd.DataFrame(golf_stats.loc[:,['course_name']].sort_values(by=['course_name'],ascending=True)).drop_duplicates().reset_index(drop=True)
 course_names = course_names['course_name'].values.tolist()
 course_var = st.selectbox('Select a course to for hole specific averages:',course_names[:])
+
+
 
 #Figure 2 dataset
 avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
@@ -73,32 +75,25 @@ fig3.encoding.x.title='round_date'
 fig3.encoding.y.title='total score'
 st.altair_chart(fig3, use_container_width=True)
 
-#Score & par
+#Figure 4 header
+st.subheader('Scores by Round Date for ' + course_var)
+
+#Figure 4 dataset
 round_dates = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var, ['round_date']]).drop_duplicates().reset_index(drop=True)
 round_dates = round_dates['round_date'].values.tolist()
 
 datebox=st.selectbox('Which date would you like scores from?', round_dates[:])
 
-# round_hole_scores = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox)])
-st.subheader('Scores by Round Date for ' + course_var)
-
-# fig4 = alt.Chart(round_hole_scores).mark_bar(size=20).encode(x = 'hole_number', y = 'score')
-# #rule = alt.Chart(round_hole_scores).mark_rule(color='red').encode(y = 'par')
-
-# (fig4).properties(width=alt.Step(30))
-# (fig4).encoding.x.title='hole number'
-# st.altair_chart(fig4, use_container_width=True)
-
-#Fig 5 - alternative to Fig 4
+#Figure 4
 round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox), ['course_name','par','score','hole_number']])
 #st.write(round_par)
-fig5_par = alt.Chart(round_par).mark_bar(size=10,color='grey').encode(
+fig4_par = alt.Chart(round_par).mark_bar(size=10,color='grey').encode(
     x = 'hole_number', y = 'par'
 )
-fig5_score = alt.Chart(round_par).mark_line(size=3,color='pink').encode(
+fig4_score = alt.Chart(round_par).mark_line(size=3,color='pink').encode(
     x = 'hole_number', y = 'score'
 )
-fig_5_layer = alt.layer(fig5_par, fig5_score).resolve_axis(
+fig_4_layer = alt.layer(fig4_par, fig4_score).resolve_axis(
     y = 'independent'
 )
-st.altair_chart(fig_5_layer, use_container_width=True)
+st.altair_chart(fig_4_layer, use_container_width=True)

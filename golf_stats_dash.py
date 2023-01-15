@@ -45,7 +45,7 @@ st.write(score_vs_par_by_course)
 
 fig1 = alt.Chart(score_vs_par_by_course).mark_boxplot(extent='min-max').encode(
     x='course_name:O',
-    y=alt.Y('score_vs_par:Q', color=alt.Color('species'))
+    y=alt.Y('score_vs_par:Q', color=alt.Color('white'))
 )
 fig1.encoding.x.title='course_name'
 fig1.encoding.x.title='score_vs_par'

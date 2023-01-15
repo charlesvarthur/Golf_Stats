@@ -17,30 +17,32 @@ st.set_page_config(page_title="Full Golf Stats",
 #Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
 
-# Create custom chart theme for all altair charts in this document. 
-def dark_theme():
-    return {
-        'config':{
-            'view':{
-                'height':300,
-                'width':700,
-            },
-            'mark':{
-                'color':'white',
-            }
-        }
-    }
+# # Create custom chart theme for all altair charts in this document. 
+# def dark_theme():
+#     return {
+#         'config':{
+#             'view':{
+#                 'height':300,
+#                 'width':700,
+#             },
+#             'mark':{
+#                 'color':'white',
+#             }
+#         }
+#     }
 
-alt.themes.register('dark_theme',dark_theme)
-alt.themes.enable('dark_theme')
+# alt.themes.register('dark_theme',dark_theme)
+# alt.themes.enable('dark_theme')
 
 st.header('Golf Stats')
 st.write('This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
 st.subheader('Average Score vs Par Per Hole, By Course')
-score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
 
-st.write(score_vs_par_by_course)
+
+
+#First Chart, box and whisker score for course avaerage scores_vs_par 
+score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
 
 fig1 = alt.Chart(score_vs_par_by_course).mark_boxplot(extent='min-max').encode(
     x='course_name:O',
@@ -50,14 +52,10 @@ fig1.encoding.x.title='course_name'
 fig1.encoding.x.title='score_vs_par'
 st.altair_chart(fig1, use_container_width=True)
 
-#st.bar_chart(score_vs_par_by_course)
 
 full_stats= pd.DataFrame(golf_stats)
 #st.write(full_stats)
 
-#First Chart is to measure the averge score for each course - where the round is and 18, 
-average_18 = pd.DataFrame(golf_stats.loc[:,['course_name', 'round_date', 'score',]].groupby(['course_name','round_date'], as_index=False).sum())
-#st.write(average_18)
 
 #Second chart and selection box for the courses
 course_names = pd.DataFrame(golf_stats.loc[:,['course_name']].sort_values(by=['course_name'],ascending=True)).drop_duplicates().reset_index(drop=True)
@@ -73,7 +71,8 @@ fig2 = alt.Chart(avg_hole_score_tb).mark_bar(   ).encode(x = 'score:Q', y = 'hol
 fig2.encoding.y.title='hole number'
 st.altair_chart(fig2, use_container_width=True)
 
-#Third chart - round comparisons
+
+#Third chart - round comparisons line graph
 round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
 

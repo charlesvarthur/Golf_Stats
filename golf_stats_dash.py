@@ -53,10 +53,9 @@ avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == cou
 avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_number','score','par']].groupby(['course_name','hole_number','par'], as_index=False).mean())
 
 #Figure 2
-fig2 = alt.Chart(avg_hole_score_tb).mark_rect().encode(
-    x = alt.X('score:Q', bin=alt.Bin(maxbins=60)), 
-    y = alt.Y('hole_number:O', bin=alt.Bin(maxbins=60)),
-    color = alt.Color('score:Q)', scale=alt.Scale(scheme='greenblue'))
+fig2 = alt.Chart(avg_hole_score_tb).mark_rect(color='grey').encode(
+    x = 'score:Q', 
+    y = 'hole_number:O',
 ).properties(height=alt.Step(30))
 fig2.encoding.y.title='hole number'
 st.altair_chart(fig2, use_container_width=True)

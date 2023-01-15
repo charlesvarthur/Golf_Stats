@@ -84,19 +84,19 @@ fig3.encoding.y.title='total score'
 st.altair_chart(fig3, use_container_width=True)
 
 
-def orange_theme():
-    return {
-        'config':{
-            'view':{
-                'height':300,
-                'width':700,
-            },
-            'mark':{
-                'color':'orange',
-                'fill':'white'
-            }
-        }
-    }
+# def orange_theme():
+#     return {
+#         'config':{
+#             'view':{
+#                 'height':300,
+#                 'width':700,
+#             },
+#             'mark':{
+#                 'color':'orange',
+#                 'fill':'white'
+#             }
+#         }
+#     }
 
 
 alt.themes.register('orange_theme',orange_theme)

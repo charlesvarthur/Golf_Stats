@@ -44,7 +44,7 @@ score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_numb
 st.write(score_vs_par_by_course)
 
 fig1 = alt.Chart(score_vs_par_by_course).mark_boxplot(extent='min-max').encode(
-    x='sum:O',
+    x='course_name:O',
     y='score_vs_par:Q'
 )
 fig1.encoding.x.title='course_name'

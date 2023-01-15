@@ -52,22 +52,13 @@ course_var = st.selectbox('Select a course to for hole specific averages:',cours
 avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_number','score','par']].groupby(['course_name','hole_number','par'], as_index=False).mean())
 
-st.write(avg_hole_score_tb)
-
-fig2 = alt.Chart(avg_hole_score_tb).mark_rect().encode(
-    x=alt.X('course_name'),
-    y=alt.Y('score:Q'),bin=alt.Bin(maxbins=40),
-    color=alt.Color('score'),scale=alt.Scale(scheme='greenblue')
-)
-st.altair_chart(fig2)
-
-# #Figure 2
-# fig2 = alt.Chart(avg_hole_score_tb).mark_bar(color='grey').encode(
-#     x = 'score:Q', 
-#     y = 'hole_number:O',
-# ).properties(height=alt.Step(30))
-# fig2.encoding.y.title='hole number'
-# st.altair_chart(fig2, use_container_width=True)
+#Figure 2
+fig2 = alt.Chart(avg_hole_score_tb).mark_bar(color='grey').encode(
+    x = 'score:Q', 
+    y = 'hole_number:O',
+).properties(height=alt.Step(30))
+fig2.encoding.y.title='hole number'
+st.altair_chart(fig2, use_container_width=True)
 
 
 

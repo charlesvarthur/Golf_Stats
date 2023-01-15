@@ -29,7 +29,7 @@ st.subheader('Average Score vs Par Per Hole, By Course')
 score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
 
 fig1 = alt.Chart(score_vs_par_by_course).mark_boxplot(color='grey', extent='min-max').encode(
-    x=alt.X('course_name:0', axis=alt.Axis(labels=False)),
+    x=alt.X('course_name:O', axis=alt.Axis(labels=False)),
     y=alt.Y('score_vs_par:Q'),
     color=alt.Color('course_name', legend=alt.Legend(orient='bottom', direction='vertical'))
 ).properties(height=650)

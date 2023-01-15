@@ -17,19 +17,6 @@ st.set_page_config(page_title="Full Golf Stats",
 #Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
 
-# Create custom chart theme for all altair charts in this document. 
-def dark_theme():
-    return {
-        'config':{
-            'view':{
-                'height':300,
-                'width':700,
-            },
-            }
-        }
-
-alt.themes.register('dark_theme',dark_theme)
-alt.themes.enable('dark_theme')
 
 st.header('Golf Stats')
 st.write('This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
@@ -79,25 +66,6 @@ fig3 = alt.Chart(round_comparison).mark_line(point=True, size=5, opacity=0.7).en
 fig3.encoding.x.title='round_date'
 fig3.encoding.y.title='total score'
 st.altair_chart(fig3, use_container_width=True)
-
-
-# def orange_theme():
-#     return {
-#         'config':{
-#             'view':{
-#                 'height':300,
-#                 'width':700,
-#             },
-#             'mark':{
-#                 'color':'orange',
-#                 'fill':'white'
-#             }
-#         }
-#     }
-
-
-# alt.themes.register('orange_theme',orange_theme)
-# alt.themes.enable('orange_theme')
 
 #Score & par
 round_dates = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var, ['round_date']]).drop_duplicates().reset_index(drop=True)

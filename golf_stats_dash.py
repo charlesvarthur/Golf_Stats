@@ -54,8 +54,16 @@ avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_nu
 
 st.write(avg_hole_score_tb)
 
+fig2 = alt.Chart(avg_hole_score_tb).mark_rect.encode(
+    x=alt.X('course_name'),bin=alt.Bin(maxbins=60),
+    y=alt.Y('score'),bin=alt.Bin(maxbins=40),
+    color=alt.Color('score'),scale=alt.Scale(scheme='greenblue')
+
+)
+st.altair_chart(fig2)
+
 # #Figure 2
-# fig2 = alt.Chart(avg_hole_score_tb).mark_rect(color='grey').encode(
+# fig2 = alt.Chart(avg_hole_score_tb).mark_bar(color='grey').encode(
 #     x = 'score:Q', 
 #     y = 'hole_number:O',
 # ).properties(height=alt.Step(30))

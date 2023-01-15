@@ -37,7 +37,7 @@ st.write('Figure one, shows how many shots over or under (wishful thinking) I am
 fig1 = alt.Chart(score_vs_par_by_course).mark_boxplot(color='grey', extent='min-max').encode(
     x=alt.X('course_name:O', axis=alt.Axis(labels=False)),
     y=alt.Y('score_vs_par:Q'),
-    fig1_color=alt.Color('course_name', legend=alt.Legend(orient='bottom', direction='vertical'))
+    color=alt.Color('course_name', legend=alt.Legend(orient='bottom', direction='vertical'))
 ).properties(height=500)
 fig1.encoding.x.title='course'
 fig1.encoding.y.title='score vs par'
@@ -56,7 +56,7 @@ avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_nu
 fig2 = alt.Chart(avg_hole_score_tb).mark_rect().encode(
     x = alt.X('score:Q', bin=alt.Bin(maxbins=60)), 
     y = alt.Y('hole_number:O', bin=alt.Bin(maxbins=60)),
-    fig2_color = alt.Color('score:Q)', scale=alt.Scale(scheme='greenblue'))
+    color = alt.Color('score:Q)', scale=alt.Scale(scheme='greenblue'))
 ).properties(height=alt.Step(30))
 fig2.encoding.y.title='hole number'
 st.altair_chart(fig2, use_container_width=True)

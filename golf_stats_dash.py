@@ -54,7 +54,7 @@ avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_nu
 
 st.write(avg_hole_score_tb)
 
-fig2 = alt.Chart(avg_hole_score_tb).mark_rect.encode(
+fig2 = alt.Chart(avg_hole_score_tb).mark_rect().encode(
     x=alt.X('course_name'),
     y=alt.Y('score:Q'),bin=alt.Bin(maxbins=40),
     color=alt.Color('score'),scale=alt.Scale(scheme='greenblue')

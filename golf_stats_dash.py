@@ -29,7 +29,7 @@ st.subheader('Shots Over/Under Each Hole, by Course')
 #Figure 1 dataset
 score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
 
-st.write('Figure one, shows how many shots over or under (wishful thinking) I am on each course. '
+st.write('Figure 1, shows how many shots over or under (wishful thinking) I am on each course. '
 'This \'box and whiker\' diagram shows the low, high and median scores, and each box will be the bulk of results between the '
 '25th and 75th percentiles.')
 

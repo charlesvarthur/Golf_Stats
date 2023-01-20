@@ -68,7 +68,7 @@ round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == cour
 round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
 
 st.subheader('Course Round Comparison for '+ course_var)
-fig3 = alt.Chart(round_comparison).mark_line(point=True, size=5, opacity=0.7).encode(x = 'round_date', y = 'score:Q',
+fig3 = alt.Chart(round_comparison).mark_line(color='#9dc79f'point=True, size=5, opacity=0.7).encode(x = 'round_date', y = 'score:Q',
 ).properties(width=alt.Step(30))
 fig3.encoding.x.title='round_date'
 fig3.encoding.y.title='total score'

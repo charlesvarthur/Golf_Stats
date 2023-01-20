@@ -70,14 +70,15 @@ st.altair_chart(fig2, use_container_width=True)
 #Figure 3 header
 st.subheader('Scores by Round Date for ' + course_var)
 
-#Fig 3 Blurb
-st.write('Figure 3 shows the score and par for each hole at ' + course_var +', based on round date.')
-
 #Figure 3 dataset
 round_dates = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var, ['round_date']]).drop_duplicates().reset_index(drop=True)
 round_dates = round_dates['round_date'].values.tolist()
 
+#Fig3 & 4 datebox
 datebox=st.selectbox('Which date would you like scores from?', round_dates[:])
+
+#Fig 3 Blurb
+st.write('Figure 3 shows the score and par for each hole at ' + course_var +', where the date is ' + datebox)
 
 #Figure 3
 round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox), ['course_name','par','score','hole_number']])

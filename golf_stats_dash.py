@@ -55,6 +55,7 @@ course_var = st.selectbox('Select a course to for hole specific averages:',cours
 avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_number','score','par']].groupby(['course_name','hole_number','par'], as_index=False).mean())
 
+#Figure 2 blurb
 st.write('Figure 2 shows the average hole score for ' + course_var)
 
 #Figure 2
@@ -68,6 +69,9 @@ st.altair_chart(fig2, use_container_width=True)
 
 #Figure 3 header
 st.subheader('Scores by Round Date for ' + course_var)
+
+#Fig 3 Blurb
+st.write('Figure 3 shows the score and par for each hole at ' + course_var +', based on round date.')
 
 #Figure 3 dataset
 round_dates = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var, ['round_date']]).drop_duplicates().reset_index(drop=True)

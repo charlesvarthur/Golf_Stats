@@ -63,36 +63,38 @@ fig2.encoding.y.title='hole number'
 st.altair_chart(fig2, use_container_width=True)
 
 
-#Third chart - round comparisons line graph
-round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
-round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
-
-st.subheader('Course Round Comparison for '+ course_var)
-fig3 = alt.Chart(round_comparison).mark_line(point=True, size=5, opacity=0.7).encode(x = 'round_date', y = 'score:Q',color=alt.value('#9dc79f')
-).properties(width=alt.Step(30))
-fig3.encoding.x.title='round_date'
-fig3.encoding.y.title='total score'
-st.altair_chart(fig3, use_container_width=True)
-
-#Figure 4 header
+#Figure 3 header
 st.subheader('Scores by Round Date for ' + course_var)
 
-#Figure 4 dataset
+#Figure 3 dataset
 round_dates = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var, ['round_date']]).drop_duplicates().reset_index(drop=True)
 round_dates = round_dates['round_date'].values.tolist()
 
 datebox=st.selectbox('Which date would you like scores from?', round_dates[:])
 
-#Figure 4
+#Figure 3
 round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox), ['course_name','par','score','hole_number']])
 #st.write(round_par)
-fig4_par = alt.Chart(round_par).mark_bar(size=10,color='grey').encode(
+fig3_par = alt.Chart(round_par).mark_bar(size=10,color='grey').encode(
     x = 'hole_number', y = 'par'
 )
-fig4_score = alt.Chart(round_par).mark_line(size=3,color='pink').encode(
+fig3_score = alt.Chart(round_par).mark_line(size=3,color='pink').encode(
     x = 'hole_number', y = 'score'
 )
-fig_4_layer = alt.layer(fig4_par, fig4_score).resolve_axis(
+fig3_layer = alt.layer(fig3_par, fig3_score).resolve_axis(
     y = 'independent'
 )
-st.altair_chart(fig_4_layer, use_container_width=True)
+st.altair_chart(fig3_layer, use_container_width=True)
+
+
+#Third chart - round comparisons line graph
+round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
+round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
+
+st.subheader('Course Round Comparison for '+ course_var)
+fig4 = alt.Chart(round_comparison).mark_line(point=True, size=5, opacity=0.7).encode(x = 'round_date', y = 'score:Q',color=alt.value('#9dc79f')
+).properties(width=alt.Step(30))
+fig4.encoding.x.title='round_date'
+fig4.encoding.y.title='total score'
+st.altair_chart(fig4, use_container_width=True)
+

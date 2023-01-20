@@ -78,7 +78,7 @@ round_dates = round_dates['round_date'].values.tolist()
 datebox=st.selectbox('Select a round date for Figure 3...', round_dates[:])
 
 #Fig 3 Blurb
-st.markdown('<br>Figure 3 shows the score and par for each hole at ' + course_var +', where the date is ' + datebox)
+st.markdown('<br>Figure 3 shows the score and par for each hole at ' + course_var +', where the date is ' + datebox, unsafe_allow_html=True)
 
 #Figure 3
 round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox), ['course_name','par','score','hole_number']])

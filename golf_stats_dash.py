@@ -56,7 +56,7 @@ avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == cou
 avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_number','score','par']].groupby(['course_name','hole_number','par'], as_index=False).mean())
 
 #Figure 2 blurb
-st.markdown('<br>Figure 2 shows the average hole score for ' + course_var'.', unsafe_allow_html=True)
+st.markdown('<br>Figure 2 shows the average hole score for ' + course_var + '.', unsafe_allow_html=True)
 
 #Figure 2
 fig2 = alt.Chart(avg_hole_score_tb).mark_bar(color='#00CCCC').encode(
@@ -78,7 +78,7 @@ round_dates = round_dates['round_date'].values.tolist()
 datebox=st.selectbox('Select a round date for Figure 3...', round_dates[:])
 
 #Fig 3 Blurb
-st.markdown('<br>Figure 3 shows the score and par for each hole at ' + course_var +', where the date is ' + datebox'.', unsafe_allow_html=True)
+st.markdown('<br>Figure 3 shows the score and par for each hole at ' + course_var +', where the date is ' + datebox + '.', unsafe_allow_html=True)
 
 #Figure 3
 round_par = pd.DataFrame(golf_stats.loc[(golf_stats['course_name'] == course_var) & (golf_stats['round_date'] == datebox), ['course_name','par','score','hole_number']])
@@ -104,7 +104,7 @@ round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_dat
 st.subheader('Course Round Comparison for '+ course_var)
 
 #Fig4 blurb
-st.write('Figure 4 tracks the scores for each round at ' + course_var'.')
+st.write('Figure 4 tracks the scores for each round at ' + course_var + '.')
 #Fig4 
 fig4 = alt.Chart(round_comparison).mark_line(point=True, size=5, opacity=0.7).encode(x = 'round_date', y = 'score:Q',color=alt.value('#9dc79f')
 ).properties(width=alt.Step(30))

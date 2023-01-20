@@ -56,7 +56,7 @@ avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == cou
 avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_number','score','par']].groupby(['course_name','hole_number','par'], as_index=False).mean())
 
 #Figure 2 blurb
-st.write('Figure 2 shows the average hole score for ' + course_var)
+st.markdown('<br>Figure 2 shows the average hole score for ' + course_var, unsafe_allow_html=True)
 
 #Figure 2
 fig2 = alt.Chart(avg_hole_score_tb).mark_bar(color='#00CCCC').encode(

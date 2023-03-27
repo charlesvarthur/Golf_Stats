@@ -19,7 +19,10 @@
 -- insert into round VALUES (nextval('round_round_id_seq'),'2023-01-27',2,'yellow','Singles',18);
 -- insert into round VALUES (nextval('round_round_id_seq'),'2023-02-01',2,'yellow','Singles',18);
 -- insert into round VALUES (nextval('round_round_id_seq'),'2023-02-04',4,'yellow','Singles',18);
-
+-- insert into round VALUES (nextval('round_round_id_seq'),'2022-02-19',3,'yellow','Singles',18);
+-- insert into round VALUES (nextval('round_round_id_seq'),'2023-03-10',3,'yellow','Singles',18);
+-- insert into round VALUES (nextval('round_round_id_seq'),'2023-03-12',12,'yellow','Scramble',18);
+-- insert into round VALUES (nextval('round_round_id_seq'),'2023-03-17',7,'yellow','Singles',18);
+-- insert into round VALUES (nextval('round_round_id_seq'),'2023-03-25',7,'yellow','Singles',18);
 --select * from course;
-
 select * from round;

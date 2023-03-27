@@ -15,7 +15,7 @@ st.set_page_config(page_title="Full Golf Stats",
                     )
 
 #Core Data source
-golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats_2023-03-27-15_57_32.csv")
+golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats_2023-03-27-16_11_36.csv")
 
 #Page Header and Introduction
 st.header('Golf Stats')

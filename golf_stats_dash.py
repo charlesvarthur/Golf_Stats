@@ -16,7 +16,7 @@ st.set_page_config(page_title="Full Golf Stats",
                     )
 
 #Core Data source
-golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats_2023-03-27-16_11_36.csv")
+golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
 
 #Page Header and Introduction
 st.header('Golf Stats')
@@ -112,6 +112,3 @@ fig4 = alt.Chart(round_comparison).mark_line(point=True, size=5, opacity=0.7).en
 fig4.encoding.x.title='round_date'
 fig4.encoding.y.title='total score'
 st.altair_chart(fig4, use_container_width=True)
-
-for name in glob.glob('https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats_'):
-    st.write(name)

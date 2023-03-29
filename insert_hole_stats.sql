@@ -29,4 +29,4 @@
 -- insert into hole_stats VALUES (5,nextval('hole_stats_hole_id_seq'),8,4,4,4,10,352,362,366,NULL);
 -- insert into hole_stats VALUES (5,nextval('hole_stats_hole_id_seq'),9,4,4,4,2,391,416,421,NULL);
 
-select * from hole_stats where course_id = 12;
+--select * from hole_stats where course_id = 3;

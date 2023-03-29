@@ -1,5 +1,5 @@
 DO
---$$DECLARE
+$$DECLARE
 --	datestr text := to_char(current_timestamp, 'YYYY-MM-DD-HH24_MI_SS');
 
 BEGIN
@@ -10,4 +10,4 @@ BEGIN
 		'/Users/charlesarthur/Documents/Data_Projects/Golf_Stats/full_stats.csv'
 		);
 END;
---$$;
+$$;

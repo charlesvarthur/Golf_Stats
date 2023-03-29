@@ -12,6 +12,5 @@
 --INSERT INTO course VALUES (nextval('course_course_id_seq'),'Bletchingly Golf Club',132,129,134);
 --INSERT INTO course VALUES (nextval('course_course_id_seq'),'Chilworth Golf Club',118,115,118);
 --INSERT INTO course VALUES (nextval('course_course_id_seq'),'Coulsdon Manor Golf Club',119,117,120);
-
-
+--INSERT INTO course VALUES (nextval('course_course_id_seq'),'Southampton Municipal - 9',128,115,113);
 select * from course;

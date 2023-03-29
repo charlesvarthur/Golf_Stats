@@ -61,7 +61,7 @@ st.markdown('<br>Figure 2 shows the average hole score for ' + course_var + '.',
 
 #Figure 2
 fig2 = alt.Chart(avg_hole_score_tb).mark_bar(color='#00CCCC').encode(
-    x = 'score:Q',scale=alt.Scale(domain=[0, 9]), 
+    x = 'score:Q', 
     y = 'hole_number:O',
 ).properties(height=alt.Step(30))
 fig2.encoding.y.title='hole number'

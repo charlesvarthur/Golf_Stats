@@ -7,6 +7,7 @@ import plotly_express as px
 import streamlit as st
 import matplotlib.pyplot as plt
 import altair as alt
+import glob
 
 #Steamlit app basic config
 st.set_page_config(page_title="Full Golf Stats",    
@@ -112,3 +113,5 @@ fig4.encoding.x.title='round_date'
 fig4.encoding.y.title='total score'
 st.altair_chart(fig4, use_container_width=True)
 
+for name in glob.glob('https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats_'):
+    st.write(name)

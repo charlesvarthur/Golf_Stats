@@ -24,5 +24,10 @@
 -- insert into round VALUES (nextval('round_round_id_seq'),'2023-03-12',12,'yellow','Scramble',18);
 -- insert into round VALUES (nextval('round_round_id_seq'),'2023-03-17',7,'yellow','Singles',18);
 -- insert into round VALUES (nextval('round_round_id_seq'),'2023-03-25',7,'yellow','Singles',18);
+--insert into round VALUES (nextval('round_round_id_seq'),'2023-04-11',13,'yellow','Singles',9);
+--insert into round VALUES (nextval('round_round_id_seq'),'2023-04-28',3,'yellow','Singles',18);
+--insert into round VALUES (nextval('round_round_id_seq'),'2023-04-30',7,'yellow','Singles',18);
+insert into round VALUES (nextval('round_round_id_seq'),'2023-05-13',1,'yellow','Singles',9);
 --select * from course;
-select * from round;
+
+select * from round order by 2;

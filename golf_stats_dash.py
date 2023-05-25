@@ -27,8 +27,6 @@ st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data anal
 #First Chart, box and whisker score for course avaerage scores_vs_par 
 st.subheader('Shots Over/Under Each Hole, by Course')
 
-current_
-
 #Figure 1 dataset
 score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
 

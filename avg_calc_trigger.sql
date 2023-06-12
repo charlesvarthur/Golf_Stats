@@ -1,0 +1,2 @@
+CREATE EVENT TRIGGER recalculate_average_par_scores
+ON 

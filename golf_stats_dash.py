@@ -63,11 +63,9 @@ st.altair_chart(fig1p1, use_container_width=True)
 
 fig1p2 = alt.Chart(round_sum).mark_line(point=False, size=3).encode(
     x='round_id:O',
-    y='score',
-    color='score',
+    y='score:Q',
+    color='score:N',
 )
-
-
 
 #Figure 2 Header
 st.subheader('Average Hole Score, by Course')

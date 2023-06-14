@@ -53,9 +53,8 @@ st.altair_chart(fig1, use_container_width=True)
 st.subheader('Average Strokes by Par & Round')
 
 #Figure 1.1 averages line graph
-source = score_vs_par_by_course
 
-fig1p1 = alt.Chart(source).mark_line().encode(
+fig1p1 = alt.Chart(strokes_vs_par_avg).mark_line().encode(
     x='par:T',
     y='score_average:Q',
     color='symbol:N',

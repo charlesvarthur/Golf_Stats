@@ -64,7 +64,6 @@ st.altair_chart(fig1p1, use_container_width=True)
 fig1p2 = alt.Chart(round_sum).mark_line(point=False, size=3).encode(
     x='round_id:O',
     y='score:Q',
-    color='score:N',
 )
 
 st.altair_chart(fig1p2, use_container_width=True)

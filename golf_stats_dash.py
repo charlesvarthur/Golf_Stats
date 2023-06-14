@@ -17,6 +17,9 @@ st.set_page_config(page_title="Full Golf Stats",
 
 #Core Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
+#Average scores data source
+strokes_vs_par_avg = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/average_strokes_vs_par.csv")
+st.write(strokes_vs_par_avg)
 
 #Page Header and Introduction
 st.header('Golf Stats')
@@ -43,6 +46,11 @@ fig1 = alt.Chart(score_vs_par_by_course).mark_boxplot(color='grey', extent='min-
 fig1.encoding.x.title='course'
 fig1.encoding.y.title='score vs par'
 st.altair_chart(fig1, use_container_width=True)
+
+#Figure 1.1 
+st.subheader('Average Strokes by Par & Round')
+
+
 
 #Figure 2 Header
 st.subheader('Average Hole Score, by Course')

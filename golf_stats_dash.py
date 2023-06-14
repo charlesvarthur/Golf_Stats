@@ -20,9 +20,6 @@ golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_
 #Average scores data source
 strokes_vs_par_avg = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/average_strokes_vs_par.csv")
 strokes_vs_par_avg=strokes_vs_par_avg[strokes_vs_par_avg.notnull().all(1)]
-st.write(strokes_vs_par_avg)
-
-
 
 #Page Header and Introduction
 st.header('Golf Stats')

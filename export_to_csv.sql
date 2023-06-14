@@ -11,3 +11,17 @@ BEGIN
 		);
 END;
 $$;
+			
+DO
+$$DECLARE
+--	datestr text := to_char(current_timestamp, 'YYYY-MM-DD-HH24_MI_SS');
+
+BEGIN
+	EXECUTE	format(		
+		'COPY ' 
+		'(SELECT * FROM average_score_vs_par) '
+		'TO %L CSV HEADER',
+		'/Users/charlesarthur/Documents/Data_Projects/Golf_Stats/average_strokes_vs_par.csv'
+		);
+END;
+$$;

@@ -21,6 +21,8 @@ golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_
 strokes_vs_par_avg = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/average_strokes_vs_par.csv")
 st.write(strokes_vs_par_avg)
 
+
+
 #Page Header and Introduction
 st.header('Golf Stats')
 st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data analyst! '
@@ -50,6 +52,14 @@ st.altair_chart(fig1, use_container_width=True)
 #Figure 1.1 
 st.subheader('Average Strokes by Par & Round')
 
+#Figure 1.1 averages line graph
+source = score_vs_par_by_course
+
+alt.Chart(source).mark_line().encode(
+    x='par:T',
+    y='score_average:Q',
+    color='symbol:N',
+)
 
 
 #Figure 2 Header

@@ -20,6 +20,8 @@ golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_
 #Average scores data source
 strokes_vs_par_avg = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/average_strokes_vs_par.csv")
 strokes_vs_par_avg=strokes_vs_par_avg[strokes_vs_par_avg.notnull().all(1)]
+#Sum golf stats by round_id
+round_sum = golf_stats.loc[:,['round_id','score']].groupby(['round_id']).sum()
 
 #Page Header and Introduction
 st.header('Golf Stats')
@@ -57,8 +59,15 @@ fig1p1 = alt.Chart(strokes_vs_par_avg).mark_line(point=False, size=3).encode(
     y='score_average:Q',
     color='par:N',
 )
-
 st.altair_chart(fig1p1, use_container_width=True)
+
+fig1p2 = alt.Chart(round_sum).mark_line(point=False, size=3).encode(
+    x='round_id:O',
+    y='score'
+    color='score'
+)
+
+
 
 #Figure 2 Header
 st.subheader('Average Hole Score, by Course')

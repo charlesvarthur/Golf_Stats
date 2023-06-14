@@ -62,7 +62,7 @@ fig1p1 = alt.Chart(strokes_vs_par_avg).mark_line(point=False, size=3).encode(
 st.altair_chart(fig1p1, use_container_width=True)
 
 fig1p2 = alt.Chart(round_sum).mark_line(point=False, size=3).encode(
-    x='round_id:O',
+    x='round_id:Q',
     y='score:Q',
 )
 

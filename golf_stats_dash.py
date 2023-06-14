@@ -55,12 +55,13 @@ st.subheader('Average Strokes by Par & Round')
 #Figure 1.1 averages line graph
 source = score_vs_par_by_course
 
-alt.Chart(source).mark_line().encode(
+fig1p1 = alt.Chart(source).mark_line().encode(
     x='par:T',
     y='score_average:Q',
     color='symbol:N',
 )
-
+fig1p1.encoding.y.title='Average Strokes by Par & Round'
+st.altair_chart(fig1p1, use_container_width=True)
 
 #Figure 2 Header
 st.subheader('Average Hole Score, by Course')

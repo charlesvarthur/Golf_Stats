@@ -55,7 +55,7 @@ st.subheader('Average Strokes by Par & Round')
 
 #Figure 1.1 averages line graph
 
-fig1p1 = alt.Chart(strokes_vs_par_avg).mark_line(point=True, size=5, opacity=0.7).encode(
+fig1p1 = alt.Chart(strokes_vs_par_avg).mark_line(point=False, size=3).encode(
     x='round_id:O',
     y='score_average:Q',
     color='par:N',

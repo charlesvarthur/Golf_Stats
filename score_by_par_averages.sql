@@ -1,5 +1,5 @@
-TRUNCATE par_averages CASCADE;
-DROP TABLE par_averages CASCADE;
+-- TRUNCATE par_averages CASCADE;
+-- DROP TABLE par_averages CASCADE;
 CREATE TEMP TABLE par_averages(
 	round_id int,
 	average_score numeric,

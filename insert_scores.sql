@@ -1,33 +1,33 @@
 --inserting scores 
 
--- insert into scores VALUES (1,16,244,33,6);
--- insert into scores VALUES (1,16,245,33,5);
--- insert into scores VALUES (1,16,246,33,7);
--- insert into scores VALUES (1,16,247,33,8);
--- insert into scores VALUES (1,16,248,33,6);
--- insert into scores VALUES (1,16,249,33,5);
--- insert into scores VALUES (1,16,250,33,7);
--- insert into scores VALUES (1,16,251,33,3);
--- insert into scores VALUES (1,16,252,33,3);
--- insert into scores VALUES (1,16,253,33,7);
--- insert into scores VALUES (1,16,254,33,5);
--- insert into scores VALUES (1,16,255,33,6);
--- insert into scores VALUES (1,16,256,33,5);
--- insert into scores VALUES (1,16,257,33,6);
--- insert into scores VALUES (1,16,258,33,9);
--- insert into scores VALUES (1,16,259,33,3);
--- insert into scores VALUES (1,16,260,33,5);
--- insert into scores VALUES (1,16,261,33,7);
+-- insert into scores VALUES (1,17,262,35,4);
+-- insert into scores VALUES (1,17,263,35,7);
+-- insert into scores VALUES (1,17,264,35,6);
+-- insert into scores VALUES (1,17,265,35,4);
+-- insert into scores VALUES (1,17,266,35,6);
+-- insert into scores VALUES (1,17,267,35,4);
+-- insert into scores VALUES (1,17,268,35,5);
+-- insert into scores VALUES (1,17,269,35,5);
+-- insert into scores VALUES (1,17,270,35,5);
+-- insert into scores VALUES (1,17,262,35,4);
+-- insert into scores VALUES (1,17,263,35,5);
+-- insert into scores VALUES (1,17,264,35,5);
+-- insert into scores VALUES (1,17,265,35,3);
+-- insert into scores VALUES (1,17,266,35,4);
+-- insert into scores VALUES (1,17,267,35,4);
+-- insert into scores VALUES (1,17,268,35,5);
+-- insert into scores VALUES (1,17,269,35,6);
+-- insert into scores VALUES (1,17,270,35,7);
 
--- insert into scores VALUES (1,15,235,31,4);
--- insert into scores VALUES (1,15,236,31,6);
--- insert into scores VALUES (1,15,237,31,6);
--- insert into scores VALUES (1,15,238,31,6);
--- insert into scores VALUES (1,15,239,31,6);
--- insert into scores VALUES (1,15,240,31,3);
--- insert into scores VALUES (1,15,241,31,6);
--- insert into scores VALUES (1,15,242,31,6);
--- insert into scores VALUES (1,15,243,31,9);
+-- insert into scores VALUES (1,13,55,34,3);
+-- insert into scores VALUES (1,13,56,34,4);
+-- insert into scores VALUES (1,13,57,34,7);
+-- insert into scores VALUES (1,13,58,34,5);
+-- insert into scores VALUES (1,13,59,34,4);
+-- insert into scores VALUES (1,13,60,34,7);
+-- insert into scores VALUES (1,13,61,34,4);
+-- insert into scores VALUES (1,13,62,34,6);
+-- insert into scores VALUES (1,13,63,34,7);
 
 -- Results checking and supporting queries
 -- select hs.hole_id, hs.hole_number, c.course_id, c.course_name, hs.notes
@@ -37,10 +37,10 @@
 -- ON hs.course_id = c.course_id
 -- where c.course_id=6
 -- order by 1;
---select hole_number,hole_id,notes from hole_stats where course_id=16 order by 2;
+--select hole_number,hole_id,notes from hole_stats where course_id=17 order by 2;
 --select * from course;
-select * from scores where round_id=33 order by 3;
-select sum(score) from scores where round_id=33 and player_id=1;
+select * from scores where round_id=35 order by 3;
+select sum(score) from scores where round_id=35 and player_id=1;
 -- select * from player
 --select * from round
 

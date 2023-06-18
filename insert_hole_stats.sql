@@ -19,14 +19,14 @@
 -- insert into hole_stats VALUES (16,nextval('hole_stats_hole_id_seq'),17,4,4,4,7,317,383,393,NULL);
 -- insert into hole_stats VALUES (16,nextval('hole_stats_hole_id_seq'),18,5,5,5,5,402,443,455,NULL);
 
--- insert into hole_stats VALUES (15,nextval('hole_stats_hole_id_seq'),19,3,3,3,15,125,153,173,NULL);
--- insert into hole_stats VALUES (15,nextval('hole_stats_hole_id_seq'),20,4,4,4,1,390,411,422,NULL);
--- insert into hole_stats VALUES (15,nextval('hole_stats_hole_id_seq'),21,3,3,3,11,146,152,184,NULL);
--- insert into hole_stats VALUES (15,nextval('hole_stats_hole_id_seq'),22,4,4,4,5,314,332,354,NULL);
--- insert into hole_stats VALUES (15,nextval('hole_stats_hole_id_seq'),23,5,5,5,7,468,482,494,NULL);
--- insert into hole_stats VALUES (15,nextval('hole_stats_hole_id_seq'),24,3,3,3,17,106,115,122,NULL);
--- insert into hole_stats VALUES (15,nextval('hole_stats_hole_id_seq'),25,4,4,4,3,300,317,326,NULL);
--- insert into hole_stats VALUES (15,nextval('hole_stats_hole_id_seq'),26,4,4,4,13,271,284,302,NULL);
--- insert into hole_stats VALUES (15,nextval('hole_stats_hole_id_seq'),27,5,5,5,9,413,436,479,NULL);
-select * from course;
-select * from hole_stats where course_id IN (16);
+-- insert into hole_stats VALUES (17,nextval('hole_stats_hole_id_seq'),1,4,4,4,13,256,271,289,NULL);
+-- insert into hole_stats VALUES (17,nextval('hole_stats_hole_id_seq'),2,5,4,4,3,331,347,347,NULL);
+-- insert into hole_stats VALUES (17,nextval('hole_stats_hole_id_seq'),3,4,4,4,1,434,437,441,NULL);
+-- insert into hole_stats VALUES (17,nextval('hole_stats_hole_id_seq'),4,3,3,3,15,122,131,140,NULL);
+-- insert into hole_stats VALUES (17,nextval('hole_stats_hole_id_seq'),5,4,4,4,11,230,277,264,NULL);
+-- insert into hole_stats VALUES (17,nextval('hole_stats_hole_id_seq'),6,3,3,3,17,149,178,166,NULL);
+-- insert into hole_stats VALUES (17,nextval('hole_stats_hole_id_seq'),7,4,4,4,7,244,311,311,NULL);
+-- insert into hole_stats VALUES (17,nextval('hole_stats_hole_id_seq'),8,3,3,3,9,191,230,221,NULL);
+-- insert into hole_stats VALUES (17,nextval('hole_stats_hole_id_seq'),9,4,4,4,5,331,374,393,NULL);
+-- select * from course;
+select * from hole_stats where course_id IN (17);

@@ -16,4 +16,5 @@
 --INSERT INTO course VALUES (nextval('course_course_id_seq'),'Weybrook Park Golf Club - West Course',107,116,123);
 --INSERT INTO course VALUES (nextval('course_course_id_seq'),'Weybrook Park Golf Club - East Course',108,111,118);
 --INSERT INTO course VALUES (nextval('course_course_id_seq'),'Rookwood Golf Centre',113,113,113,68);
+--INSERT INTO course VALUES (nextval('course_course_id_seq'),'Dorking Golf Club',113,113,113,65);
 select * from course;

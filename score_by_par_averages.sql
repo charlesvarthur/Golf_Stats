@@ -1,5 +1,5 @@
---TRUNCATE par_averages CASCADE;
---DROP TABLE par_averages CASCADE;
+-- TRUNCATE par_averages CASCADE;
+-- DROP TABLE par_averages CASCADE;
 CREATE TEMP TABLE par_averages(
 	round_id int,
 	average_score numeric,
@@ -24,7 +24,7 @@ CREATE OR REPLACE VIEW average_score_vs_par as (
 SELECT round_id, ROUND(avg(average_score),2) as score_average, par, (ROUND(avg(average_score),2) - par) difference
 from par_averages
 group by par, round_id
-HAVING round_id BETWEEN max(round_id)-10 and max(round_id)
+HAVING round_id BETWEEN (select max(round_id)-10 from par_averages) and max(round_id)
 order by 1,3)
 ;
 

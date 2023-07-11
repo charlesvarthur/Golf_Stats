@@ -74,7 +74,7 @@ st.subheader('Average Hole Score, by Course')
 #Course Dropdown box variables
 course_names = pd.DataFrame(golf_stats.loc[:,['course_name']].sort_values(by=['course_name'],ascending=True)).drop_duplicates().reset_index(drop=True)
 course_names = course_names['course_name'].values.tolist()
-course_var = st.selectbox('Select a course to provide data for, in figures 2, 3 and 4:',course_names[:],index=10)
+course_var = st.selectbox('Select a course to provide data for, in figures 2, 3 and 4:',course_names[:],index=13)
 
 #Figure 2 dataset
 avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])

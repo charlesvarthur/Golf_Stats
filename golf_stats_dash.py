@@ -15,6 +15,9 @@ st.set_page_config(page_title="Full Golf Stats",
                     layout="wide"
                     )
 
+####################
+# All Data sources #
+####################
 #Core Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
 #Average scores data source
@@ -22,6 +25,13 @@ strokes_vs_par_avg = pd.read_csv("https://raw.githubusercontent.com/charlesvarth
 strokes_vs_par_avg=strokes_vs_par_avg[strokes_vs_par_avg.notnull().all(1)]
 #Sum golf stats by round_id
 round_sum = golf_stats.loc[:,['round_id','score']].groupby(['round_id']).sum()
+
+#Average round score by distance data
+average_score_by_hole_length = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/average_score_by_hole_length.csv") 
+st.write(average_score_by_hole_length)
+#Round comparison data
+round_comparison = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/form_comparison.csv")
+st.write(round_comparison)
 
 #Page Header and Introduction
 st.header('Golf Stats')

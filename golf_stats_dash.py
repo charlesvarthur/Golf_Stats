@@ -80,7 +80,8 @@ st.altair_chart(fig1p1, use_container_width=True)
 
 #New figure 2
 alt.Chart(average_score_by_hole_length).mark_point().encode(
-x = 
+x = 'course_name'
+y = 'score'
 )
 
 

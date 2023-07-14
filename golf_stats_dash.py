@@ -79,7 +79,7 @@ st.altair_chart(fig1p1, use_container_width=True)
 # st.altair_chart(fig1p2, use_container_width=True)
 
 #New figure 2
-fig2=alt.Chartf(form_comparison).mark_point().encode(
+fig2=alt.Chart(form_comparison).mark_point().encode(
 x = 'course_name',
 y = 'score'
 )

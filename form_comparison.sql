@@ -2,12 +2,14 @@
 --round par and round score versus round score
 
 CREATE OR REPLACE VIEW form_comparison AS
-(SELECT hs.course_id, c.course_name, s.round_id, sq2.par, sqs.score 
+(SELECT hs.course_id, c.course_name, r.round_date, sq2.par, sqs.score 
 FROM hole_stats hs
 JOIN scores s
 ON s.course_id=hs.course_id
 JOIN course c
 ON hs.course_id=c.course_id
+JOIN round r
+ON s.round_id=r.round_id
 INNER JOIN 
 	(SELECT DISTINCT round_id, SUM(score) score
 	 FROM scores 
@@ -19,7 +21,7 @@ INNER JOIN
 	FROM hole_stats
 	GROUP BY course_id) sq2
 ON  hs.course_id=sq2.course_id
-GROUP BY hs.course_id, s.round_id, c.course_name, sqs.score, sq2.par
+GROUP BY hs.course_id, r.round_date, c.course_name, sqs.score, sq2.par
 ORDER BY 1,3
 );
 

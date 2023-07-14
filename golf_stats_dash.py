@@ -79,11 +79,12 @@ st.altair_chart(fig1p1, use_container_width=True)
 # st.altair_chart(fig1p2, use_container_width=True)
 
 #New figure 2
-alt.Chart(average_score_by_hole_length).mark_point().encode(
+fig2=alt.Chart(average_score_by_hole_length).mark_point().encode(
 x = 'course_name',
 y = 'score'
 )
 
+st.write(fig2)
 
 #Figure 2 Header
 #st.subheader('Average Hole Score, by Course')

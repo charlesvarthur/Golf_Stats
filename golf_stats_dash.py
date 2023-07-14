@@ -30,7 +30,7 @@ round_sum = golf_stats.loc[:,['round_id','score']].groupby(['round_id']).sum()
 #Average round score by distance data
 average_score_by_hole_length = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/average_score_by_hole_length.csv") 
 #Round comparison data
-round_comparison = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/form_comparison.csv")
+form_comparison = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/form_comparison.csv")
 
 
 #Page Header and Introduction
@@ -79,7 +79,7 @@ st.altair_chart(fig1p1, use_container_width=True)
 # st.altair_chart(fig1p2, use_container_width=True)
 
 #New figure 2
-fig2=alt.Chart(average_score_by_hole_length).mark_point().encode(
+fig2=alt.Chartf(form_comparison).mark_point().encode(
 x = 'course_name',
 y = 'score'
 )

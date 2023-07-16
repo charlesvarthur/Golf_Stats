@@ -32,7 +32,7 @@ average_score_by_hole_length = pd.read_csv("https://raw.githubusercontent.com/ch
 #Round comparison data
 form_comparison = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/form_comparison.csv")
 form_comparison["round_date"] = pd.to_datetime(form_comparison["round_date"])
-form_comparison["round_date"] = form_comparison["round_date"].dt.to_period('M')
+form_comparison["month_year"] = form_comparison["round_date"].dt.to_period('M')
 st.write(form_comparison)
 
 
@@ -83,7 +83,7 @@ st.altair_chart(fig1p1, use_container_width=True)
 
 #New figure 2
 fig2=alt.Chart(form_comparison).mark_point().encode(
-x = 'round_date',
+x = 'month_year',
 y = 'score',
 color = 'par'
 )

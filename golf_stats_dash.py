@@ -33,6 +33,7 @@ average_score_by_hole_length = pd.read_csv("https://raw.githubusercontent.com/ch
 form_comparison = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/form_comparison.csv")
 form_comparison["round_date"] = pd.to_datetime(form_comparison["round_date"])
 form_comparison["round_date"] = form_comparison["round_date"].dt.to_period('M')
+st.write(form_comparison)
 
 
 #Page Header and Introduction

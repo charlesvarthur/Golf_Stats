@@ -85,7 +85,7 @@ y = 'score',
 color = 'par'
 )
 
-st.write(fig2)
+st.altair_chart(fig2, use_container_width=True)
 
 #Figure 2 Header
 #st.subheader('Average Hole Score, by Course')

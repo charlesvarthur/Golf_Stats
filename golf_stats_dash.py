@@ -31,7 +31,7 @@ round_sum = golf_stats.loc[:,['round_id','score']].groupby(['round_id']).sum()
 average_score_by_hole_length = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/average_score_by_hole_length.csv") 
 #Round comparison data
 form_comparison = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/form_comparison.csv")
-form_comparison["round_date"] = pd.to_datetime(form_comparison["round_date"])
+form_comparison["round_date"] = pd.to_datetime(form_comparison["round_date"],format='%Y-%m-%d')
 form_comparison["month_year"] = form_comparison["round_date"].dt.to_period('M')
 st.write(form_comparison)
 

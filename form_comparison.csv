@@ -1,4 +1,4 @@
-course_id,course_name,to_char,par,score
+course_id,course_name,round_date,par,score
 1,Godstone Golf Club,2022-09,72,57
 1,Godstone Golf Club,2023-05,72,45
 2,The Oaks,2022-09,72,92

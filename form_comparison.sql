@@ -1,7 +1,7 @@
 --Create a view that compares my overall form to my most recent form of the previous 10 rounds. 
---round par and round score versus round score
+--round par and round score versus round scorex	
 CREATE OR REPLACE VIEW form_comparison AS
-(SELECT hs.course_id, c.course_name, to_char(r.round_date,'YYYY-MM'), sq2.par, sqs.score 
+(SELECT hs.course_id, c.course_name, to_char(r.round_date,'YYYY-MM') round_date, sq2.par, sqs.score 
 FROM hole_stats hs
 JOIN scores s
 ON s.course_id=hs.course_id

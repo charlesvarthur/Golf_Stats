@@ -8,6 +8,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import altair as alt
 import glob
+import datetime
 
 #Steamlit app basic config
 st.set_page_config(page_title="Full Golf Stats",    
@@ -48,7 +49,9 @@ st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data anal
 st.subheader('Shots Over/Under Each Hole, by Course')
 
 #Figure 1 dataset
+score_vs_par_by_course = golf_stats[golf_stats.round_date > datetime.datetime.now() - pd.to_timedelta("100day")]
 score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
+
 
 st.write('Figure 1 shows how many shots over or under (wishful thinking) I am on each course. '
 'This \"box and whisker\" diagram shows the low, high and median scores. Each box contains the bulk of results and encompasses data between the '

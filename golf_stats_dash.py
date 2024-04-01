@@ -49,7 +49,8 @@ st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data anal
 st.subheader('Shots Over/Under Each Hole, by Course')
 
 #Figure 1 dataset
-#score_vs_par_by_course = golf_stats.loc[:,['round_date'] > datetime.datetime.now() - pd.to_timedelta("100day")]
+golf_stats['date'] = pd.to_datetime(golf_stats['date'], format='%Y-%m-%d')
+score_vs_par_by_course = golf_stats.loc[(golf_stats['round_date'] >= (datetime.date -100))]
 score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
 
 
@@ -105,7 +106,7 @@ course_var = st.selectbox('Select a course to provide data for, in figures 2, 3 
 
 
 #Deprecated figure 2
-# #Figure 2 dataset
+# #Figure 2 dataset 
 # avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 # avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_number','score','par']].groupby(['course_name','hole_number','par'], as_index=False).mean())
 

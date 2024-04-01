@@ -49,7 +49,7 @@ st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data anal
 st.subheader('Shots Over/Under Each Hole, by Course')
 
 #Figure 1 dataset
-golf_stats['date'] = pd.to_datetime(golf_stats['date'], format='%Y-%m-%d')
+golf_stats['date'] = pd.to_datetime(golf_stats['round_date'], format='%Y-%m-%d')
 score_vs_par_by_course = golf_stats.loc[(golf_stats['round_date'] >= (datetime.date -100))]
 score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
 

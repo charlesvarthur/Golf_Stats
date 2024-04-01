@@ -23,6 +23,8 @@ st.set_page_config(page_title="Full Golf Stats",
 
 #Core Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
+#Hundred Days stats (actually 365 or other random date select)
+hundred_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats_hundred.csv")
 #Average scores data source
 strokes_vs_par_avg = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/average_strokes_vs_par.csv")
 strokes_vs_par_avg=strokes_vs_par_avg[strokes_vs_par_avg.notnull().all(1)]
@@ -50,7 +52,7 @@ st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data anal
 st.subheader('Shots Over/Under Each Hole, by Course')
 
 #Figure 1 dataset
-score_vs_par_by_course = pd.DataFrame(golf_stats.loc[:,['course_name','hole_number','score_vs_par']])
+score_vs_par_by_course = pd.DataFrame(hundred_stats .loc[:,['course_name','hole_number','score_vs_par']])
 
 
 st.write('Figure 1 shows how many shots over or under (wishful thinking) I am on each course. '

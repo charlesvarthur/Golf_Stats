@@ -44,6 +44,8 @@
 --insert into round VALUES (nextval('round_round_id_seq'),'2024-03-03',1,'yellow','Singles',18);
 --insert into round VALUES (nextval('round_round_id_seq'),'2024-04-13',17,'yellow','Singles',9);
 --insert into round VALUES (nextval('round_round_id_seq'),'2024-04-28',4,'yellow','Singles',18);
+--insert into round VALUES (nextval('round_round_id_seq'),'2024-05-18',13,'yellow','Singles',9);
+
 
 --select * from course;
 -- update round set round_length = 9 where round_id = 34;

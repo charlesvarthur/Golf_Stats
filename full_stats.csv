@@ -44,24 +44,24 @@ player_id,course_name,round_id,round_date,hole_number,par,yards,stroke_index,sco
 1,Southampton Municipal - 18,4,2022-10-14,7,4,441,1,7,3
 1,Southampton Municipal - 18,4,2022-10-14,8,4,379,5,9,5
 1,Southampton Municipal - 18,4,2022-10-14,9,4,319,11,6,2
-1,Hurtmore Golf Club,5,2022-10-15,1,4,332,12,7,3
-1,Hurtmore Golf Club,5,2022-10-15,2,3,175,8,6,3
-1,Hurtmore Golf Club,5,2022-10-15,3,4,436,2,4,0
-1,Hurtmore Golf Club,5,2022-10-15,4,4,228,18,7,3
-1,Hurtmore Golf Club,5,2022-10-15,5,3,116,6,8,5
-1,Hurtmore Golf Club,5,2022-10-15,6,4,346,4,7,3
-1,Hurtmore Golf Club,5,2022-10-15,7,4,264,16,6,2
-1,Hurtmore Golf Club,5,2022-10-15,8,4,252,14,6,2
-1,Hurtmore Golf Club,5,2022-10-15,9,4,347,10,9,5
-1,Hurtmore Golf Club,5,2022-10-15,10,4,318,11,7,3
-1,Hurtmore Golf Club,5,2022-10-15,11,4,257,15,6,2
-1,Hurtmore Golf Club,5,2022-10-15,12,4,359,1,6,2
-1,Hurtmore Golf Club,5,2022-10-15,13,4,303,13,5,1
-1,Hurtmore Golf Club,5,2022-10-15,14,4,294,3,8,4
-1,Hurtmore Golf Club,5,2022-10-15,15,5,511,5,9,4
-1,Hurtmore Golf Club,5,2022-10-15,16,3,125,7,7,4
-1,Hurtmore Golf Club,5,2022-10-15,17,4,238,17,8,4
-1,Hurtmore Golf Club,5,2022-10-15,18,4,325,9,5,1
+1,Hurtmore Golf Club,5,2022-10-15,1,4,332,11,7,3
+1,Hurtmore Golf Club,5,2022-10-15,2,3,175,7,6,3
+1,Hurtmore Golf Club,5,2022-10-15,3,4,436,1,4,0
+1,Hurtmore Golf Club,5,2022-10-15,4,4,228,15,7,3
+1,Hurtmore Golf Club,5,2022-10-15,5,3,116,9,8,5
+1,Hurtmore Golf Club,5,2022-10-15,6,4,346,3,7,3
+1,Hurtmore Golf Club,5,2022-10-15,7,4,264,17,6,2
+1,Hurtmore Golf Club,5,2022-10-15,8,4,252,13,6,2
+1,Hurtmore Golf Club,5,2022-10-15,9,4,347,5,9,5
+1,Hurtmore Golf Club,5,2022-10-15,10,4,318,10,7,3
+1,Hurtmore Golf Club,5,2022-10-15,11,4,257,14,6,2
+1,Hurtmore Golf Club,5,2022-10-15,12,4,359,4,6,2
+1,Hurtmore Golf Club,5,2022-10-15,13,4,303,16,5,1
+1,Hurtmore Golf Club,5,2022-10-15,14,4,294,12,8,4
+1,Hurtmore Golf Club,5,2022-10-15,15,5,511,2,9,4
+1,Hurtmore Golf Club,5,2022-10-15,16,3,125,8,7,4
+1,Hurtmore Golf Club,5,2022-10-15,17,4,238,18,8,4
+1,Hurtmore Golf Club,5,2022-10-15,18,4,325,6,5,1
 1,Alton Golf Club,6,2022-10-22,1,4,280,18,6,2
 1,Alton Golf Club,6,2022-10-22,2,4,370,4,9,5
 1,Alton Golf Club,6,2022-10-22,3,3,176,8,8,5
@@ -161,40 +161,40 @@ player_id,course_name,round_id,round_date,hole_number,par,yards,stroke_index,sco
 1,Etchinghill Golf Trust,11,2022-12-04,16,4,308,14,9,5
 1,Etchinghill Golf Trust,11,2022-12-04,17,3,164,16,4,1
 1,Etchinghill Golf Trust,11,2022-12-04,18,4,341,8,9,5
-1,Hurtmore Golf Club,12,2022-12-10,1,4,332,12,9,5
-1,Hurtmore Golf Club,12,2022-12-10,2,3,175,8,8,5
-1,Hurtmore Golf Club,12,2022-12-10,3,4,436,2,8,4
-1,Hurtmore Golf Club,12,2022-12-10,4,4,228,18,6,2
-1,Hurtmore Golf Club,12,2022-12-10,5,3,116,6,5,2
-1,Hurtmore Golf Club,12,2022-12-10,6,4,346,4,5,1
-1,Hurtmore Golf Club,12,2022-12-10,7,4,264,16,6,2
-1,Hurtmore Golf Club,12,2022-12-10,8,4,252,14,7,3
-1,Hurtmore Golf Club,12,2022-12-10,9,4,347,10,7,3
-1,Hurtmore Golf Club,12,2022-12-10,10,4,318,11,6,2
-1,Hurtmore Golf Club,12,2022-12-10,11,4,257,15,9,5
-1,Hurtmore Golf Club,12,2022-12-10,12,4,359,1,6,2
-1,Hurtmore Golf Club,12,2022-12-10,13,4,303,13,9,5
-1,Hurtmore Golf Club,12,2022-12-10,14,4,294,3,9,5
-1,Hurtmore Golf Club,12,2022-12-10,15,5,511,5,9,4
-1,Hurtmore Golf Club,12,2022-12-10,16,3,125,7,7,4
-1,Hurtmore Golf Club,12,2022-12-10,17,4,238,17,7,3
-1,Hurtmore Golf Club,12,2022-12-10,18,4,325,9,9,5
+1,Hurtmore Golf Club,12,2022-12-10,1,4,332,11,9,5
+1,Hurtmore Golf Club,12,2022-12-10,2,3,175,7,8,5
+1,Hurtmore Golf Club,12,2022-12-10,3,4,436,1,8,4
+1,Hurtmore Golf Club,12,2022-12-10,4,4,228,15,6,2
+1,Hurtmore Golf Club,12,2022-12-10,5,3,116,9,5,2
+1,Hurtmore Golf Club,12,2022-12-10,6,4,346,3,5,1
+1,Hurtmore Golf Club,12,2022-12-10,7,4,264,17,6,2
+1,Hurtmore Golf Club,12,2022-12-10,8,4,252,13,7,3
+1,Hurtmore Golf Club,12,2022-12-10,9,4,347,5,7,3
+1,Hurtmore Golf Club,12,2022-12-10,10,4,318,10,6,2
+1,Hurtmore Golf Club,12,2022-12-10,11,4,257,14,9,5
+1,Hurtmore Golf Club,12,2022-12-10,12,4,359,4,6,2
+1,Hurtmore Golf Club,12,2022-12-10,13,4,303,16,9,5
+1,Hurtmore Golf Club,12,2022-12-10,14,4,294,12,9,5
+1,Hurtmore Golf Club,12,2022-12-10,15,5,511,2,9,4
+1,Hurtmore Golf Club,12,2022-12-10,16,3,125,8,7,4
+1,Hurtmore Golf Club,12,2022-12-10,17,4,238,18,7,3
+1,Hurtmore Golf Club,12,2022-12-10,18,4,325,6,9,5
 1,Southampton Municipal - 9,13,2022-12-16,1,3,122,8,6,3
 1,Ampfield Golf Club,14,2022-12-16,1,3,149,5,4,1
-1,Southampton Municipal - 9,13,2022-12-16,2,4,322,4,6,2
 1,Ampfield Golf Club,14,2022-12-16,2,3,170,1,4,1
+1,Southampton Municipal - 9,13,2022-12-16,2,4,322,4,6,2
 1,Southampton Municipal - 9,13,2022-12-16,3,3,117,9,4,1
 1,Ampfield Golf Club,14,2022-12-16,3,3,166,3,4,1
-1,Southampton Municipal - 9,13,2022-12-16,4,4,335,2,6,2
 1,Ampfield Golf Club,14,2022-12-16,4,3,121,9,5,2
+1,Southampton Municipal - 9,13,2022-12-16,4,4,335,2,6,2
 1,Ampfield Golf Club,14,2022-12-16,5,3,181,2,5,2
 1,Southampton Municipal - 9,13,2022-12-16,5,3,117,6,5,2
 1,Southampton Municipal - 9,13,2022-12-16,6,4,312,5,8,4
 1,Ampfield Golf Club,14,2022-12-16,6,3,101,15,3,0
 1,Southampton Municipal - 9,13,2022-12-16,7,3,150,7,7,4
 1,Ampfield Golf Club,14,2022-12-16,7,3,91,13,6,3
-1,Ampfield Golf Club,14,2022-12-16,8,3,163,4,4,1
 1,Southampton Municipal - 9,13,2022-12-16,8,4,358,3,7,3
+1,Ampfield Golf Club,14,2022-12-16,8,3,163,4,4,1
 1,Southampton Municipal - 9,13,2022-12-16,9,5,440,1,6,1
 1,Ampfield Golf Club,14,2022-12-16,9,3,161,10,4,1
 1,Ampfield Golf Club,14,2022-12-16,10,3,88,17,3,0
@@ -539,24 +539,24 @@ player_id,course_name,round_id,round_date,hole_number,par,yards,stroke_index,sco
 1,Southampton Municipal - 9,36,2023-06-22,7,3,150,7,4,1
 1,Southampton Municipal - 9,36,2023-06-22,8,4,358,3,7,3
 1,Southampton Municipal - 9,36,2023-06-22,9,5,440,1,6,1
-1,Hurtmore Golf Club,37,2023-07-08,1,4,332,12,4,0
-1,Hurtmore Golf Club,37,2023-07-08,2,3,175,8,4,1
-1,Hurtmore Golf Club,37,2023-07-08,3,4,436,2,6,2
-1,Hurtmore Golf Club,37,2023-07-08,4,4,228,18,5,1
-1,Hurtmore Golf Club,37,2023-07-08,5,3,116,6,2,-1
-1,Hurtmore Golf Club,37,2023-07-08,6,4,346,4,7,3
-1,Hurtmore Golf Club,37,2023-07-08,7,4,264,16,4,0
-1,Hurtmore Golf Club,37,2023-07-08,8,4,252,14,5,1
-1,Hurtmore Golf Club,37,2023-07-08,9,4,347,10,6,2
-1,Hurtmore Golf Club,37,2023-07-08,10,4,318,11,5,1
-1,Hurtmore Golf Club,37,2023-07-08,11,4,257,15,5,1
-1,Hurtmore Golf Club,37,2023-07-08,12,4,359,1,6,2
-1,Hurtmore Golf Club,37,2023-07-08,13,4,303,13,9,5
-1,Hurtmore Golf Club,37,2023-07-08,14,4,294,3,4,0
-1,Hurtmore Golf Club,37,2023-07-08,15,5,511,5,6,1
-1,Hurtmore Golf Club,37,2023-07-08,16,3,125,7,7,4
-1,Hurtmore Golf Club,37,2023-07-08,17,4,238,17,5,1
-1,Hurtmore Golf Club,37,2023-07-08,18,4,325,9,6,2
+1,Hurtmore Golf Club,37,2023-07-08,1,4,332,11,4,0
+1,Hurtmore Golf Club,37,2023-07-08,2,3,175,7,4,1
+1,Hurtmore Golf Club,37,2023-07-08,3,4,436,1,6,2
+1,Hurtmore Golf Club,37,2023-07-08,4,4,228,15,5,1
+1,Hurtmore Golf Club,37,2023-07-08,5,3,116,9,2,-1
+1,Hurtmore Golf Club,37,2023-07-08,6,4,346,3,7,3
+1,Hurtmore Golf Club,37,2023-07-08,7,4,264,17,4,0
+1,Hurtmore Golf Club,37,2023-07-08,8,4,252,13,5,1
+1,Hurtmore Golf Club,37,2023-07-08,9,4,347,5,6,2
+1,Hurtmore Golf Club,37,2023-07-08,10,4,318,10,5,1
+1,Hurtmore Golf Club,37,2023-07-08,11,4,257,14,5,1
+1,Hurtmore Golf Club,37,2023-07-08,12,4,359,4,6,2
+1,Hurtmore Golf Club,37,2023-07-08,13,4,303,16,9,5
+1,Hurtmore Golf Club,37,2023-07-08,14,4,294,12,4,0
+1,Hurtmore Golf Club,37,2023-07-08,15,5,511,2,6,1
+1,Hurtmore Golf Club,37,2023-07-08,16,3,125,8,7,4
+1,Hurtmore Golf Club,37,2023-07-08,17,4,238,18,5,1
+1,Hurtmore Golf Club,37,2023-07-08,18,4,325,6,6,2
 1,Boundary Lakes,38,2023-07-21,1,4,331,5,5,1
 1,Boundary Lakes,38,2023-07-21,2,3,114,14,8,5
 1,Boundary Lakes,38,2023-07-21,3,4,355,4,9,5
@@ -629,24 +629,24 @@ player_id,course_name,round_id,round_date,hole_number,par,yards,stroke_index,sco
 1,The Oaks,40,2023-12-03,16,4,362,7,6,2
 1,The Oaks,40,2023-12-03,17,5,480,5,6,1
 1,The Oaks,40,2023-12-03,18,4,311,8,7,3
-1,Hurtmore Golf Club,42,2024-01-07,1,4,332,12,4,0
-1,Hurtmore Golf Club,42,2024-01-07,2,3,175,8,4,1
-1,Hurtmore Golf Club,42,2024-01-07,3,4,436,2,6,2
-1,Hurtmore Golf Club,42,2024-01-07,4,4,228,18,6,2
-1,Hurtmore Golf Club,42,2024-01-07,5,3,116,6,3,0
-1,Hurtmore Golf Club,42,2024-01-07,6,4,346,4,5,1
-1,Hurtmore Golf Club,42,2024-01-07,7,4,264,16,6,2
-1,Hurtmore Golf Club,42,2024-01-07,8,4,252,14,4,0
-1,Hurtmore Golf Club,42,2024-01-07,9,4,347,10,5,1
-1,Hurtmore Golf Club,42,2024-01-07,10,4,318,11,6,2
-1,Hurtmore Golf Club,42,2024-01-07,11,4,257,15,6,2
-1,Hurtmore Golf Club,42,2024-01-07,12,4,359,1,5,1
-1,Hurtmore Golf Club,42,2024-01-07,13,4,303,13,5,1
-1,Hurtmore Golf Club,42,2024-01-07,14,4,294,3,7,3
-1,Hurtmore Golf Club,42,2024-01-07,15,5,511,5,6,1
-1,Hurtmore Golf Club,42,2024-01-07,16,3,125,7,4,1
-1,Hurtmore Golf Club,42,2024-01-07,17,4,238,17,6,2
-1,Hurtmore Golf Club,42,2024-01-07,18,4,325,9,7,3
+1,Hurtmore Golf Club,42,2024-01-07,1,4,332,11,4,0
+1,Hurtmore Golf Club,42,2024-01-07,2,3,175,7,4,1
+1,Hurtmore Golf Club,42,2024-01-07,3,4,436,1,6,2
+1,Hurtmore Golf Club,42,2024-01-07,4,4,228,15,6,2
+1,Hurtmore Golf Club,42,2024-01-07,5,3,116,9,3,0
+1,Hurtmore Golf Club,42,2024-01-07,6,4,346,3,5,1
+1,Hurtmore Golf Club,42,2024-01-07,7,4,264,17,6,2
+1,Hurtmore Golf Club,42,2024-01-07,8,4,252,13,4,0
+1,Hurtmore Golf Club,42,2024-01-07,9,4,347,5,5,1
+1,Hurtmore Golf Club,42,2024-01-07,10,4,318,10,6,2
+1,Hurtmore Golf Club,42,2024-01-07,11,4,257,14,6,2
+1,Hurtmore Golf Club,42,2024-01-07,12,4,359,4,5,1
+1,Hurtmore Golf Club,42,2024-01-07,13,4,303,16,5,1
+1,Hurtmore Golf Club,42,2024-01-07,14,4,294,12,7,3
+1,Hurtmore Golf Club,42,2024-01-07,15,5,511,2,6,1
+1,Hurtmore Golf Club,42,2024-01-07,16,3,125,8,4,1
+1,Hurtmore Golf Club,42,2024-01-07,17,4,238,18,6,2
+1,Hurtmore Golf Club,42,2024-01-07,18,4,325,6,7,3
 1,Silvermere Golf Club,43,2024-01-28,1,5,465,4,6,1
 1,Silvermere Golf Club,43,2024-01-28,2,3,176,18,4,1
 1,Silvermere Golf Club,43,2024-01-28,3,4,407,8,7,3
@@ -692,21 +692,30 @@ player_id,course_name,round_id,round_date,hole_number,par,yards,stroke_index,sco
 1,Dorking Golf Club,45,2024-04-13,7,4,311,7,7,3
 1,Dorking Golf Club,45,2024-04-13,8,3,230,9,6,3
 1,Dorking Golf Club,45,2024-04-13,9,4,374,5,5,1
-1,Hurtmore Golf Club,46,2024-04-28,1,4,332,12,6,2
-1,Hurtmore Golf Club,46,2024-04-28,2,3,175,8,3,0
-1,Hurtmore Golf Club,46,2024-04-28,3,4,436,2,9,5
-1,Hurtmore Golf Club,46,2024-04-28,4,4,228,18,5,1
-1,Hurtmore Golf Club,46,2024-04-28,5,3,116,6,4,1
-1,Hurtmore Golf Club,46,2024-04-28,6,4,346,4,7,3
-1,Hurtmore Golf Club,46,2024-04-28,7,4,264,16,5,1
-1,Hurtmore Golf Club,46,2024-04-28,8,4,252,14,5,1
-1,Hurtmore Golf Club,46,2024-04-28,9,4,347,10,5,1
-1,Hurtmore Golf Club,46,2024-04-28,10,4,318,11,4,0
-1,Hurtmore Golf Club,46,2024-04-28,11,4,257,15,5,1
-1,Hurtmore Golf Club,46,2024-04-28,12,4,359,1,7,3
-1,Hurtmore Golf Club,46,2024-04-28,13,4,303,13,5,1
-1,Hurtmore Golf Club,46,2024-04-28,14,4,294,3,6,2
-1,Hurtmore Golf Club,46,2024-04-28,15,5,511,5,9,4
-1,Hurtmore Golf Club,46,2024-04-28,16,3,125,7,3,0
-1,Hurtmore Golf Club,46,2024-04-28,17,4,238,17,4,0
-1,Hurtmore Golf Club,46,2024-04-28,18,4,325,9,5,1
+1,Hurtmore Golf Club,46,2024-04-28,1,4,332,11,6,2
+1,Hurtmore Golf Club,46,2024-04-28,2,3,175,7,3,0
+1,Hurtmore Golf Club,46,2024-04-28,3,4,436,1,9,5
+1,Hurtmore Golf Club,46,2024-04-28,4,4,228,15,5,1
+1,Hurtmore Golf Club,46,2024-04-28,5,3,116,9,4,1
+1,Hurtmore Golf Club,46,2024-04-28,6,4,346,3,7,3
+1,Hurtmore Golf Club,46,2024-04-28,7,4,264,17,5,1
+1,Hurtmore Golf Club,46,2024-04-28,8,4,252,13,5,1
+1,Hurtmore Golf Club,46,2024-04-28,9,4,347,5,5,1
+1,Hurtmore Golf Club,46,2024-04-28,10,4,318,10,4,0
+1,Hurtmore Golf Club,46,2024-04-28,11,4,257,14,5,1
+1,Hurtmore Golf Club,46,2024-04-28,12,4,359,4,7,3
+1,Hurtmore Golf Club,46,2024-04-28,13,4,303,16,5,1
+1,Hurtmore Golf Club,46,2024-04-28,14,4,294,12,6,2
+1,Hurtmore Golf Club,46,2024-04-28,15,5,511,2,9,4
+1,Hurtmore Golf Club,46,2024-04-28,16,3,125,8,3,0
+1,Hurtmore Golf Club,46,2024-04-28,17,4,238,18,4,0
+1,Hurtmore Golf Club,46,2024-04-28,18,4,325,6,5,1
+1,Southampton Municipal - 9,47,2024-05-18,1,3,122,8,3,0
+1,Southampton Municipal - 9,47,2024-05-18,2,4,322,4,5,1
+1,Southampton Municipal - 9,47,2024-05-18,3,3,117,9,3,0
+1,Southampton Municipal - 9,47,2024-05-18,4,4,335,2,9,5
+1,Southampton Municipal - 9,47,2024-05-18,5,3,117,6,4,1
+1,Southampton Municipal - 9,47,2024-05-18,6,4,312,5,5,1
+1,Southampton Municipal - 9,47,2024-05-18,7,3,150,7,4,1
+1,Southampton Municipal - 9,47,2024-05-18,8,4,358,3,7,3
+1,Southampton Municipal - 9,47,2024-05-18,9,5,440,1,7,2

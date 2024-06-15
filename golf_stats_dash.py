@@ -89,7 +89,7 @@ st.altair_chart(fig1p1, use_container_width=True)
 # color = 'par'
 # )
 
-st.altair_chart(fig2, use_container_width=True)
+# st.altair_chart(fig2, use_container_width=True)
 
 #Course Dropdown box variables
 course_names = pd.DataFrame(golf_stats.loc[:,['course_name']].sort_values(by=['course_name'],ascending=True)).drop_duplicates().reset_index(drop=True)

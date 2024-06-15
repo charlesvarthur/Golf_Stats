@@ -81,47 +81,20 @@ fig1p1 = alt.Chart(strokes_vs_par_avg).mark_line(point=False, size=3).encode(
 )
 st.altair_chart(fig1p1, use_container_width=True)
 
-# fig1p2 = alt.Chart(round_sum).mark_line(point=False, size=3).encode(
-#     x='round_id:Q',
-#     y='score',
+# Removed figured 2 - 
+# New figure 2
+# fig2=alt.Chart(form_comparison).mark_point().encode(
+# x = 'round_date',
+# y = 'score',
+# color = 'par'
 # )
 
-# st.altair_chart(fig1p2, use_container_width=True)
-
-#New figure 2
-fig2=alt.Chart(form_comparison).mark_point().encode(
-x = 'round_date',
-y = 'score',
-color = 'par'
-)
-
 st.altair_chart(fig2, use_container_width=True)
-
-#Figure 2 Header
-#st.subheader('Average Hole Score, by Course')
 
 #Course Dropdown box variables
 course_names = pd.DataFrame(golf_stats.loc[:,['course_name']].sort_values(by=['course_name'],ascending=True)).drop_duplicates().reset_index(drop=True)
 course_names = course_names['course_name'].values.tolist()
 course_var = st.selectbox('Select a course to provide data for, in figures 2, 3 and 4:',course_names[:],index=13)
-
-
-#Deprecated figure 2
-# #Figure 2 dataset 
-# avg_hole_score_tb = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
-# avg_hole_score_tb = pd.DataFrame(avg_hole_score_tb.loc[:,['course_name','hole_number','score','par']].groupby(['course_name','hole_number','par'], as_index=False).mean())
-
-# #Figure 2 blurb
-# st.markdown('<br>Figure 2 shows the average hole score for ' + course_var + '.', unsafe_allow_html=True)
-
-# #Figure 2
-# fig2 = alt.Chart(avg_hole_score_tb).mark_bar(color='#00CCCC').encode(
-#     x = 'score:Q', 
-#     y = 'hole_number:O',
-# ).properties(height=alt.Step(30))
-# fig2.encoding.y.title='hole number'
-# st.altair_chart(fig2, use_container_width=True)
-
 
 #Figure 3 header
 st.subheader('Scores by Round Date for ' + course_var)

@@ -75,7 +75,7 @@ BEGIN
 		'COPY ' 
 		'(select * from recent_form) '
 		'TO %L CSV HEADER',
-		'/Users/charlesarthur/Documents/Data_Projects/Golf_Stats/recent_form'
+		'/Users/charlesarthur/Documents/Data_Projects/Golf_Stats/recent_form.csv'
 		);
 END;
 $$;

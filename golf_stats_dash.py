@@ -23,18 +23,25 @@ st.set_page_config(page_title="Full Golf Stats",
 
 #Core Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
-#Hundred Days stats (actually 365 or other random date select)
+
+#Hundred Days stats (actually 365 or other random date select)  
 hundred_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats_hundred_days.csv")
+
 #Average scores data source
 strokes_vs_par_avg = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/average_strokes_vs_par.csv")
 strokes_vs_par_avg=strokes_vs_par_avg[strokes_vs_par_avg.notnull().all(1)]
+
 #Sum golf stats by round_id
 round_sum = golf_stats.loc[:,['round_id','score']].groupby(['round_id']).sum()
 
 #Average round score by distance data
 average_score_by_hole_length = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/average_score_by_hole_length.csv") 
+
 #Round comparison data
 form_comparison = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/form_comparison.csv")
+
+#Recent form with stableford calculations
+recent_form = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/recent_form.csv")
 
 #Fix this so the datetime is captured in the month_year column yyyy-mm
 #form_comparison["round_date"] = pd.to_datetime(form_comparison["round_date"],format="%Y-%m-%d")

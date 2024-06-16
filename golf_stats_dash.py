@@ -43,24 +43,24 @@ form_comparison = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/
 #Recent form with stableford calculations
 recent_form = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/recent_form.csv")
 
-#Fix this so the datetime is captured in the month_year column yyyy-mm
-#form_comparison["round_date"] = pd.to_datetime(form_comparison["round_date"],format="%Y-%m-%d")
-#form_comparison["month_year"] = form_comparison["round_date"].dt.to_period('M')
-#st.write(form_comparison)
-
+###########################
+# Page details and tables #
+###########################
 
 #Page Header and Introduction
 st.header('Golf Stats')
 st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data analyst! '
 'This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
+############
+# Figure 1 #
+############
 
 #First Chart, box and whisker score for course avaerage scores_vs_par 
 st.subheader('Shots Over/Under Each Hole, by Course')
 
 #Figure 1 dataset
 score_vs_par_by_course = pd.DataFrame(hundred_stats .loc[:,['course_name','hole_number','score_vs_par']])
-
 
 st.write('Figure 1 shows how many shots over or under (wishful thinking) I am on each course. '
 'This \"box and whisker\" diagram shows the low, high and median scores. Each box contains the bulk of results and encompasses data between the '
@@ -76,10 +76,14 @@ fig1.encoding.x.title='course'
 fig1.encoding.y.title='score vs par'
 st.altair_chart(fig1, use_container_width=True)
 
-#Figure 1.1 
+############
+# Figure 2 #
+############
+
+#Figure 2 
 st.subheader('Average Strokes by Par & Round')
 
-#Figure 1.1 averages line graph
+#Figure 2 averages line graph
 
 fig1p1 = alt.Chart(strokes_vs_par_avg).mark_line(point=False, size=3).encode(
     x='round_id:O',
@@ -88,20 +92,18 @@ fig1p1 = alt.Chart(strokes_vs_par_avg).mark_line(point=False, size=3).encode(
 )
 st.altair_chart(fig1p1, use_container_width=True)
 
-# Removed figured 2 - 
-# New figure 2
-# fig2=alt.Chart(form_comparison).mark_point().encode(
-# x = 'round_date',
-# y = 'score',
-# color = 'par'
-# )
-
-# st.altair_chart(fig2, use_container_width=True)
+############################
+# Course Selector Dropdown #
+############################
 
 #Course Dropdown box variables
 course_names = pd.DataFrame(golf_stats.loc[:,['course_name']].sort_values(by=['course_name'],ascending=True)).drop_duplicates().reset_index(drop=True)
 course_names = course_names['course_name'].values.tolist()
 course_var = st.selectbox('Select a course to provide data for, in figures 2, 3 and 4:',course_names[:],index=16)
+
+############
+# Figure 3 #
+############
 
 #Figure 3 header
 st.subheader('Scores by Round Date for ' + course_var)
@@ -131,6 +133,9 @@ fig3_layer = alt.layer(fig3_par, fig3_score).resolve_axis(
 )
 st.altair_chart(fig3_layer, use_container_width=True)
 
+############
+# Figure 4 #
+############
 
 #Fig4 - round comparisons line graph
 round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
@@ -144,6 +149,30 @@ st.write('Figure 4 tracks the scores for each round at ' + course_var + '.')
 #Fig4 
 fig4 = alt.Chart(round_comparison).mark_line(point=True, size=5, opacity=0.7).encode(x = 'round_date', y = 'score:Q',color=alt.value('#9dc79f')
 ).properties(width=alt.Step(30))
-fig4.encoding.x.title='round_date'
+fig4.encoding.x.title='round date'
 fig4.encoding.y.title='total score'
 st.altair_chart(fig4, use_container_width=True)
+
+############
+# Figure 5 #
+############
+
+# Need to figure out if this is going to be useful with recent_form csv
+
+
+# st.subheader('Individual Round Stats')
+# round_par = pd.DataFrame(full_with_stableford.loc[(full_with_stableford['course_name'] == course_var) & (full_stats['round_date'] == datebox) & (full_stats['first_name'] == player_box), ['first_name','course_name','par','score','stableford_score','hole_number']])
+# #st.write(round_par)
+# fig5_par = alt.Chart(round_par).mark_bar(size=10,color='grey').encode(
+#     x = 'hole_number', y = 'par'
+# ).properties(width=alt.Step(30))
+# fig5_score = alt.Chart(round_par).mark_line(size=3,color='pink').encode(
+#     x = 'hole_number', y=alt.Y('score',title='score')
+# )
+# fig5_stableford = alt.Chart(round_par).mark_bar(size=5,color='orange').encode(
+#     x = 'hole_number', y =alt.Y('stableford_score',title='score')
+# )
+# fig_5_layer = alt.layer(fig5_par, fig5_score, fig5_stableford).resolve_axis(
+#     y = 'independent'
+# ).configure(autosize=alt.AutoSizeParams(resize=True))
+# st.altair_chart(fig_5_layer, use_container_width=True)

@@ -131,7 +131,6 @@ fig3_score = alt.Chart(round_par).mark_line(size=3,color='pink').encode(
 fig3_layer = alt.layer(fig3_par, fig3_score).resolve_axis(
     y = 'independent'
 )
-fig3_layer.encoding.x.title='hole_number'
 
 st.altair_chart(fig3_layer, use_container_width=True)
 

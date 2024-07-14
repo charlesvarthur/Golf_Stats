@@ -1,9 +1,0 @@
-numpy
-matplotlib
-pandas
-openpyxl
-plotly_express
-streamlit
-seaborn
-datetime
-psycopg2-binary==2.9.5

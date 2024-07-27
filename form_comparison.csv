@@ -11,13 +11,14 @@ course_id,course_name,round_date,par,score
 3,Southampton Municipal - 18,2022-12,70,55
 3,Southampton Municipal - 18,2023-02,70,108
 3,Southampton Municipal - 18,2023-03,70,44
-3,Southampton Municipal - 18,2023-04,70,52
 3,Southampton Municipal - 18,2023-04,70,118
+3,Southampton Municipal - 18,2023-04,70,52
 4,Hurtmore Golf Club,2022-10,70,121
 4,Hurtmore Golf Club,2022-12,70,132
 4,Hurtmore Golf Club,2023-02,70,103
 4,Hurtmore Golf Club,2024-01,70,95
 4,Hurtmore Golf Club,2024-04,70,97
+4,Hurtmore Golf Club,2024-07,70,104
 5,Alton Golf Club,2022-10,35,66
 6,Ampfield Golf Club,2022-11,,83
 6,Ampfield Golf Club,2022-12,,77
@@ -46,3 +47,4 @@ course_id,course_name,round_date,par,score
 19,Hoebridge Golf Club,2023-08,72,109
 20,Silvermere Golf Club,2024-01,72,117
 20,Silvermere Golf Club,2024-03,72,99
+21,Cottesmore Golf Club,2024-07,72,104

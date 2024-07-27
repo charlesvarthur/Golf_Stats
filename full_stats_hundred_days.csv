@@ -1,121 +1,4 @@
 player_id,course_name,round_id,round_date,hole_number,par,yards,stroke_index,score,score_vs_par
-1,Weybrook Park Golf Club - East Course,31,2023-05-19,19,3,153,15,4,1
-1,Weybrook Park Golf Club - East Course,31,2023-05-19,20,4,411,1,6,2
-1,Weybrook Park Golf Club - East Course,31,2023-05-19,21,3,152,11,6,3
-1,Weybrook Park Golf Club - East Course,31,2023-05-19,22,4,332,5,6,2
-1,Weybrook Park Golf Club - East Course,31,2023-05-19,23,5,482,7,6,1
-1,Weybrook Park Golf Club - East Course,31,2023-05-19,24,3,115,17,3,0
-1,Weybrook Park Golf Club - East Course,31,2023-05-19,25,4,317,3,6,2
-1,Weybrook Park Golf Club - East Course,31,2023-05-19,26,4,284,13,6,2
-1,Weybrook Park Golf Club - East Course,31,2023-05-19,27,5,436,9,9,4
-1,Etchinghill Golf Trust,32,2023-05-20,1,4,349,9,6,2
-1,Etchinghill Golf Trust,32,2023-05-20,2,5,515,7,9,4
-1,Etchinghill Golf Trust,32,2023-05-20,3,4,364,15,5,1
-1,Etchinghill Golf Trust,32,2023-05-20,4,4,397,1,6,2
-1,Etchinghill Golf Trust,32,2023-05-20,5,3,149,13,7,4
-1,Etchinghill Golf Trust,32,2023-05-20,6,4,370,3,9,5
-1,Etchinghill Golf Trust,32,2023-05-20,7,4,279,11,4,0
-1,Etchinghill Golf Trust,32,2023-05-20,8,4,385,5,7,3
-1,Etchinghill Golf Trust,32,2023-05-20,9,3,151,17,7,4
-1,Etchinghill Golf Trust,32,2023-05-20,10,5,490,6,9,4
-1,Etchinghill Golf Trust,32,2023-05-20,11,3,130,18,7,4
-1,Etchinghill Golf Trust,32,2023-05-20,12,5,479,12,7,2
-1,Etchinghill Golf Trust,32,2023-05-20,13,4,400,10,5,1
-1,Etchinghill Golf Trust,32,2023-05-20,14,4,421,2,7,3
-1,Etchinghill Golf Trust,32,2023-05-20,15,3,215,4,5,2
-1,Etchinghill Golf Trust,32,2023-05-20,16,4,308,14,9,5
-1,Etchinghill Golf Trust,32,2023-05-20,17,3,164,16,6,3
-1,Etchinghill Golf Trust,32,2023-05-20,18,4,341,8,6,2
-1,Rookwood Golf Centre,33,2023-06-04,1,5,478,12,6,1
-1,Rookwood Golf Centre,33,2023-06-04,2,4,289,6,5,1
-1,Rookwood Golf Centre,33,2023-06-04,3,4,294,10,7,3
-1,Rookwood Golf Centre,33,2023-06-04,4,5,499,2,8,3
-1,Rookwood Golf Centre,33,2023-06-04,5,4,316,16,6,2
-1,Rookwood Golf Centre,33,2023-06-04,6,4,336,8,5,1
-1,Rookwood Golf Centre,33,2023-06-04,7,4,371,4,7,3
-1,Rookwood Golf Centre,33,2023-06-04,8,3,98,18,3,0
-1,Rookwood Golf Centre,33,2023-06-04,9,4,257,14,3,-1
-1,Rookwood Golf Centre,33,2023-06-04,10,4,357,9,7,3
-1,Rookwood Golf Centre,33,2023-06-04,11,3,151,13,5,2
-1,Rookwood Golf Centre,33,2023-06-04,12,5,527,1,6,1
-1,Rookwood Golf Centre,33,2023-06-04,13,3,159,15,5,2
-1,Rookwood Golf Centre,33,2023-06-04,14,4,359,3,6,2
-1,Rookwood Golf Centre,33,2023-06-04,15,5,536,11,9,4
-1,Rookwood Golf Centre,33,2023-06-04,16,3,155,17,3,0
-1,Rookwood Golf Centre,33,2023-06-04,17,4,383,7,5,1
-1,Rookwood Golf Centre,33,2023-06-04,18,5,443,5,7,2
-1,Southampton Municipal - 9,34,2023-06-16,1,3,122,8,3,0
-1,Southampton Municipal - 9,34,2023-06-16,2,4,322,4,4,0
-1,Southampton Municipal - 9,34,2023-06-16,3,3,117,9,7,4
-1,Southampton Municipal - 9,34,2023-06-16,4,4,335,2,5,1
-1,Southampton Municipal - 9,34,2023-06-16,5,3,117,6,4,1
-1,Southampton Municipal - 9,34,2023-06-16,6,4,312,5,7,3
-1,Southampton Municipal - 9,34,2023-06-16,7,3,150,7,4,1
-1,Southampton Municipal - 9,34,2023-06-16,8,4,358,3,6,2
-1,Southampton Municipal - 9,34,2023-06-16,9,5,440,1,7,2
-1,Dorking Golf Club,35,2023-06-17,1,4,271,13,4,0
-1,Dorking Golf Club,35,2023-06-17,2,4,347,3,7,3
-1,Dorking Golf Club,35,2023-06-17,3,4,437,1,6,2
-1,Dorking Golf Club,35,2023-06-17,4,3,131,15,4,1
-1,Dorking Golf Club,35,2023-06-17,5,4,277,11,6,2
-1,Dorking Golf Club,35,2023-06-17,6,3,178,17,4,1
-1,Dorking Golf Club,35,2023-06-17,7,4,311,7,5,1
-1,Dorking Golf Club,35,2023-06-17,8,3,230,9,5,2
-1,Dorking Golf Club,35,2023-06-17,9,4,374,5,5,1
-1,Dorking Golf Club,35,2023-06-17,10,4,271,13,4,0
-1,Dorking Golf Club,35,2023-06-17,11,4,347,3,5,1
-1,Dorking Golf Club,35,2023-06-17,12,4,437,1,5,1
-1,Dorking Golf Club,35,2023-06-17,13,3,131,15,3,0
-1,Dorking Golf Club,35,2023-06-17,14,4,277,11,4,0
-1,Dorking Golf Club,35,2023-06-17,15,3,178,17,4,1
-1,Dorking Golf Club,35,2023-06-17,16,4,311,7,5,1
-1,Dorking Golf Club,35,2023-06-17,17,3,230,9,6,3
-1,Dorking Golf Club,35,2023-06-17,18,4,374,5,7,3
-1,Southampton Municipal - 9,36,2023-06-22,1,3,122,8,4,1
-1,Southampton Municipal - 9,36,2023-06-22,2,4,322,4,5,1
-1,Southampton Municipal - 9,36,2023-06-22,3,3,117,9,5,2
-1,Southampton Municipal - 9,36,2023-06-22,4,4,335,2,6,2
-1,Southampton Municipal - 9,36,2023-06-22,5,3,117,6,4,1
-1,Southampton Municipal - 9,36,2023-06-22,6,4,312,5,5,1
-1,Southampton Municipal - 9,36,2023-06-22,7,3,150,7,4,1
-1,Southampton Municipal - 9,36,2023-06-22,8,4,358,3,7,3
-1,Southampton Municipal - 9,36,2023-06-22,9,5,440,1,6,1
-1,Hurtmore Golf Club,37,2023-07-08,1,4,332,11,4,0
-1,Hurtmore Golf Club,37,2023-07-08,2,3,175,7,4,1
-1,Hurtmore Golf Club,37,2023-07-08,3,4,436,1,6,2
-1,Hurtmore Golf Club,37,2023-07-08,4,4,228,15,5,1
-1,Hurtmore Golf Club,37,2023-07-08,5,3,116,9,2,-1
-1,Hurtmore Golf Club,37,2023-07-08,6,4,346,3,7,3
-1,Hurtmore Golf Club,37,2023-07-08,7,4,264,17,4,0
-1,Hurtmore Golf Club,37,2023-07-08,8,4,252,13,5,1
-1,Hurtmore Golf Club,37,2023-07-08,9,4,347,5,6,2
-1,Hurtmore Golf Club,37,2023-07-08,10,4,318,10,5,1
-1,Hurtmore Golf Club,37,2023-07-08,11,4,257,14,5,1
-1,Hurtmore Golf Club,37,2023-07-08,12,4,359,4,6,2
-1,Hurtmore Golf Club,37,2023-07-08,13,4,303,16,9,5
-1,Hurtmore Golf Club,37,2023-07-08,14,4,294,12,4,0
-1,Hurtmore Golf Club,37,2023-07-08,15,5,511,2,6,1
-1,Hurtmore Golf Club,37,2023-07-08,16,3,125,8,7,4
-1,Hurtmore Golf Club,37,2023-07-08,17,4,238,18,5,1
-1,Hurtmore Golf Club,37,2023-07-08,18,4,325,6,6,2
-1,Boundary Lakes,38,2023-07-21,1,4,331,5,5,1
-1,Boundary Lakes,38,2023-07-21,2,3,114,14,8,5
-1,Boundary Lakes,38,2023-07-21,3,4,355,4,9,5
-1,Boundary Lakes,38,2023-07-21,4,4,296,15,4,0
-1,Boundary Lakes,38,2023-07-21,5,3,147,16,4,1
-1,Boundary Lakes,38,2023-07-21,6,5,476,7,7,2
-1,Boundary Lakes,38,2023-07-21,7,4,363,9,4,0
-1,Boundary Lakes,38,2023-07-21,8,5,528,2,6,1
-1,Boundary Lakes,38,2023-07-21,9,3,164,10,6,3
-1,Boundary Lakes,38,2023-07-21,10,4,231,17,5,1
-1,Boundary Lakes,38,2023-07-21,11,3,100,18,6,3
-1,Boundary Lakes,38,2023-07-21,12,5,495,3,9,4
-1,Boundary Lakes,38,2023-07-21,13,3,148,13,4,1
-1,Boundary Lakes,38,2023-07-21,14,4,352,1,6,2
-1,Boundary Lakes,38,2023-07-21,15,3,173,8,5,2
-1,Boundary Lakes,38,2023-07-21,16,4,292,12,6,2
-1,Boundary Lakes,38,2023-07-21,17,5,436,11,7,2
-1,Boundary Lakes,38,2023-07-21,18,3,153,6,7,4
 1,Gatton Mannor Golf Club,39,2023-07-28,1,4,379,9,5,1
 1,Gatton Mannor Golf Club,39,2023-07-28,2,3,120,15,5,2
 1,Gatton Mannor Golf Club,39,2023-07-28,3,4,332,3,9,5
@@ -260,3 +143,39 @@ player_id,course_name,round_id,round_date,hole_number,par,yards,stroke_index,sco
 1,Southampton Municipal - 9,47,2024-05-18,7,3,150,7,4,1
 1,Southampton Municipal - 9,47,2024-05-18,8,4,358,3,7,3
 1,Southampton Municipal - 9,47,2024-05-18,9,5,440,1,7,2
+1,Hurtmore Golf Club,48,2024-07-13,1,4,332,11,5,1
+1,Hurtmore Golf Club,48,2024-07-13,2,3,175,7,7,4
+1,Hurtmore Golf Club,48,2024-07-13,3,4,436,1,5,1
+1,Hurtmore Golf Club,48,2024-07-13,4,4,228,15,5,1
+1,Hurtmore Golf Club,48,2024-07-13,5,3,116,9,5,2
+1,Hurtmore Golf Club,48,2024-07-13,6,4,346,3,9,5
+1,Hurtmore Golf Club,48,2024-07-13,7,4,264,17,4,0
+1,Hurtmore Golf Club,48,2024-07-13,8,4,252,13,6,2
+1,Hurtmore Golf Club,48,2024-07-13,9,4,347,5,6,2
+1,Hurtmore Golf Club,48,2024-07-13,10,4,318,10,4,0
+1,Hurtmore Golf Club,48,2024-07-13,11,4,257,14,5,1
+1,Hurtmore Golf Club,48,2024-07-13,12,4,359,4,7,3
+1,Hurtmore Golf Club,48,2024-07-13,13,4,303,16,7,3
+1,Hurtmore Golf Club,48,2024-07-13,14,4,294,12,7,3
+1,Hurtmore Golf Club,48,2024-07-13,15,5,511,2,8,3
+1,Hurtmore Golf Club,48,2024-07-13,16,3,125,8,3,0
+1,Hurtmore Golf Club,48,2024-07-13,17,4,238,18,6,2
+1,Hurtmore Golf Club,48,2024-07-13,18,4,325,6,5,1
+1,Cottesmore Golf Club,49,2024-07-26,1,5,465,9,5,0
+1,Cottesmore Golf Club,49,2024-07-26,2,4,319,13,7,3
+1,Cottesmore Golf Club,49,2024-07-26,3,3,177,7,5,2
+1,Cottesmore Golf Club,49,2024-07-26,4,4,422,1,5,1
+1,Cottesmore Golf Club,49,2024-07-26,5,4,264,17,5,1
+1,Cottesmore Golf Club,49,2024-07-26,6,4,377,3,9,5
+1,Cottesmore Golf Club,49,2024-07-26,7,3,149,15,4,1
+1,Cottesmore Golf Club,49,2024-07-26,8,4,394,5,6,2
+1,Cottesmore Golf Club,49,2024-07-26,9,4,273,11,6,2
+1,Cottesmore Golf Club,49,2024-07-26,10,4,399,10,4,0
+1,Cottesmore Golf Club,49,2024-07-26,11,4,355,4,5,1
+1,Cottesmore Golf Club,49,2024-07-26,12,3,209,14,7,4
+1,Cottesmore Golf Club,49,2024-07-26,13,4,341,2,7,3
+1,Cottesmore Golf Club,49,2024-07-26,14,5,450,16,7,2
+1,Cottesmore Golf Club,49,2024-07-26,15,5,532,6,8,3
+1,Cottesmore Golf Club,49,2024-07-26,16,4,287,18,3,-1
+1,Cottesmore Golf Club,49,2024-07-26,17,3,153,8,6,3
+1,Cottesmore Golf Club,49,2024-07-26,18,5,467,12,5,0

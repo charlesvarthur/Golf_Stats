@@ -1,3 +1,4 @@
+altair>= 5.0.0
 numpy
 matplotlib
 pandas

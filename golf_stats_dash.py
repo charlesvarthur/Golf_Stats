@@ -206,7 +206,7 @@ fig4.encoding.x.title='round date'
 fig4.encoding.y.title='total score'
 
 tab1, tab2 = st.tabs(["Chart", "Dataframe"])
-tab1.fig4
+tab1.line_chart(round_comparison, height=250)
 tab2.dataframe(round_comparison, height=250, use_container_width=True)
 
 #Fig 4 Header

@@ -98,6 +98,8 @@ handicap = calculate_handicap_index(scores, course_ratings, slope_ratings)
 st.header('Golf Stats')
 st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data analyst! '
 'This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
+
+st.header(f'Current handicap is: {handicap}')
 ############    
 # Figure 1 #
 ############

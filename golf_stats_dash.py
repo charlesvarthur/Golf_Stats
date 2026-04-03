@@ -183,16 +183,6 @@ fig3_layer = alt.layer(fig3_par, fig3_score).resolve_axis(
 
 st.altair_chart(fig3_layer, use_container_width=True)
 
-#--------------------------
-# New test of toggle and rolling mean
-#--------------------------
-
-# with st.container(border=True):
-#     rolling_average = st.toggle("Rolling average")
-# if rolling_average:
-#     round_comparison = round_comparison["score"].rolling(4).mean().dropna()
-    
-
 #------------------------
 # Figure 4 
 #------------------------
@@ -224,7 +214,7 @@ tab2.dataframe(round_comparison, height=250, use_container_width=True)
 # Need to figure out if this is going to be useful with recent_form csv
 
 
-# st.subheader('Individual Round Stats')
+# st.subheader('Individual Round Stats')y^g 
 # round_par = pd.DataFrame(full_with_stableford.loc[(full_with_stableford['course_name'] == course_var) & (full_stats['round_date'] == datebox) & (full_stats['first_name'] == player_box), ['first_name','course_name','par','score','stableford_score','hole_number']])
 # #st.write(round_par)
 # fig5_par = alt.Chart(round_par).mark_bar(size=10,color='grey').encode(
@@ -240,3 +230,14 @@ tab2.dataframe(round_comparison, height=250, use_container_width=True)
 #     y = 'independent'
 # ).configure(autosize=alt.AutoSizeParams(resize=True))
 # st.altair_chart(fig_5_layer, use_container_width=True)
+
+
+#--------------------------
+# New test of toggle and rolling mean
+#--------------------------
+
+with st.container(border=True):
+    rolling_average = st.toggle("Rolling average")
+if rolling_average:
+    rolling_average = golf_stats["score"].rolling(4).mean().dropna()
+    

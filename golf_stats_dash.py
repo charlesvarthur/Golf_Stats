@@ -16,6 +16,28 @@ st.set_page_config(page_title="Full Golf Stats",
                     layout="wide"
                     )
 
+#######################
+# Handicap calculator #
+#######################
+
+def calculate_handicap_index(scores, course_ratings, slope_ratings):
+    differentials = []
+
+    # Step 1: Calculate differentials
+    for score, rating, slope in zip(scores, course_ratings, slope_ratings):
+        diff = (score - rating) * 113 / slope
+        differentials.append(diff)
+
+    # Step 2: Sort and take lowest 8 (if 20 rounds available)
+    differentials.sort()
+    lowest_diffs = differentials[:8]
+
+    # Step 3: Average and apply multiplier
+    handicap_index = sum(lowest_diffs) / len(lowest_diffs)
+    handicap_index *= 0.96
+
+    return round(handicap_index, 1)
+
 ####################
 # All Data sources #
 ####################
@@ -42,6 +64,16 @@ form_comparison = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/
 #Recent form with stableford calculations
 recent_form = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/recent_form.csv")
 
+scores = recent_form[["score"]]
+course_ratings = [["course_rating"]]
+slope_ratings = [["slope_rating"]]
+
+
+handicap = calculate_handicap_index(scores, course_ratings, slope_ratings)
+print("Handicap Index:", handicap)
+
+
+
 ###########################
 # Page details and tables #
 ###########################
@@ -51,7 +83,7 @@ st.header('Golf Stats')
 st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data analyst! '
 'This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
-############
+############    
 # Figure 1 #
 ############
 

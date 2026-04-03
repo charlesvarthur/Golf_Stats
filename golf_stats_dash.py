@@ -61,7 +61,7 @@ average_score_by_hole_length = pd.read_csv("https://raw.githubusercontent.com/ch
 #Round comparison data
 form_comparison = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/form_comparison.csv")
 
-#Recent form with stableford calculations
+# Recent form with stableford calculations
 recent_form = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/recent_form.csv")
 
 scores = (
@@ -96,7 +96,7 @@ handicap = calculate_handicap_index(scores, course_ratings, slope_ratings)
 
 #Page Header and Introduction
 st.header('Golf Stats')
-st.write(f'Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data analyst! '
+st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data analyst! '
 'This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
 st.write = (f'Current handicap is {handicap}')

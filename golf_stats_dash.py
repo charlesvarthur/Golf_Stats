@@ -74,14 +74,14 @@ scores = (
 course_ratings = (
     recent_form
     .groupby("round_id")["course_rating"]
-    .sum()
+    .first()
     .sort_index()
     .tolist()
 )
 slope_ratings = (
     recent_form
     .groupby("round_id")["slope_rating"]
-    .sum()
+    .first()
     .sort_index()
     .tolist()
 )
@@ -99,7 +99,7 @@ st.header('Golf Stats')
 st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data analyst! '
 'This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
-st.header(f'Current handicap is: {handicap}')
+st.header(f'Handicap: {handicap}')
 ############    
 # Figure 1 #
 ############

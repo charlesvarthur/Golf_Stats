@@ -1,13 +1,9 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-import altair as alt
-import glob
-import datetime
-from datetime import date
-
-#######################
-# Handicap calculator #
-#######################
+# Recent form with stableford calculations
+try:
+    recent_form = pd.read_csv("recent_form.csv")
+except Exception:
+    recent_form = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/recent_form.csv")
 
 def calculate_handicap_index(scores, course_ratings, slope_ratings):
     differentials = []
@@ -27,10 +23,6 @@ def calculate_handicap_index(scores, course_ratings, slope_ratings):
 
     return round(handicap_index, 1)
 
-
-# Recent form with stableford calculations
-recent_form = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/recent_form.csv")
-
 scores = (
     recent_form
     .groupby("round_id")["score"]
@@ -38,29 +30,20 @@ scores = (
     .sort_index()
     .tolist()
 )
-
-print(scores)
-
 course_ratings = (
     recent_form
     .groupby("round_id")["course_rating"]
-    .sum()
+    .first()
     .sort_index()
     .tolist()
 )
-
-print(course_ratings)
-
 slope_ratings = (
     recent_form
     .groupby("round_id")["slope_rating"]
-    .sum()
+    .first()
     .sort_index()
     .tolist()
 )
 
-print(recent_form)
-
-
 handicap = calculate_handicap_index(scores, course_ratings, slope_ratings)
-#print("Handicap Index:", handicap)
+print("Handicap Index:", handicap)

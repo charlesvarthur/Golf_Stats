@@ -197,6 +197,13 @@ st.altair_chart(fig3_layer, use_container_width=True)
 # Figure 4 
 #------------------------
 
+
+#Fig 4 Header
+st.subheader('Course Round Comparison for '+ course_var)
+
+#Fig4 blurb
+st.write('Figure 4 tracks the scores for each round at ' + course_var + '.')
+
 #Fig4 - round comparisons line graph
 round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
@@ -208,12 +215,6 @@ fig4.encoding.y.title='total score'
 tab1, tab2 = st.tabs(["Chart", "Dataframe"])
 tab1.line_chart(x = "round_date", y = "score", data = round_comparison, height=250)
 tab2.dataframe(round_comparison, height=250, use_container_width=True)
-
-#Fig 4 Header
-st.subheader('Course Round Comparison for '+ course_var)
-
-#Fig4 blurb
-st.write('Figure 4 tracks the scores for each round at ' + course_var + '.')
 
 
 ############

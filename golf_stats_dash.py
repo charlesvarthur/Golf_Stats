@@ -64,6 +64,8 @@ form_comparison = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/
 # Recent form with stableford calculations
 recent_form = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/recent_form.csv")
 
+
+# Handicap parameters
 scores = (
     recent_form
     .groupby("round_id")["score"]
@@ -86,9 +88,8 @@ slope_ratings = (
     .tolist()
 )
 
+# Calling handicap calculation function
 handicap = calculate_handicap_index(scores, course_ratings, slope_ratings)
-# print("Handicap Index:", handicap)
-
 
 ###########################
 # Page details and tables #
@@ -99,7 +100,7 @@ st.header('Golf Stats')
 st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data analyst! '
 'This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
-st.header(f'Handicap: {handicap}')
+st.subheader(f'Handicap: {handicap}')
 ############    
 # Figure 1 #
 ############

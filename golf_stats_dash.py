@@ -150,9 +150,9 @@ course_names = pd.DataFrame(golf_stats.loc[:,['course_name']].sort_values(by=['c
 course_names = course_names['course_name'].values.tolist()
 course_var = st.selectbox('Select a course to provide data for, in figures 2, 3 and 4:',course_names[:],index=16)
 
-############
+#---------------------
 # Figure 3 #
-############
+#---------------------
 
 #Figure 3 header
 st.subheader('Scores by Round Date for ' + course_var)
@@ -183,25 +183,38 @@ fig3_layer = alt.layer(fig3_par, fig3_score).resolve_axis(
 
 st.altair_chart(fig3_layer, use_container_width=True)
 
-############
+#--------------------------
+# New test of toggle and rolling mean
+#--------------------------
+
+with st.container(border=True):
+    rolling_average = st.toggle("Rolling average")
+
+
+#------------------------
 # Figure 4 #
-############
+#------------------------
 
 #Fig4 - round comparisons line graph
 round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
+if rolling_average:
+    round_comparison = round_comparison.rolling(7).mean().dropna()
+    
+fig4 = alt.Chart(round_comparison).mark_line(point=True, size=5, opacity=0.7).encode(x = 'round_date', y = 'score:Q',color=alt.value('#9dc79f')).properties(width=alt.Step(30))
+fig4.encoding.x.title='round date'
+fig4.encoding.y.title='total score'
+
+tab1, tab2 = st.tabs(["Chart", "Dataframe"])
+tab1.fig4
+tab2.dataframe(round_comparison, height=250, use_container_width=True)
 
 #Fig 4 Header
 st.subheader('Course Round Comparison for '+ course_var)
 
 #Fig4 blurb
 st.write('Figure 4 tracks the scores for each round at ' + course_var + '.')
-#Fig4 
-fig4 = alt.Chart(round_comparison).mark_line(point=True, size=5, opacity=0.7).encode(x = 'round_date', y = 'score:Q',color=alt.value('#9dc79f')
-).properties(width=alt.Step(30))
-fig4.encoding.x.title='round date'
-fig4.encoding.y.title='total score'
-st.altair_chart(fig4, use_container_width=True)
+
 
 ############
 # Figure 5 #

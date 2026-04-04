@@ -187,7 +187,6 @@ st.altair_chart(fig3_layer, use_container_width=True)
 # Figure 4 
 #------------------------
 
-
 #Fig 4 Header
 st.subheader('Course Round Comparison for '+ course_var)
 
@@ -207,9 +206,36 @@ tab1.line_chart(x = "round_date", y = "score", data = round_comparison, height=2
 tab2.dataframe(round_comparison, height=250, use_container_width=True)
 
 
-############
+#-----------------
 # Figure 5 #
-############
+#-----------------
+
+
+#--------------------------
+# New test of toggle and rolling mean
+#--------------------------
+
+# with st.container(border=True):
+#     rolling_average = st.toggle("Rolling average")
+# if rolling_average:
+#     rolling_average = golf_stats["score"].rolling(4).mean().dropna()
+
+fig5 = alt.Chart(round_comparison).transform_filter(
+    'datum.symbol==="GOOG"'
+    ).mark_area(
+    line={'color':'darkgreen'},
+    color=alt.Gradient(
+        gradient='linear',
+        stops=[alt.GradientStop(color='white', offset=0),
+               alt.GradientStop(color='darkgreen', offset=1)],
+        x1=1,
+        x2=1,
+        y1=1,
+        y2=0
+        )
+    )
+st.altair_chart(fig5,use_container_width=True)
+
 
 # Need to figure out if this is going to be useful with recent_form csv
 
@@ -230,29 +256,3 @@ tab2.dataframe(round_comparison, height=250, use_container_width=True)
 #     y = 'independent'
 # ).configure(autosize=alt.AutoSizeParams(resize=True))
 # st.altair_chart(fig_5_layer, use_container_width=True)
-
-
-#--------------------------
-# New test of toggle and rolling mean
-#--------------------------
-
-with st.container(border=True):
-    rolling_average = st.toggle("Rolling average")
-if rolling_average:
-    rolling_average = golf_stats["score"].rolling(4).mean().dropna()
-
-fig5 = alt.Chart(round_comparison).transform_filter(
-    'datum.symbol==="GOOG"'
-).mark_area(
-    line={'color':'darkgreen'},
-    color=alt.Gradient(
-        gradient='linear',
-        stops=[alt.GradientStop(color='white', offset=0),
-               alt.GradientStop(color='darkgreen', offset=1)],
-        x1=1,
-        x2=1,
-        y1=1,
-        y2=0
-    )
-)
-st.altair_chart(fig5, use_container_width=True)

@@ -214,7 +214,7 @@ tab2.dataframe(round_comparison, height=250, use_container_width=True)
 # Need to figure out if this is going to be useful with recent_form csv
 
 
-# st.subheader('Individual Round Stats')y^g 
+# st.subheader('Individual Round Stats')y^g     
 # round_par = pd.DataFrame(full_with_stableford.loc[(full_with_stableford['course_name'] == course_var) & (full_stats['round_date'] == datebox) & (full_stats['first_name'] == player_box), ['first_name','course_name','par','score','stableford_score','hole_number']])
 # #st.write(round_par)
 # fig5_par = alt.Chart(round_par).mark_bar(size=10,color='grey').encode(
@@ -240,4 +240,19 @@ with st.container(border=True):
     rolling_average = st.toggle("Rolling average")
 if rolling_average:
     rolling_average = golf_stats["score"].rolling(4).mean().dropna()
-    
+
+alt.Chart(round_comparison).transform_filter(
+    'datum.symbol==="GOOG"'
+).mark_area(
+    line={'color':'darkgreen'},
+    color=alt.Gradient(
+        gradient='linear',
+        stops=[alt.GradientStop(color='white', offset=0),
+               alt.GradientStop(color='darkgreen', offset=1)],
+        x1=1,
+        x2=1,
+        y1=1,
+        y2=0
+    )
+)
+plt.show()

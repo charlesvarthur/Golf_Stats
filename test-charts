@@ -1,9 +1,27 @@
 import pandas as pd
+import altair as alt
+import matplotlib.pyplot as plt
 
 #Core Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
 
 round_comparison = pd.DataFrame(golf_stats.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
-round_comparison= round_comparison["score"].rolling(4).mean().dropna()
+round_comparison = round_comparison["score"].rolling(4).mean().dropna()
 
 print(round_comparison)
+
+alt.Chart(round_comparison).transform_filter(
+    'datum.symbol==="GOOG"'
+).mark_area(
+    line={'color':'darkgreen'},
+    color=alt.Gradient(
+        gradient='linear',
+        stops=[alt.GradientStop(color='white', offset=0),
+               alt.GradientStop(color='darkgreen', offset=1)],
+        x1=1,
+        x2=1,
+        y1=1,
+        y2=0
+    )
+)
+plt.show()

@@ -241,7 +241,7 @@ with st.container(border=True):
 if rolling_average:
     rolling_average = golf_stats["score"].rolling(4).mean().dropna()
 
-alt.Chart(round_comparison).transform_filter(
+fig5 = alt.Chart(round_comparison).transform_filter(
     'datum.symbol==="GOOG"'
 ).mark_area(
     line={'color':'darkgreen'},
@@ -255,4 +255,4 @@ alt.Chart(round_comparison).transform_filter(
         y2=0
     )
 )
-plt.show()
+st.altair_chart(fig5, use_container_width=True)

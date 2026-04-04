@@ -196,6 +196,8 @@ st.write('Figure 4 tracks the scores for each round at ' + course_var + '.')
 #Fig4 - round comparisons line graph
 round_comparison = pd.DataFrame(golf_stats.loc[golf_stats['course_name'] == course_var])
 round_comparison = pd.DataFrame(round_comparison.loc[:,['course_name','round_date','score']].groupby(['course_name','round_date'], as_index=False).sum())
+round_comparison['round_date'] = pd.to_datetime(round_comparison['round_date'], errors='coerce')
+round_comparison = round_comparison.dropna(subset=['round_date']).sort_values('round_date').reset_index(drop=True)
 
 fig4 = alt.Chart(round_comparison).mark_line(point=True, size=5, opacity=0.7).encode(x = 'round_date', y = 'score:Q',color=alt.value('#9dc79f')).properties(width=alt.Step(30))
 fig4.encoding.x.title='round date'
@@ -225,6 +227,8 @@ st.write('Figure 5 tracks the rolling average score across all 18 hole courses')
 # if rolling_average:
 #     rolling_average = golf_stats["score"].rolling(4).mean().dropna()
 
+round_comparison['rolling_average'] = round_comparison['score'].rolling(4, min_periods=1).mean()
+
 fig5 = alt.Chart(round_comparison).mark_area(
     line={'color':'darkgreen'},
     color=alt.Gradient(
@@ -236,6 +240,9 @@ fig5 = alt.Chart(round_comparison).mark_area(
         y1=1,
         y2=0
         )
+    ).encode(
+        x=alt.X('round_date:T', title='round date'),
+        y=alt.Y('rolling_average:Q', title='rolling average score')
     )
 st.altair_chart(fig5,use_container_width=True)
 

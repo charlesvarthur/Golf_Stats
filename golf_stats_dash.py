@@ -225,9 +225,7 @@ st.write('Figure 5 tracks the rolling average score across all 18 hole courses')
 # if rolling_average:
 #     rolling_average = golf_stats["score"].rolling(4).mean().dropna()
 
-fig5 = alt.Chart(round_comparison).transform_filter(
-    'datum.symbol==="GOOG"'
-    ).mark_area(
+fig5 = alt.Chart(round_comparison).mark_area(
     line={'color':'darkgreen'},
     color=alt.Gradient(
         gradient='linear',

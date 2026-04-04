@@ -210,6 +210,11 @@ tab2.dataframe(round_comparison, height=250, use_container_width=True)
 # Figure 5 #
 #-----------------
 
+#Fig 4 Header
+st.subheader('Rolling average across courses')
+
+#Fig4 blurb
+st.write('Figure 5 tracks the rolling average score across all 18 hole courses')
 
 #--------------------------
 # New test of toggle and rolling mean

@@ -100,9 +100,9 @@ st.header('Golf Stats')
 st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data analyst! '
 'This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
-st.set_page_config(page_title="Golf App", page_icon="⛳", layout="wide")
+st.set_page_config(page_title="Golf Stats", page_icon="⛳", layout="wide")
 
-if st.button("Go to Shots & Putts Input"):
+if st.button("Input new round"):
     st.switch_page("pages/round_input.py")
         
 

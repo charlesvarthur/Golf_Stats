@@ -6,6 +6,16 @@ st.set_page_config(page_title="Golf Round Input", page_icon="⛳", layout="wide"
 st.title("⛳ Golf Round Data Input")
 st.caption("Enter shots and putts for each hole in a round.")
 
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("Go to Shots & Putts Input"):
+        st.switch_page("round_input.py")
+
+with col2:
+    st.write("Use this page as your home screen.")
+
+
 # Initialize session state
 if "round_data" not in st.session_state:
     st.session_state.round_data = pd.DataFrame(

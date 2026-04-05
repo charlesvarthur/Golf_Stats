@@ -106,7 +106,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     if st.button("Go to Shots & Putts Input"):
-        st.switch_page("round_input.py")
+        st.switch_page("pages/round_input.py")
 
 with col2:
     st.write("Use this page as your home screen.")

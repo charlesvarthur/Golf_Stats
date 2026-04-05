@@ -3,18 +3,14 @@ import pandas as pd
 
 st.set_page_config(page_title="Golf Round Input", page_icon="⛳", layout="wide")
 
+# Navigation row
+nav1, nav2 = st.columns([1, 4])
+with nav1:
+    if st.button("← Back to Main"):
+        st.switch_page("golf_stats_dash.py")
+
 st.title("⛳ Golf Round Data Input")
 st.caption("Enter shots and putts for each hole in a round.")
-
-col1, col2 = st.columns(2)
-
-with col1:
-    if st.button("Go to Shots & Putts Input"):
-        st.switch_page("round_input.py")
-
-with col2:
-    st.write("Use this page as your home screen.")
-
 
 # Initialize session state
 if "round_data" not in st.session_state:
@@ -41,6 +37,7 @@ with st.sidebar:
 
     st.divider()
     st.subheader("Quick Actions")
+
     if st.button("Reset Round"):
         st.session_state.round_data = pd.DataFrame(
             {
@@ -51,6 +48,10 @@ with st.sidebar:
             }
         )
         st.rerun()
+
+    st.divider()
+    if st.button("Back to Main"):
+        st.switch_page("main.py")
 
 st.subheader("Hole-by-hole entry")
 st.write("Update par, total shots, and putts for each hole.")
@@ -74,12 +75,10 @@ df = st.session_state.round_data.copy()
 df["Strokes Gained vs Par"] = df["Shots"] - df["Par"]
 df["Non-putt Shots"] = df["Shots"] - df["Putts"]
 
-# Validation
 invalid_rows = df[df["Putts"] > df["Shots"]]
 if not invalid_rows.empty:
     st.error("Some holes have more putts than total shots. Please correct those entries.")
 
-# Summary metrics
 total_par = int(df["Par"].sum())
 total_shots = int(df["Shots"].sum())
 total_putts = int(df["Putts"].sum())
@@ -134,4 +133,4 @@ st.info(
     f"Player: {st.session_state.player_name or 'Not set'} | "
     f"Course: {st.session_state.course_name or 'Not set'} | "
     f"Date: {round_date}"
-
+)

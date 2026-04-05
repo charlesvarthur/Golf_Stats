@@ -100,6 +100,19 @@ st.header('Golf Stats')
 st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data analyst! '
 'This page is solely dedicated to golf and keeping track of my scores, based on each round, course and individual holes.')
 
+st.set_page_config(page_title="Golf App", page_icon="⛳", layout="wide")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("Go to Shots & Putts Input"):
+        st.switch_page("round_input.py")
+
+with col2:
+    st.write("Use this page as your home screen.")
+
+
+
 st.subheader(f'Handicap: {handicap}')
 ############    
 # Figure 1 #
@@ -206,7 +219,6 @@ fig4.encoding.y.title='total score'
 tab1, tab2 = st.tabs(["Chart", "Dataframe"])
 tab1.line_chart(x = "round_date", y = "score", data = round_comparison, height=250)
 tab2.dataframe(round_comparison, height=250, use_container_width=True)
-
 
 #-----------------
 # Figure 5 #

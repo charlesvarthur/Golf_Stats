@@ -102,16 +102,9 @@ st.write('Hi, I\'m Charlie - I\'m a terrible golfer, but a pretty good data anal
 
 st.set_page_config(page_title="Golf App", page_icon="⛳", layout="wide")
 
-col1, col2 = st.columns(2)
-
-with col1:
-    if st.button("Go to Shots & Putts Input"):
-        st.switch_page("pages/round_input.py")
-
-with col2:
-    st.write("Use this page as your home screen.")
-
-
+if st.button("Go to Shots & Putts Input"):
+    st.switch_page("pages/round_input.py")
+        
 
 st.subheader(f'Handicap: {handicap}')
 ############    

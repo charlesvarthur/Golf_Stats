@@ -6,6 +6,10 @@ import glob
 import datetime
 from datetime import date
 
+#--------------------
+# Load data
+#--------------------
+
 st.set_page_config(page_title="Golf Round Input", page_icon="⛳", layout="wide")
 
 # Navigation row
@@ -37,7 +41,10 @@ if "player_name" not in st.session_state:
 with st.sidebar:
     st.header("Round Details")
     st.session_state.player_name = st.text_input("Player name", value=st.session_state.player_name)
-    st.session_state.course_name = st.text_input("Course name", value=st.session_state.course_name)
+    #Course Dropdown box variables
+    course_var = st.selectbox('Select a course to provide data for, in figures 2, 3 and 4:',course_names[:],index=16)
+
+     
     round_date = st.date_input("Round date")
 
     st.divider()

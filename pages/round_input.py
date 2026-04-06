@@ -21,6 +21,11 @@ with nav1:
 st.title("⛳ New Round Input")
 st.caption("Enter shots and putts for each hole in a round.")
 
+@st.cache_data
+def load_course_options():
+    stats_df = pd.read_csv("full_stats.csv")
+    return sorted(stats_df["course_name"].dropna().astype(str).unique().tolist())
+
 # Initialize session state
 if "round_data" not in st.session_state:
     st.session_state.round_data = pd.DataFrame(
@@ -38,13 +43,7 @@ if "course_name" not in st.session_state:
 if "player_name" not in st.session_state:
     st.session_state.player_name = ""
 
-if "course_name" in st.session_state.round_data.columns:
-    course_options = sorted(st.session_state.round_data["course_name"].dropna().unique().tolist())
-else:
-    course_options = []
-
-if not course_options:
-    course_options = [st.session_state.course_name] if st.session_state.course_name else ["Select course"]
+course_options = load_course_options()
 
 default_course_index = 0
 if st.session_state.course_name in course_options:

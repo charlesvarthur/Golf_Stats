@@ -7,3 +7,5 @@ import matplotlib.pyplot as plt
 
 gs = pd.read_csv("full_stats.csv")
 print(gs.tail())
+
+print(max(gs['round_id']))

@@ -144,7 +144,7 @@ if apply_edits:
     st.session_state.round_entry_data = edited_df.copy()
 
 new_df = st.session_state.round_entry_data.copy()
-new_df ["Round ID"] = stats_df['round_id'] + 1)
+new_df ["Round ID"] = max(stats_df['round_id']) + 1
 new_df["Strokes Gained vs Par"] = new_df["Shots"] - new_df["Par"]
 new_df["Non-putt Shots"] = new_df["Shots"] - new_df["Putts"]
 

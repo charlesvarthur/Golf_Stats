@@ -158,7 +158,9 @@ course_name = courses['course_name'].values.tolist()
 course_var = st.selectbox('Select a course to provide data for, in figures 2, 3 and 4:',course_name[:],index=16)
 
 if "course_name" not in st.session_state:
-    st.session_state.my_list = []
+    st.session_state.course_name = course_var
+else:
+    st.session_state.course_name = course_var
 
 #---------------------
 # Figure 3 #

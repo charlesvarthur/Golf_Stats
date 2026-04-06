@@ -38,11 +38,26 @@ if "course_name" not in st.session_state:
 if "player_name" not in st.session_state:
     st.session_state.player_name = ""
 
+if "course_name" in st.session_state.round_data.columns:
+    course_options = sorted(st.session_state.round_data["course_name"].dropna().unique().tolist())
+else:
+    course_options = []
+
+if not course_options:
+    course_options = [st.session_state.course_name] if st.session_state.course_name else ["Select course"]
+
+default_course_index = 0
+if st.session_state.course_name in course_options:
+    default_course_index = course_options.index(st.session_state.course_name)
+
 with st.sidebar:
     st.header("Round Details")
     st.session_state.player_name = st.text_input("Player name", value=st.session_state.player_name)
-    #Course Dropdown box variables
-    course_var = st.selectbox('Select a course to provide data for, in figures 2, 3 and 4:',course_name[:],index=16)
+    st.session_state.course_name = st.selectbox(
+        "Select a course:",
+        course_options,
+        index=default_course_index,
+    )
 
      
     round_date = st.date_input("Round date")

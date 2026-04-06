@@ -125,20 +125,23 @@ with st.sidebar:
 st.subheader("Hole-by-hole entry")
 st.write("Update par, total shots, and putts for each hole.")
 
-edited_df = st.data_editor(
-    st.session_state.round_entry_data,
-    use_container_width=True,
-    hide_index=True,
-    column_config={
-        "Hole": st.column_config.NumberColumn("Hole", disabled=True),
-        "Par": st.column_config.NumberColumn("Par", min_value=3, max_value=6, step=1),
-        "Shots": st.column_config.NumberColumn("Shots", min_value=0, max_value=20, step=1),
-        "Putts": st.column_config.NumberColumn("Putts", min_value=0, max_value=10, step=1),
-    },
-    key="round_editor",
-)
+with st.form("round_entry_form"):
+    edited_df = st.data_editor(
+        st.session_state.round_entry_data,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "Hole": st.column_config.NumberColumn("Hole", disabled=True),
+            "Par": st.column_config.NumberColumn("Par", min_value=3, max_value=6, step=1),
+            "Shots": st.column_config.NumberColumn("Shots", min_value=0, max_value=20, step=1),
+            "Putts": st.column_config.NumberColumn("Putts", min_value=0, max_value=10, step=1),
+        },
+        key="round_editor",
+    )
+    apply_edits = st.form_submit_button("Apply hole updates")
 
-st.session_state.round_entry_data = edited_df.copy()
+if apply_edits:
+    st.session_state.round_entry_data = edited_df.copy()
 
 df = st.session_state.round_entry_data.copy()
 df["Strokes Gained vs Par"] = df["Shots"] - df["Par"]

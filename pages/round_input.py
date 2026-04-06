@@ -16,7 +16,7 @@ st.set_page_config(page_title="Golf Round Input", page_icon="⛳", layout="wide"
 nav1, nav2 = st.columns([1, 4])
 with nav1:
     if st.button("← Back to Main"):
-        st.switch_page("golf_stats_dash.py")
+        st.switch_page("golf_stats_dash.py")    
 
 st.title("⛳ New Round Input")
 st.caption("Enter shots and putts for each hole in a round.")

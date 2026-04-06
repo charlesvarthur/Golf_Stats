@@ -57,13 +57,13 @@ def build_round_template(course_name, existing_df=None):
     return template
 
 def sync_round_data_to_course():
-    existing_df = st.session_state.get("round_data")
-    st.session_state.round_data = build_round_template(st.session_state.course_name, existing_df)
-    st.session_state.round_course_loaded = st.session_state.course_name
+    existing_df = st.session_state.get("round_entry_data")
+    st.session_state.round_entry_data = build_round_template(st.session_state.round_entry_course, existing_df)
+    st.session_state.round_course_loaded = st.session_state.round_entry_course
 
 # Initialize session state
-if "round_data" not in st.session_state:
-    st.session_state.round_data = pd.DataFrame(
+if "round_entry_data" not in st.session_state:
+    st.session_state.round_entry_data = pd.DataFrame(
         {
             "Hole": list(range(1, 19)),
             "Par": [4] * 18,
@@ -72,8 +72,8 @@ if "round_data" not in st.session_state:
         }
     )
 
-if "course_name" not in st.session_state:
-    st.session_state.course_name = ""
+if "round_entry_course" not in st.session_state:
+    st.session_state.round_entry_course = ""
 
 if "player_name" not in st.session_state:
     st.session_state.player_name = ""
@@ -81,16 +81,19 @@ if "player_name" not in st.session_state:
 course_options = sorted(load_course_data()["course_name"].dropna().unique().tolist())
 
 default_course_index = 0
-if st.session_state.course_name in course_options:
-    default_course_index = course_options.index(st.session_state.course_name)
+if st.session_state.round_entry_course in course_options:
+    default_course_index = course_options.index(st.session_state.round_entry_course)
 
 if "round_course_loaded" not in st.session_state:
     st.session_state.round_course_loaded = ""
 
-if not st.session_state.course_name and course_options:
-    st.session_state.course_name = course_options[default_course_index]
+if not st.session_state.round_entry_course and course_options:
+    st.session_state.round_entry_course = course_options[default_course_index]
 
-if st.session_state.course_name and st.session_state.round_course_loaded != st.session_state.course_name:
+if (
+    st.session_state.round_entry_course
+    and st.session_state.round_course_loaded != st.session_state.round_entry_course
+):
     sync_round_data_to_course()
 
 with st.sidebar:
@@ -101,7 +104,7 @@ with st.sidebar:
         course_options,
         index=default_course_index,
         on_change=sync_round_data_to_course,
-        key="course_name",
+        key="round_entry_course",
     )
 
      
@@ -111,8 +114,8 @@ with st.sidebar:
     st.subheader("Quick Actions")
 
     if st.button("Reset Round"):
-        st.session_state.round_data = build_round_template(st.session_state.course_name)
-        st.session_state.round_course_loaded = st.session_state.course_name
+        st.session_state.round_entry_data = build_round_template(st.session_state.round_entry_course)
+        st.session_state.round_course_loaded = st.session_state.round_entry_course
         st.rerun()
 
     st.divider()
@@ -123,7 +126,7 @@ st.subheader("Hole-by-hole entry")
 st.write("Update par, total shots, and putts for each hole.")
 
 edited_df = st.data_editor(
-    st.session_state.round_data,
+    st.session_state.round_entry_data,
     use_container_width=True,
     hide_index=True,
     column_config={
@@ -135,9 +138,9 @@ edited_df = st.data_editor(
     key="round_editor",
 )
 
-st.session_state.round_data = edited_df.copy()
+st.session_state.round_entry_data = edited_df.copy()
 
-df = st.session_state.round_data.copy()
+df = st.session_state.round_entry_data.copy()
 df["Strokes Gained vs Par"] = df["Shots"] - df["Par"]
 df["Non-putt Shots"] = df["Shots"] - df["Putts"]
 
@@ -197,6 +200,6 @@ st.download_button(
 
 st.info(
     f"Player: {st.session_state.player_name or 'Not set'} | "
-    f"Course: {st.session_state.course_name or 'Not set'} | "
+    f"Course: {st.session_state.round_entry_course or 'Not set'} | "
     f"Date: {round_date}"
 )

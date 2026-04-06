@@ -153,8 +153,8 @@ st.altair_chart(fig1p1, use_container_width=True)
 ############################
 
 #Course Dropdown box variables
-st.session_state.course_name = pd.DataFrame(golf_stats.loc[:,['course_name']].sort_values(by=['course_name'],ascending=True)).drop_duplicates().reset_index(drop=True)
-course_name = course_name['course_name'].values.tolist()
+st.session_state.courses = pd.DataFrame(golf_stats.loc[:,['course_name']].sort_values(by=['course_name'],ascending=True)).drop_duplicates().reset_index(drop=True)
+course_name = courses['course_name'].values.tolist()
 course_var = st.selectbox('Select a course to provide data for, in figures 2, 3 and 4:',course_name[:],index=16)
 
 #---------------------

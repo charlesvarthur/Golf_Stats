@@ -22,9 +22,44 @@ st.title("⛳ New Round Input")
 st.caption("Enter shots and putts for each hole in a round.")
 
 @st.cache_data
-def load_course_options():
+def load_course_data():
     stats_df = pd.read_csv("full_stats.csv")
-    return sorted(stats_df["course_name"].dropna().astype(str).unique().tolist())
+    stats_df["course_name"] = stats_df["course_name"].astype(str)
+    return stats_df
+
+def build_round_template(course_name, existing_df=None):
+    course_df = load_course_data()
+    par_lookup = (
+        course_df.loc[course_df["course_name"] == course_name, ["hole_number", "par"]]
+        .dropna(subset=["hole_number", "par"])
+        .drop_duplicates(subset=["hole_number"])
+        .sort_values("hole_number")
+    )
+
+    hole_numbers = par_lookup["hole_number"].astype(int).tolist()
+    if not hole_numbers:
+        hole_numbers = list(range(1, 19))
+
+    template = pd.DataFrame({"Hole": hole_numbers})
+    template["Par"] = template["Hole"].map(
+        par_lookup.set_index("hole_number")["par"].to_dict()
+    ).fillna(4).astype(int)
+    template["Shots"] = 0
+    template["Putts"] = 0
+
+    if existing_df is not None and {"Hole", "Shots", "Putts"}.issubset(existing_df.columns):
+        existing_values = existing_df.loc[:, ["Hole", "Shots", "Putts"]].copy()
+        template = template.merge(existing_values, on="Hole", how="left", suffixes=("", "_existing"))
+        template["Shots"] = template["Shots_existing"].fillna(template["Shots"]).astype(int)
+        template["Putts"] = template["Putts_existing"].fillna(template["Putts"]).astype(int)
+        template = template.drop(columns=["Shots_existing", "Putts_existing"])
+
+    return template
+
+def sync_round_data_to_course():
+    existing_df = st.session_state.get("round_data")
+    st.session_state.round_data = build_round_template(st.session_state.course_name, existing_df)
+    st.session_state.round_course_loaded = st.session_state.course_name
 
 # Initialize session state
 if "round_data" not in st.session_state:
@@ -43,19 +78,30 @@ if "course_name" not in st.session_state:
 if "player_name" not in st.session_state:
     st.session_state.player_name = ""
 
-course_options = load_course_options()
+course_options = sorted(load_course_data()["course_name"].dropna().unique().tolist())
 
 default_course_index = 0
 if st.session_state.course_name in course_options:
     default_course_index = course_options.index(st.session_state.course_name)
 
+if "round_course_loaded" not in st.session_state:
+    st.session_state.round_course_loaded = ""
+
+if not st.session_state.course_name and course_options:
+    st.session_state.course_name = course_options[default_course_index]
+
+if st.session_state.course_name and st.session_state.round_course_loaded != st.session_state.course_name:
+    sync_round_data_to_course()
+
 with st.sidebar:
     st.header("Round Details")
     st.session_state.player_name = st.text_input("Player name", value=st.session_state.player_name)
-    st.session_state.course_name = st.selectbox(
+    st.selectbox(
         "Select a course:",
         course_options,
         index=default_course_index,
+        on_change=sync_round_data_to_course,
+        key="course_name",
     )
 
      
@@ -65,14 +111,8 @@ with st.sidebar:
     st.subheader("Quick Actions")
 
     if st.button("Reset Round"):
-        st.session_state.round_data = pd.DataFrame(
-            {
-                "Hole": list(range(1, 19)),
-                "Par": [4] * 18,
-                "Shots": [0] * 18,
-                "Putts": [0] * 18,
-            }
-        )
+        st.session_state.round_data = build_round_template(st.session_state.course_name)
+        st.session_state.round_course_loaded = st.session_state.course_name
         st.rerun()
 
     st.divider()

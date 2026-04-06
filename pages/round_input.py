@@ -42,7 +42,7 @@ with st.sidebar:
     st.header("Round Details")
     st.session_state.player_name = st.text_input("Player name", value=st.session_state.player_name)
     #Course Dropdown box variables
-    course_var = st.selectbox('Select a course to provide data for, in figures 2, 3 and 4:',course_names[:],index=16)
+    course_var = st.selectbox('Select a course to provide data for, in figures 2, 3 and 4:',course_name[:],index=16)
 
      
     round_date = st.date_input("Round date")

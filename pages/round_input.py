@@ -143,18 +143,18 @@ with st.form("round_entry_form"):
 if apply_edits:
     st.session_state.round_entry_data = edited_df.copy()
 
-df = st.session_state.round_entry_data.copy()
-df["Strokes Gained vs Par"] = df["Shots"] - df["Par"]
-df["Non-putt Shots"] = df["Shots"] - df["Putts"]
+new_df = st.session_state.round_entry_data.copy()
+new_df["Strokes Gained vs Par"] = new_df["Shots"] - new_df["Par"]
+new_df["Non-putt Shots"] = new_df["Shots"] - new_df["Putts"]
 
-invalid_rows = df[df["Putts"] > df["Shots"]]
+invalid_rows = new_df[new_df["Putts"] > new_df["Shots"]]
 if not invalid_rows.empty:
     st.error("Some holes have more putts than total shots. Please correct those entries.")
 
-total_par = int(df["Par"].sum())
-total_shots = int(df["Shots"].sum())
-total_putts = int(df["Putts"].sum())
-total_non_putt = int(df["Non-putt Shots"].sum())
+total_par = int(new_df["Par"].sum())
+total_shots = int(new_df["Shots"].sum())
+total_putts = int(new_df["Putts"].sum())
+total_non_putt = int(new_df["Non-putt Shots"].sum())
 score_to_par = total_shots - total_par
 
 col1, col2, col3, col4 = st.columns(4)
@@ -163,8 +163,8 @@ col2.metric("Total Shots", total_shots, delta=score_to_par)
 col3.metric("Total Putts", total_putts)
 col4.metric("Non-putt Shots", total_non_putt)
 
-front_nine = df[df["Hole"] <= 9]
-back_nine = df[df["Hole"] >= 10]
+front_nine = new_df[new_df["Hole"] <= 9]
+back_nine = new_df[new_df["Hole"] >= 10]
 
 st.subheader("Round breakdown")
 left, right = st.columns(2)
@@ -190,9 +190,9 @@ with right:
     )
 
 st.subheader("Entered data preview")
-st.dataframe(df, use_container_width=True, hide_index=True)
+st.dataframe(new_df, use_container_width=True, hide_index=True)
 
-csv_data = df.to_csv(index=False).encode("utf-8")
+csv_data = new_df.to_csv(index=False).encode("utf-8")
 
 st.download_button(
     label="Download round as CSV",

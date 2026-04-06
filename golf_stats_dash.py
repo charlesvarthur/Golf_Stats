@@ -42,9 +42,7 @@ def calculate_handicap_index(scores, course_ratings, slope_ratings):
 # All Data sources #
 ####################
 
-if st.button("Load default round data"):
-    st.session_state.round_data = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats_hundred_days.csv")
-    st.success("Round data loaded into session state.")
+st.session_state.round_data = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats_hundred_days.csv")
 
 #Core Data source
 golf_stats = pd.read_csv("https://raw.githubusercontent.com/charlesvarthur/Golf_Stats/main/full_stats.csv")
